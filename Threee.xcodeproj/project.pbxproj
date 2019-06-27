@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
-		2BF8E1FC22C56ABB004D3C2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1FB22C56ABB004D3C2E /* ViewController.swift */; };
+		2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */; };
 		2BF8E20122C56ABD004D3C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF8E20022C56ABD004D3C2E /* Assets.xcassets */; };
 		2BF8E20422C56ABD004D3C2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF8E20222C56ABD004D3C2E /* LaunchScreen.storyboard */; };
 		2BF8E20F22C56ABD004D3C2E /* ThreeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E20E22C56ABD004D3C2E /* ThreeeTests.swift */; };
 		2BF8E21A22C56ABD004D3C2E /* ThreeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E21922C56ABD004D3C2E /* ThreeeUITests.swift */; };
+		2BF8E22A22C56C1E004D3C2E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E22922C56C1E004D3C2E /* HomeViewModel.swift */; };
+		2BF8E22D22C56CEF004D3C2E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E22C22C56CEF004D3C2E /* User.swift */; };
+		2BF8E22F22C56D13004D3C2E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E22E22C56D13004D3C2E /* Day.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,7 @@
 /* Begin PBXFileReference section */
 		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2BF8E1FB22C56ABB004D3C2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2BF8E20022C56ABD004D3C2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BF8E20322C56ABD004D3C2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BF8E20522C56ABD004D3C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +48,9 @@
 		2BF8E21522C56ABD004D3C2E /* ThreeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF8E21922C56ABD004D3C2E /* ThreeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeeUITests.swift; sourceTree = "<group>"; };
 		2BF8E21B22C56ABD004D3C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF8E22922C56C1E004D3C2E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2BF8E22C22C56CEF004D3C2E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2BF8E22E22C56D13004D3C2E /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,9 @@
 		2BF8E1F822C56ABB004D3C2E /* Threee */ = {
 			isa = PBXGroup;
 			children = (
+				2BF8E22B22C56CE5004D3C2E /* Model */,
+				2BF8E22822C56BF0004D3C2E /* HomeView */,
 				2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */,
-				2BF8E1FB22C56ABB004D3C2E /* ViewController.swift */,
 				2BF8E20022C56ABD004D3C2E /* Assets.xcassets */,
 				2BF8E20222C56ABD004D3C2E /* LaunchScreen.storyboard */,
 				2BF8E20522C56ABD004D3C2E /* Info.plist */,
@@ -120,6 +127,24 @@
 				2BF8E21B22C56ABD004D3C2E /* Info.plist */,
 			);
 			path = ThreeeUITests;
+			sourceTree = "<group>";
+		};
+		2BF8E22822C56BF0004D3C2E /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */,
+				2BF8E22922C56C1E004D3C2E /* HomeViewModel.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		2BF8E22B22C56CE5004D3C2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BF8E22C22C56CEF004D3C2E /* User.swift */,
+				2BF8E22E22C56D13004D3C2E /* Day.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BF8E1FC22C56ABB004D3C2E /* ViewController.swift in Sources */,
+				2BF8E22D22C56CEF004D3C2E /* User.swift in Sources */,
+				2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */,
+				2BF8E22A22C56C1E004D3C2E /* HomeViewModel.swift in Sources */,
+				2BF8E22F22C56D13004D3C2E /* Day.swift in Sources */,
 				2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
