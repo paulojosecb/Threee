@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
         
         let user = User(name: "Paulo")
         
-        print(Date(timeIntervalSince1970: user.tomorrow.date))
+        print(user.days[0].isDayCompleted())
     }
 
 
