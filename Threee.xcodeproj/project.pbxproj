@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
+		2BF8E1FC22C56ABB004D3C2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1FB22C56ABB004D3C2E /* ViewController.swift */; };
+		2BF8E1FF22C56ABB004D3C2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF8E1FD22C56ABB004D3C2E /* Main.storyboard */; };
+		2BF8E20122C56ABD004D3C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF8E20022C56ABD004D3C2E /* Assets.xcassets */; };
+		2BF8E20422C56ABD004D3C2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF8E20222C56ABD004D3C2E /* LaunchScreen.storyboard */; };
+		2BF8E20F22C56ABD004D3C2E /* ThreeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E20E22C56ABD004D3C2E /* ThreeeTests.swift */; };
+		2BF8E21A22C56ABD004D3C2E /* ThreeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E21922C56ABD004D3C2E /* ThreeeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2BF8E20B22C56ABD004D3C2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BF8E1EE22C56ABB004D3C2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BF8E1F522C56ABB004D3C2E;
+			remoteInfo = Threee;
+		};
+		2BF8E21622C56ABD004D3C2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BF8E1EE22C56ABB004D3C2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BF8E1F522C56ABB004D3C2E;
+			remoteInfo = Threee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2BF8E1FB22C56ABB004D3C2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2BF8E1FE22C56ABB004D3C2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BF8E20022C56ABD004D3C2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BF8E20322C56ABD004D3C2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BF8E20522C56ABD004D3C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF8E20A22C56ABD004D3C2E /* ThreeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF8E20E22C56ABD004D3C2E /* ThreeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeeTests.swift; sourceTree = "<group>"; };
+		2BF8E21022C56ABD004D3C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF8E21522C56ABD004D3C2E /* ThreeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF8E21922C56ABD004D3C2E /* ThreeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeeUITests.swift; sourceTree = "<group>"; };
+		2BF8E21B22C56ABD004D3C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BF8E1F322C56ABB004D3C2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF8E20722C56ABD004D3C2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF8E21222C56ABD004D3C2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BF8E1ED22C56ABB004D3C2E = {
+			isa = PBXGroup;
+			children = (
+				2BF8E1F822C56ABB004D3C2E /* Threee */,
+				2BF8E20D22C56ABD004D3C2E /* ThreeeTests */,
+				2BF8E21822C56ABD004D3C2E /* ThreeeUITests */,
+				2BF8E1F722C56ABB004D3C2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2BF8E1F722C56ABB004D3C2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BF8E1F622C56ABB004D3C2E /* Threee.app */,
+				2BF8E20A22C56ABD004D3C2E /* ThreeeTests.xctest */,
+				2BF8E21522C56ABD004D3C2E /* ThreeeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BF8E1F822C56ABB004D3C2E /* Threee */ = {
+			isa = PBXGroup;
+			children = (
+				2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */,
+				2BF8E1FB22C56ABB004D3C2E /* ViewController.swift */,
+				2BF8E1FD22C56ABB004D3C2E /* Main.storyboard */,
+				2BF8E20022C56ABD004D3C2E /* Assets.xcassets */,
+				2BF8E20222C56ABD004D3C2E /* LaunchScreen.storyboard */,
+				2BF8E20522C56ABD004D3C2E /* Info.plist */,
+			);
+			path = Threee;
+			sourceTree = "<group>";
+		};
+		2BF8E20D22C56ABD004D3C2E /* ThreeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				2BF8E20E22C56ABD004D3C2E /* ThreeeTests.swift */,
+				2BF8E21022C56ABD004D3C2E /* Info.plist */,
+			);
+			path = ThreeeTests;
+			sourceTree = "<group>";
+		};
+		2BF8E21822C56ABD004D3C2E /* ThreeeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2BF8E21922C56ABD004D3C2E /* ThreeeUITests.swift */,
+				2BF8E21B22C56ABD004D3C2E /* Info.plist */,
+			);
+			path = ThreeeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BF8E1F522C56ABB004D3C2E /* Threee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BF8E21E22C56ABD004D3C2E /* Build configuration list for PBXNativeTarget "Threee" */;
+			buildPhases = (
+				2BF8E1F222C56ABB004D3C2E /* Sources */,
+				2BF8E1F322C56ABB004D3C2E /* Frameworks */,
+				2BF8E1F422C56ABB004D3C2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Threee;
+			productName = Threee;
+			productReference = 2BF8E1F622C56ABB004D3C2E /* Threee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2BF8E20922C56ABD004D3C2E /* ThreeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BF8E22122C56ABD004D3C2E /* Build configuration list for PBXNativeTarget "ThreeeTests" */;
+			buildPhases = (
+				2BF8E20622C56ABD004D3C2E /* Sources */,
+				2BF8E20722C56ABD004D3C2E /* Frameworks */,
+				2BF8E20822C56ABD004D3C2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BF8E20C22C56ABD004D3C2E /* PBXTargetDependency */,
+			);
+			name = ThreeeTests;
+			productName = ThreeeTests;
+			productReference = 2BF8E20A22C56ABD004D3C2E /* ThreeeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2BF8E21422C56ABD004D3C2E /* ThreeeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BF8E22422C56ABD004D3C2E /* Build configuration list for PBXNativeTarget "ThreeeUITests" */;
+			buildPhases = (
+				2BF8E21122C56ABD004D3C2E /* Sources */,
+				2BF8E21222C56ABD004D3C2E /* Frameworks */,
+				2BF8E21322C56ABD004D3C2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BF8E21722C56ABD004D3C2E /* PBXTargetDependency */,
+			);
+			name = ThreeeUITests;
+			productName = ThreeeUITests;
+			productReference = 2BF8E21522C56ABD004D3C2E /* ThreeeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BF8E1EE22C56ABB004D3C2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Paulo José";
+				TargetAttributes = {
+					2BF8E1F522C56ABB004D3C2E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					2BF8E20922C56ABD004D3C2E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 2BF8E1F522C56ABB004D3C2E;
+					};
+					2BF8E21422C56ABD004D3C2E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 2BF8E1F522C56ABB004D3C2E;
+					};
+				};
+			};
+			buildConfigurationList = 2BF8E1F122C56ABB004D3C2E /* Build configuration list for PBXProject "Threee" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2BF8E1ED22C56ABB004D3C2E;
+			productRefGroup = 2BF8E1F722C56ABB004D3C2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BF8E1F522C56ABB004D3C2E /* Threee */,
+				2BF8E20922C56ABD004D3C2E /* ThreeeTests */,
+				2BF8E21422C56ABD004D3C2E /* ThreeeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BF8E1F422C56ABB004D3C2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF8E20422C56ABD004D3C2E /* LaunchScreen.storyboard in Resources */,
+				2BF8E20122C56ABD004D3C2E /* Assets.xcassets in Resources */,
+				2BF8E1FF22C56ABB004D3C2E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF8E20822C56ABD004D3C2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF8E21322C56ABD004D3C2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BF8E1F222C56ABB004D3C2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF8E1FC22C56ABB004D3C2E /* ViewController.swift in Sources */,
+				2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF8E20622C56ABD004D3C2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF8E20F22C56ABD004D3C2E /* ThreeeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF8E21122C56ABD004D3C2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF8E21A22C56ABD004D3C2E /* ThreeeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2BF8E20C22C56ABD004D3C2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BF8E1F522C56ABB004D3C2E /* Threee */;
+			targetProxy = 2BF8E20B22C56ABD004D3C2E /* PBXContainerItemProxy */;
+		};
+		2BF8E21722C56ABD004D3C2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BF8E1F522C56ABB004D3C2E /* Threee */;
+			targetProxy = 2BF8E21622C56ABD004D3C2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2BF8E1FD22C56ABB004D3C2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BF8E1FE22C56ABB004D3C2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2BF8E20222C56ABD004D3C2E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BF8E20322C56ABD004D3C2E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2BF8E21C22C56ABD004D3C2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2BF8E21D22C56ABD004D3C2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2BF8E21F22C56ABD004D3C2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				INFOPLIST_FILE = Threee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulocardosob.Threee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BF8E22022C56ABD004D3C2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				INFOPLIST_FILE = Threee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulocardosob.Threee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2BF8E22222C56ABD004D3C2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				INFOPLIST_FILE = ThreeeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulocardosob.ThreeeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Threee.app/Threee";
+			};
+			name = Debug;
+		};
+		2BF8E22322C56ABD004D3C2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				INFOPLIST_FILE = ThreeeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulocardosob.ThreeeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Threee.app/Threee";
+			};
+			name = Release;
+		};
+		2BF8E22522C56ABD004D3C2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				INFOPLIST_FILE = ThreeeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulocardosob.ThreeeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Threee;
+			};
+			name = Debug;
+		};
+		2BF8E22622C56ABD004D3C2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				INFOPLIST_FILE = ThreeeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulocardosob.ThreeeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Threee;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BF8E1F122C56ABB004D3C2E /* Build configuration list for PBXProject "Threee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF8E21C22C56ABD004D3C2E /* Debug */,
+				2BF8E21D22C56ABD004D3C2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BF8E21E22C56ABD004D3C2E /* Build configuration list for PBXNativeTarget "Threee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF8E21F22C56ABD004D3C2E /* Debug */,
+				2BF8E22022C56ABD004D3C2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BF8E22122C56ABD004D3C2E /* Build configuration list for PBXNativeTarget "ThreeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF8E22222C56ABD004D3C2E /* Debug */,
+				2BF8E22322C56ABD004D3C2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BF8E22422C56ABD004D3C2E /* Build configuration list for PBXNativeTarget "ThreeeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF8E22522C56ABD004D3C2E /* Debug */,
+				2BF8E22622C56ABD004D3C2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BF8E1EE22C56ABB004D3C2E /* Project object */;
+}
