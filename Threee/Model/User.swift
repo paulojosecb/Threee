@@ -15,6 +15,7 @@ class User {
     
     var today: Day {
         get {
+            
             for day in days {
                 
                 let date = Date(timeIntervalSince1970: day.date)
@@ -29,7 +30,9 @@ class User {
     }
     
     var tomorrow: Day {
+        
         get {
+            
             for day in days {
                 
                 let date = Date(timeIntervalSince1970: day.date)
@@ -39,7 +42,10 @@ class User {
                 }
             }
             
-            return days[1]
+            // If tomorrow is not created yet, it will create, append and return it
+            let day = Day(daysFromNow: 1)
+            days.append(day)
+            return day
             
         }
     }
@@ -50,5 +56,5 @@ class User {
         days.append(Day(daysFromNow: 0))
         days.append(Day(daysFromNow: 1))
     }
-    
+        
 }
