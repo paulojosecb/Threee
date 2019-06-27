@@ -8,12 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .blue
+        
+        let user = User(name: "Paulo")
+        
+        print(Date(timeIntervalSince1970: user.tomorrow.date))
     }
 
 
