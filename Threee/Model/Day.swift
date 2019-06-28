@@ -15,11 +15,8 @@ struct Day: Codable {
     
     init(daysFromNow: Int) {
         
-        guard let today = Calendar.current.date(byAdding: .day, value: daysFromNow, to: Date()) else {
-            self.date = Date().timeIntervalSince1970
-            return
-            
-        }
+        let today = Calendar.current.date(byAdding: .day, value: daysFromNow, to: Date()) ?? Date()
+        
         self.date = today.timeIntervalSince1970
         self.items = [Item(), Item(), Item()]
     }

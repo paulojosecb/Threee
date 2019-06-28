@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0792401C024B413BEBD7F5E7 /* Pods_ThreeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA9CAACA5A363803A3FC02E /* Pods_ThreeeTests.framework */; };
+		2B1A2DCC22C5BB260049093A /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DCB22C5BB260049093A /* UserTests.swift */; };
+		2B1A2DCE22C5BD070049093A /* DayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DCD22C5BD070049093A /* DayTests.swift */; };
+		2B1A2DD022C5C1520049093A /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DCF22C5C1520049093A /* ItemTests.swift */; };
 		2B8553FF22C59C91005F41F5 /* FirebaseAuthMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8553FE22C59C91005F41F5 /* FirebaseAuthMananger.swift */; };
 		2B94B10122C58154007C22DF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* FirebaseManager.swift */; };
 		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
@@ -44,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		1B27DC82C5926521508C2E46 /* Pods-ThreeeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeeUITests.release.xcconfig"; path = "Target Support Files/Pods-ThreeeUITests/Pods-ThreeeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2B1A2DCB22C5BB260049093A /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		2B1A2DCD22C5BD070049093A /* DayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTests.swift; sourceTree = "<group>"; };
+		2B1A2DCF22C5C1520049093A /* ItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
 		2B8553FE22C59C91005F41F5 /* FirebaseAuthMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthMananger.swift; sourceTree = "<group>"; };
 		2B94B10022C58154007C22DF /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +158,9 @@
 			children = (
 				2BF8E20E22C56ABD004D3C2E /* ThreeeTests.swift */,
 				2BF8E21022C56ABD004D3C2E /* Info.plist */,
+				2B1A2DCB22C5BB260049093A /* UserTests.swift */,
+				2B1A2DCD22C5BD070049093A /* DayTests.swift */,
+				2B1A2DCF22C5C1520049093A /* ItemTests.swift */,
 			);
 			path = ThreeeTests;
 			sourceTree = "<group>";
@@ -443,6 +452,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B1A2DD022C5C1520049093A /* ItemTests.swift in Sources */,
+				2B1A2DCE22C5BD070049093A /* DayTests.swift in Sources */,
+				2B1A2DCC22C5BB260049093A /* UserTests.swift in Sources */,
 				2BF8E20F22C56ABD004D3C2E /* ThreeeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
