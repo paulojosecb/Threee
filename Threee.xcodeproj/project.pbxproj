@@ -11,7 +11,12 @@
 		2B1A2DCC22C5BB260049093A /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DCB22C5BB260049093A /* UserTests.swift */; };
 		2B1A2DCE22C5BD070049093A /* DayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DCD22C5BD070049093A /* DayTests.swift */; };
 		2B1A2DD022C5C1520049093A /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DCF22C5C1520049093A /* ItemTests.swift */; };
-		2B8553FF22C59C91005F41F5 /* FirebaseAuthMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8553FE22C59C91005F41F5 /* FirebaseAuthMananger.swift */; };
+		2B1A2DD322C6B4110049093A /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DD222C6B4110049093A /* AuthError.swift */; };
+		2B1A2DD722C6B56A0049093A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DD622C6B56A0049093A /* SignUpViewController.swift */; };
+		2B1A2DD922C6B5900049093A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DD822C6B5900049093A /* SignUpViewModel.swift */; };
+		2B1A2DDB22C6B6160049093A /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DDA22C6B6160049093A /* AuthPresenter.swift */; };
+		2B1A2DDD22C6BADC0049093A /* AuthSucess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DDC22C6BADC0049093A /* AuthSucess.swift */; };
+		2B8553FF22C59C91005F41F5 /* AuthManagerFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8553FE22C59C91005F41F5 /* AuthManagerFirebase.swift */; };
 		2B94B10122C58154007C22DF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* FirebaseManager.swift */; };
 		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
 		2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */; };
@@ -50,7 +55,12 @@
 		2B1A2DCB22C5BB260049093A /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		2B1A2DCD22C5BD070049093A /* DayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTests.swift; sourceTree = "<group>"; };
 		2B1A2DCF22C5C1520049093A /* ItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
-		2B8553FE22C59C91005F41F5 /* FirebaseAuthMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthMananger.swift; sourceTree = "<group>"; };
+		2B1A2DD222C6B4110049093A /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		2B1A2DD622C6B56A0049093A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2B1A2DD822C6B5900049093A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		2B1A2DDA22C6B6160049093A /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		2B1A2DDC22C6BADC0049093A /* AuthSucess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSucess.swift; sourceTree = "<group>"; };
+		2B8553FE22C59C91005F41F5 /* AuthManagerFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManagerFirebase.swift; sourceTree = "<group>"; };
 		2B94B10022C58154007C22DF /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,10 +120,39 @@
 		2B1A2DCA22C5A5B70049093A /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				2B8553FE22C59C91005F41F5 /* FirebaseAuthMananger.swift */,
+				2B1A2DD122C6B3D50049093A /* Auth */,
 				2B94B10022C58154007C22DF /* FirebaseManager.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		2B1A2DD122C6B3D50049093A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2B8553FE22C59C91005F41F5 /* AuthManagerFirebase.swift */,
+				2B1A2DD222C6B4110049093A /* AuthError.swift */,
+				2B1A2DDA22C6B6160049093A /* AuthPresenter.swift */,
+				2B1A2DDC22C6BADC0049093A /* AuthSucess.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		2B1A2DD422C6B5480049093A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B1A2DD522C6B5510049093A /* SignUpView */,
+				2BF8E22822C56BF0004D3C2E /* HomeView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2B1A2DD522C6B5510049093A /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				2B1A2DD622C6B56A0049093A /* SignUpViewController.swift */,
+				2B1A2DD822C6B5900049093A /* SignUpViewModel.swift */,
+			);
+			path = SignUpView;
 			sourceTree = "<group>";
 		};
 		2BF8E1ED22C56ABB004D3C2E = {
@@ -141,9 +180,9 @@
 		2BF8E1F822C56ABB004D3C2E /* Threee */ = {
 			isa = PBXGroup;
 			children = (
+				2B1A2DD422C6B5480049093A /* Views */,
 				2B1A2DCA22C5A5B70049093A /* Firebase */,
 				2BF8E22B22C56CE5004D3C2E /* Model */,
-				2BF8E22822C56BF0004D3C2E /* HomeView */,
 				2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */,
 				2BF8E20022C56ABD004D3C2E /* Assets.xcassets */,
 				2BF8E20222C56ABD004D3C2E /* LaunchScreen.storyboard */,
@@ -438,12 +477,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF8E22D22C56CEF004D3C2E /* User.swift in Sources */,
-				2B8553FF22C59C91005F41F5 /* FirebaseAuthMananger.swift in Sources */,
+				2B8553FF22C59C91005F41F5 /* AuthManagerFirebase.swift in Sources */,
 				2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */,
 				2B94B10122C58154007C22DF /* FirebaseManager.swift in Sources */,
+				2B1A2DDB22C6B6160049093A /* AuthPresenter.swift in Sources */,
+				2B1A2DDD22C6BADC0049093A /* AuthSucess.swift in Sources */,
+				2B1A2DD722C6B56A0049093A /* SignUpViewController.swift in Sources */,
 				2BF8E22A22C56C1E004D3C2E /* HomeViewModel.swift in Sources */,
 				2BF8E22F22C56D13004D3C2E /* Day.swift in Sources */,
+				2B1A2DD322C6B4110049093A /* AuthError.swift in Sources */,
 				2BF8E23122C574C2004D3C2E /* Item.swift in Sources */,
+				2B1A2DD922C6B5900049093A /* SignUpViewModel.swift in Sources */,
 				2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

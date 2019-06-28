@@ -14,7 +14,7 @@ import FirebaseDatabase
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var authManager: FirebaseAuthManager?
+//    var authManager: FirebaseAuthManager?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = HomeViewController()
         window?.makeKeyAndVisible()
         
-        authManager = FirebaseAuthManager.shared
+//        authManager = FirebaseAuthManager.shared
         
         
         return true
