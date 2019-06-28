@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User {
+struct User: Codable {
     
     var name: String
     var days: [Day]
@@ -31,7 +31,7 @@ class User {
     
     var tomorrow: Day {
         
-        get {
+        mutating get {
             
             for day in days {
                 
@@ -55,6 +55,22 @@ class User {
         days = [Day]()
         days.append(Day(daysFromNow: 0))
         days.append(Day(daysFromNow: 1))
+    }
+    
+    func transform() -> [String: Any] {
+        var dict: [String: Any] = [String: Any]()
+        
+        dict["name"] = name
+        
+        var daysDict = [String: Any]()
+        
+        for (index, day) in days.enumerated() {
+            daysDict["\(index)"] = day.transform()
+        }
+        
+        dict["days"] = daysDict
+        
+        return dict
     }
         
 }

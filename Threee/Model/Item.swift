@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Item {
+struct Item: Codable {
     
     var checked: Bool
     var name: String
@@ -16,6 +16,15 @@ class Item {
     init() {
         name = ""
         checked = false
+    }
+    
+    func transform() -> [String: Any] {
+        var dict: [String: Any] = [String: Any]()
+        
+        dict["checked"] = checked
+        dict["name"] = name
+        
+        return dict
     }
     
 }

@@ -17,7 +17,11 @@ class HomeViewController: UIViewController {
         
         let user = User(name: "Paulo")
         
-        print(user.days[0].isDayCompleted())
+        print(user.transform())
+        
+        
+//        FirebaseManager.shared.createHelloWorld(user: user)
+        FirebaseManager.shared.getUsers()
     }
 
 

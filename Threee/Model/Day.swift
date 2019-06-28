@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Day {
+struct Day: Codable {
     
     let date: Double
     var items = [Item]()
@@ -31,12 +31,28 @@ class Day {
         })
     }
     
-    func edit(item: Int, newValue: String) {
+    mutating func edit(item: Int, newValue: String) {
         items[item].name = newValue
     }
     
-    func toggle(item: Int) {
+    mutating func toggle(item: Int) {
         items[item].checked = !items[item].checked
+    }
+    
+    func transform() -> [String: Any] {
+        var dict: [String: Any] = [String: Any]()
+        
+        dict["date"] = date
+        
+        var itemsDict: [String: Any] = [String: Any]()
+        
+        for (index, item) in items.enumerated() {
+            itemsDict["\(index)"] = item.transform()
+        }
+        
+        dict["items"] = itemsDict
+        
+        return dict
     }
     
 }

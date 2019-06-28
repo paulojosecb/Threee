@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0792401C024B413BEBD7F5E7 /* Pods_ThreeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA9CAACA5A363803A3FC02E /* Pods_ThreeeTests.framework */; };
+		2B94B10122C58154007C22DF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* FirebaseManager.swift */; };
 		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
 		2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */; };
 		2BF8E20122C56ABD004D3C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF8E20022C56ABD004D3C2E /* Assets.xcassets */; };
@@ -17,6 +19,9 @@
 		2BF8E22D22C56CEF004D3C2E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E22C22C56CEF004D3C2E /* User.swift */; };
 		2BF8E22F22C56D13004D3C2E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E22E22C56D13004D3C2E /* Day.swift */; };
 		2BF8E23122C574C2004D3C2E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E23022C574C2004D3C2E /* Item.swift */; };
+		2BF8E23322C57D22004D3C2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BF8E23222C57D22004D3C2E /* GoogleService-Info.plist */; };
+		5260E8ED8D32C25B478120A6 /* Pods_Threee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BFFD40A381F5CA89FC14CA /* Pods_Threee.framework */; };
+		9AF1768385197467A80C1AC0 /* Pods_ThreeeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A306951FC686F804A0392DD8 /* Pods_ThreeeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B27DC82C5926521508C2E46 /* Pods-ThreeeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeeUITests.release.xcconfig"; path = "Target Support Files/Pods-ThreeeUITests/Pods-ThreeeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2B94B10022C58154007C22DF /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +60,15 @@
 		2BF8E22C22C56CEF004D3C2E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2BF8E22E22C56D13004D3C2E /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		2BF8E23022C574C2004D3C2E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		2BF8E23222C57D22004D3C2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2F81AE727295FD91D43D1417 /* Pods-ThreeeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeeUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThreeeUITests/Pods-ThreeeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3FA9CAACA5A363803A3FC02E /* Pods_ThreeeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreeeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E6D5E5A51A51EB77FA5624E /* Pods-ThreeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeeTests.debug.xcconfig"; path = "Target Support Files/Pods-ThreeeTests/Pods-ThreeeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0FEB2E2C9595EC063D858C1 /* Pods-Threee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Threee.debug.xcconfig"; path = "Target Support Files/Pods-Threee/Pods-Threee.debug.xcconfig"; sourceTree = "<group>"; };
+		A306951FC686F804A0392DD8 /* Pods_ThreeeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreeeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9CD105C7FCE6C39C6C56C93 /* Pods-Threee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Threee.release.xcconfig"; path = "Target Support Files/Pods-Threee/Pods-Threee.release.xcconfig"; sourceTree = "<group>"; };
+		CB2382A175A965FB0F2B8BBD /* Pods-ThreeeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeeTests.release.xcconfig"; path = "Target Support Files/Pods-ThreeeTests/Pods-ThreeeTests.release.xcconfig"; sourceTree = "<group>"; };
+		D2BFFD40A381F5CA89FC14CA /* Pods_Threee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Threee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5260E8ED8D32C25B478120A6 /* Pods_Threee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0792401C024B413BEBD7F5E7 /* Pods_ThreeeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF1768385197467A80C1AC0 /* Pods_ThreeeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +106,8 @@
 				2BF8E20D22C56ABD004D3C2E /* ThreeeTests */,
 				2BF8E21822C56ABD004D3C2E /* ThreeeUITests */,
 				2BF8E1F722C56ABB004D3C2E /* Products */,
+				FDA6E6EC97C14987A78C603B /* Pods */,
+				5AC9D583F457AAE120F7D57C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +130,7 @@
 				2BF8E20022C56ABD004D3C2E /* Assets.xcassets */,
 				2BF8E20222C56ABD004D3C2E /* LaunchScreen.storyboard */,
 				2BF8E20522C56ABD004D3C2E /* Info.plist */,
+				2BF8E23222C57D22004D3C2E /* GoogleService-Info.plist */,
 			);
 			path = Threee;
 			sourceTree = "<group>";
@@ -136,6 +158,7 @@
 			children = (
 				2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */,
 				2BF8E22922C56C1E004D3C2E /* HomeViewModel.swift */,
+				2B94B10022C58154007C22DF /* FirebaseManager.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -150,6 +173,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5AC9D583F457AAE120F7D57C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2BFFD40A381F5CA89FC14CA /* Pods_Threee.framework */,
+				3FA9CAACA5A363803A3FC02E /* Pods_ThreeeTests.framework */,
+				A306951FC686F804A0392DD8 /* Pods_ThreeeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDA6E6EC97C14987A78C603B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0FEB2E2C9595EC063D858C1 /* Pods-Threee.debug.xcconfig */,
+				A9CD105C7FCE6C39C6C56C93 /* Pods-Threee.release.xcconfig */,
+				8E6D5E5A51A51EB77FA5624E /* Pods-ThreeeTests.debug.xcconfig */,
+				CB2382A175A965FB0F2B8BBD /* Pods-ThreeeTests.release.xcconfig */,
+				2F81AE727295FD91D43D1417 /* Pods-ThreeeUITests.debug.xcconfig */,
+				1B27DC82C5926521508C2E46 /* Pods-ThreeeUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,9 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BF8E21E22C56ABD004D3C2E /* Build configuration list for PBXNativeTarget "Threee" */;
 			buildPhases = (
+				8868024A61946639D5521F68 /* [CP] Check Pods Manifest.lock */,
 				2BF8E1F222C56ABB004D3C2E /* Sources */,
 				2BF8E1F322C56ABB004D3C2E /* Frameworks */,
 				2BF8E1F422C56ABB004D3C2E /* Resources */,
+				5BC75D6989F2307D82968FC1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -174,6 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BF8E22122C56ABD004D3C2E /* Build configuration list for PBXNativeTarget "ThreeeTests" */;
 			buildPhases = (
+				25308885D6B08107EA9AAC75 /* [CP] Check Pods Manifest.lock */,
 				2BF8E20622C56ABD004D3C2E /* Sources */,
 				2BF8E20722C56ABD004D3C2E /* Frameworks */,
 				2BF8E20822C56ABD004D3C2E /* Resources */,
@@ -192,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BF8E22422C56ABD004D3C2E /* Build configuration list for PBXNativeTarget "ThreeeUITests" */;
 			buildPhases = (
+				CDABA187E6E51A14700DDDE8 /* [CP] Check Pods Manifest.lock */,
 				2BF8E21122C56ABD004D3C2E /* Sources */,
 				2BF8E21222C56ABD004D3C2E /* Frameworks */,
 				2BF8E21322C56ABD004D3C2E /* Resources */,
@@ -256,6 +306,7 @@
 			files = (
 				2BF8E20422C56ABD004D3C2E /* LaunchScreen.storyboard in Resources */,
 				2BF8E20122C56ABD004D3C2E /* Assets.xcassets in Resources */,
+				2BF8E23322C57D22004D3C2E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +326,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25308885D6B08107EA9AAC75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThreeeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BC75D6989F2307D82968FC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Threee/Pods-Threee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Threee/Pods-Threee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Threee/Pods-Threee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8868024A61946639D5521F68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Threee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDABA187E6E51A14700DDDE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThreeeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2BF8E1F222C56ABB004D3C2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -282,6 +419,7 @@
 			files = (
 				2BF8E22D22C56CEF004D3C2E /* User.swift in Sources */,
 				2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */,
+				2B94B10122C58154007C22DF /* FirebaseManager.swift in Sources */,
 				2BF8E22A22C56C1E004D3C2E /* HomeViewModel.swift in Sources */,
 				2BF8E22F22C56D13004D3C2E /* Day.swift in Sources */,
 				2BF8E23122C574C2004D3C2E /* Item.swift in Sources */,
@@ -450,6 +588,7 @@
 		};
 		2BF8E21F22C56ABD004D3C2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0FEB2E2C9595EC063D858C1 /* Pods-Threee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +607,7 @@
 		};
 		2BF8E22022C56ABD004D3C2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9CD105C7FCE6C39C6C56C93 /* Pods-Threee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +626,7 @@
 		};
 		2BF8E22222C56ABD004D3C2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E6D5E5A51A51EB77FA5624E /* Pods-ThreeeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -507,6 +648,7 @@
 		};
 		2BF8E22322C56ABD004D3C2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB2382A175A965FB0F2B8BBD /* Pods-ThreeeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +670,7 @@
 		};
 		2BF8E22522C56ABD004D3C2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F81AE727295FD91D43D1417 /* Pods-ThreeeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +691,7 @@
 		};
 		2BF8E22622C56ABD004D3C2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B27DC82C5926521508C2E46 /* Pods-ThreeeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
