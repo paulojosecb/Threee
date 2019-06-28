@@ -9,6 +9,6 @@
 import Foundation
 
 protocol AuthPresenter {
-    func sucess(_ case: AuthSucess)
-    func failure(error: AuthError)
+    func sucess(_ sucess: AuthSucess)
+    func failure(_ error: AuthError)
 }

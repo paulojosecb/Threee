@@ -59,6 +59,26 @@
                ReferencedContainer = "container:Threee.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2B1A2DE122C6BFAB0049093A"
+               BuildableName = "FirebaseAuthTests.xctest"
+               BlueprintName = "FirebaseAuthTests"
+               ReferencedContainer = "container:Threee.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2B1A2DEF22C6C0350049093A"
+               BuildableName = "ThreeeFirebaseAuthTests.xctest"
+               BlueprintName = "ThreeeFirebaseAuthTests"
+               ReferencedContainer = "container:Threee.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
