@@ -14,16 +14,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .blue
-        
-        let user = User(name: "Paulo")
-        
-        print(user.transform())
-        
-        
-//        FirebaseManager.shared.createHelloWorld(user: user)
-        FirebaseManager.shared.getUsers()
+    
+//        FirebaseAuthManager.shared.createUser(email: "paulo@gmail.com", password: "123456", name: "paulo")
+//        print(FirebaseManager.shared.user)
+    
     }
-
+    
 
 }
 
