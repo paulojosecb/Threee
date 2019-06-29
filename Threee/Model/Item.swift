@@ -8,14 +8,16 @@
 
 import Foundation
 
-struct Item: Codable {
+class Item: Codable {
     
+    var id: String
     var checked: Bool
     var name: String
     
     init() {
-        name = ""
-        checked = false
+        self.id = UUID().uuidString
+        self.name = ""
+        self.checked = false
     }
     
     func transform() -> [String: Any] {
@@ -26,5 +28,6 @@ struct Item: Codable {
         
         return dict
     }
+    
     
 }

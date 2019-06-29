@@ -9,6 +9,6 @@
 import Foundation
 
 protocol HomeViewModelDelegate {
-    func didReceivedUser(user: User)
+    func didUpdate(day: Day)
     func didReceivedError(error: Error)
 }

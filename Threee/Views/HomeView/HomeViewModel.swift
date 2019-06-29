@@ -22,7 +22,7 @@ class HomeViewModel {
         database = DatabaseUseCase(gateway: gateway, presenter: self)
     }
     
-    func fetchUser() {
+    func observerToday() {
         if database == nil {
             initializeDatabase()
         }
@@ -36,8 +36,15 @@ class HomeViewModel {
 }
 
 extension HomeViewModel: DatabasePresenter {
+    func observeredDay(_ day: Day) {
+        delegate.didUpdate(day: day)
+    }
+    
     func fetchUserSucess(_ user: User) {
-        delegate.didReceivedUser(user: user)
+        guard let database = database else { return }
+        guard let today = user.days.firstIndex(of: user.today) else { return }
+        
+        database.observerDay(with: "\(today)")
     }
     
     func failure(_ error: Error) {

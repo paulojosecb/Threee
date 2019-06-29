@@ -20,14 +20,28 @@ class DatabaseGatewayFirebase: DatabaseGateway {
     
     func fetchUser(uid: String, completion: @escaping (FetchResult) -> Void) {
         self.database.child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
+            guard let value = snapshot.value as? NSDictionary else {
+//                completion(DayObserverResult.failure(Error( )
+                return
+            }
+            
+            print(value)
+        }
+    }
+    
+    func observerDay(with uid: String, completion: @escaping (DayObserverResult) -> Void) {
+        
+        guard let userUid = FirebaseCoordinator.shared.auth.currentUser?.uid else { return }
+        
+        self.database.child("users").child(userUid).child("days").child("0").observe(.value) { (snapshot) in
             guard let value = snapshot.value as? NSDictionary else { return }
             
             do {
                 let json = try JSONSerialization.data(withJSONObject: value, options: [])
-                let user = try JSONDecoder().decode(User.self, from: json)
-                completion(FetchResult.success(user))
+                let day = try JSONDecoder().decode(Day.self, from: json)
+                completion(DayObserverResult.sucess(day))
             } catch let error {
-                completion(FetchResult.failure(error))
+                completion(DayObserverResult.failure(error))
             }
         }
     }

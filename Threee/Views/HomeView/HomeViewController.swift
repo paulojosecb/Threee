@@ -9,14 +9,28 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    var viewModel: HomeViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         view.backgroundColor = .blue
-    
+        viewModel = HomeViewModel(delegate: self)
+        
+        viewModel?.observerToday()
     }
     
+}
 
+extension HomeViewController: HomeViewModelDelegate {
+    func didUpdate(day: Day) {
+        print(day)
+    }
+    
+    func didReceivedError(error: Error) {
+        print(error)
+    }
+    
+    
 }
 

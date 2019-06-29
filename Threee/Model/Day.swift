@@ -8,13 +8,14 @@
 
 import Foundation
 
-struct Day: Codable {
-    
-    let date: Double
+class Day: NSObject, Codable {
+
+    var id: String
+    var date: Double
     var items = [Item]()
     
     init(daysFromNow: Int) {
-        
+        self.id = UUID().uuidString
         let today = Calendar.current.date(byAdding: .day, value: daysFromNow, to: Date()) ?? Date()
         
         self.date = today.timeIntervalSince1970
@@ -28,11 +29,11 @@ struct Day: Codable {
         })
     }
     
-    mutating func edit(item: Int, newValue: String) {
+    func edit(item: Int, newValue: String) {
         items[item].name = newValue
     }
     
-    mutating func toggle(item: Int) {
+    func toggle(item: Int) {
         items[item].checked = !items[item].checked
     }
     
@@ -43,8 +44,8 @@ struct Day: Codable {
         
         var itemsDict: [String: Any] = [String: Any]()
         
-        for (index, item) in items.enumerated() {
-            itemsDict["\(index)"] = item.transform()
+        for item in items {
+            itemsDict["\(item.id)"] = item.transform()
         }
         
         dict["items"] = itemsDict

@@ -64,8 +64,8 @@ struct User: Codable {
         
         var daysDict = [String: Any]()
         
-        for (index, day) in days.enumerated() {
-            daysDict["\(index)"] = day.transform()
+        for day in days{
+            daysDict["\(day.id)"] = day.transform()
         }
         
         dict["days"] = daysDict

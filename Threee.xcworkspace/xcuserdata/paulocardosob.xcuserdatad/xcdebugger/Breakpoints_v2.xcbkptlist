@@ -121,13 +121,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Threee/AppDelegate.swift"
-            timestampString = "583460186.496918"
+            filePath = "Threee/Views/HomeView/HomeViewModel.swift"
+            timestampString = "583525897.422843"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "fetchUserSucess(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -137,13 +137,237 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Threee/AppDelegate.swift"
-            timestampString = "583460186.497333"
+            filePath = "Threee/Views/HomeView/HomeViewModel.swift"
+            timestampString = "583525897.422965"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "observeredDay(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threee/Firebase/Database/Gateway/DatabaseGatewayFirebase.swift"
+            timestampString = "583525897.4230421"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "observerDay(with:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threee/Firebase/Database/Gateway/DatabaseGatewayFirebase.swift"
+            timestampString = "583525897.423435"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "observerDay(with:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Threee.DatabaseGatewayFirebase.observerDay(with: Swift.String, completion: (Threee.DayObserverResultEnum&lt;Threee.Day, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Threee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulocardosob/Documents/Code/iOS/Projetos%20Pessoais/Threee/Threee/Firebase/Database/Gateway/DatabaseGatewayFirebase.swift"
+                  timestampString = "583525897.695788"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "563">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Threee.DatabaseGatewayFirebase.observerDay(with: Swift.String, completion: (Threee.DayObserverResultEnum&lt;Threee.Day, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Threee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulocardosob/Documents/Code/iOS/Projetos%20Pessoais/Threee/Threee/Firebase/Database/Gateway/DatabaseGatewayFirebase.swift"
+                  timestampString = "583525897.697476"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "73">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threee/Firebase/Database/Gateway/DatabaseGatewayFirebase.swift"
+            timestampString = "583525897.423659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "observerDay(with:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threee/Firebase/Database/Gateway/DatabaseGatewayFirebase.swift"
+            timestampString = "583525897.4238909"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "observerDay(with:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threee/Firebase/Database/Gateway/DatabaseGatewayFirebase.swift"
+            timestampString = "583525897.424134"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "observerDay(with:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threee/Firebase/Database/UseCase/DatabaseUseCase.swift"
+            timestampString = "583525897.424384"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "observerDay(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threee/Firebase/Database/UseCase/DatabaseUseCase.swift"
+            timestampString = "583525897.424463"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "presentFetchResult(result:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Threee.DatabaseUseCase.(presentFetchResult in _E27190F4CD54053712D935B9BBC7FB79)(result: Threee.FetchResultEnum&lt;Threee.User, Swift.Error&gt;) -&gt; ()"
+                  moduleName = "Threee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulocardosob/Documents/Code/iOS/Projetos%20Pessoais/Threee/Threee/Firebase/Database/UseCase/DatabaseUseCase.swift"
+                  timestampString = "583525897.718531"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Threee.DatabaseUseCase.(presentFetchResult in _E27190F4CD54053712D935B9BBC7FB79)(result: Threee.FetchResultEnum&lt;Threee.User, Swift.Error&gt;) -&gt; ()"
+                  moduleName = "Threee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulocardosob/Documents/Code/iOS/Projetos%20Pessoais/Threee/Threee/Firebase/Database/UseCase/DatabaseUseCase.swift"
+                  timestampString = "583525897.720445"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "268">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threee/Firebase/Database/UseCase/DatabaseUseCase.swift"
+            timestampString = "583525897.4245009"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "presentFetchResult(result:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threee/Firebase/Database/Gateway/DatabaseGatewayFirebase.swift"
+            timestampString = "583525897.424536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkName = "fetchUser(uid:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threee/Firebase/Database/Gateway/DatabaseGatewayFirebase.swift"
+            timestampString = "583525897.424754"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetchUser(uid:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
