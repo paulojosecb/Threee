@@ -12,7 +12,7 @@ import XCTest
 class ItemTests: XCTestCase {
 
     func testTransform() {
-        var item = Item()
+        let item = Item()
         let dict: [String: Any] = ["name": "", "checked": false]
         
         let transformedItem = NSDictionary(dictionary: item.transform())

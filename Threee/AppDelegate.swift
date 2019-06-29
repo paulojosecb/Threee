@@ -23,7 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Database.database().isPersistenceEnabled = true
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = HomeViewController()
+        
+        if let _ = FirebaseCoordinator.shared.auth.currentUser {
+            window?.rootViewController = HomeViewController()
+        } else {
+            window?.rootViewController = SignUpViewController()
+        }
+        
         window?.makeKeyAndVisible()
         
 //        authManager = FirebaseAuthManager.shared
