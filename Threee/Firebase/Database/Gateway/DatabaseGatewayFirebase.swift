@@ -25,7 +25,13 @@ class DatabaseGatewayFirebase: DatabaseGateway {
                 return
             }
             
-            print(value)
+            do {
+                let json = try JSONSerialization.data(withJSONObject: value, options: [])
+                let user = try JSONDecoder().decode(User.self, from: json)
+                completion(FetchResult.success(user))
+            } catch let error {
+                completion(FetchResult.failure(error))
+            }
         }
     }
     
@@ -33,7 +39,7 @@ class DatabaseGatewayFirebase: DatabaseGateway {
         
         guard let userUid = FirebaseCoordinator.shared.auth.currentUser?.uid else { return }
         
-        self.database.child("users").child(userUid).child("days").child("0").observe(.value) { (snapshot) in
+        self.database.child("users").child(userUid).child("days").child(uid).observe(.value) { (snapshot) in
             guard let value = snapshot.value as? NSDictionary else { return }
             
             do {

@@ -10,12 +10,10 @@ import Foundation
 
 class Item: Codable {
     
-    var id: String
     var checked: Bool
     var name: String
     
     init() {
-        self.id = UUID().uuidString
         self.name = ""
         self.checked = false
     }

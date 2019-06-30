@@ -10,12 +10,10 @@ import Foundation
 
 class Day: NSObject, Codable {
 
-    var id: String
     var date: Double
     var items = [Item]()
     
     init(daysFromNow: Int) {
-        self.id = UUID().uuidString
         let today = Calendar.current.date(byAdding: .day, value: daysFromNow, to: Date()) ?? Date()
         
         self.date = today.timeIntervalSince1970
@@ -44,8 +42,8 @@ class Day: NSObject, Codable {
         
         var itemsDict: [String: Any] = [String: Any]()
         
-        for item in items {
-            itemsDict["\(item.id)"] = item.transform()
+        for (index, item) in items.enumerated() {
+            itemsDict["\(index)"] = item.transform()
         }
         
         dict["items"] = itemsDict
