@@ -23,6 +23,9 @@
 		2B50F70422C6DA600048262C /* FirebaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50F70322C6DA600048262C /* FirebaseCoordinator.swift */; };
 		2B50F70622C6DB570048262C /* HomeViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50F70522C6DB570048262C /* HomeViewModelDelegate.swift */; };
 		2B50F70922C6DDFF0048262C /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50F70822C6DDFF0048262C /* AuthUseCase.swift */; };
+		2B5FD45322C94B4D00D2EDF0 /* PageTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD45222C94B4D00D2EDF0 /* PageTitleLabelView.swift */; };
+		2B5FD45822C94D5200D2EDF0 /* DottedGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD45722C94D5200D2EDF0 /* DottedGridView.swift */; };
+		2B5FD45B22C94DA000D2EDF0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD45A22C94DA000D2EDF0 /* UIColor.swift */; };
 		2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */; };
 		2B94B10122C58154007C22DF /* DatabaseGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */; };
 		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
@@ -74,6 +77,9 @@
 		2B50F70322C6DA600048262C /* FirebaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCoordinator.swift; sourceTree = "<group>"; };
 		2B50F70522C6DB570048262C /* HomeViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelDelegate.swift; sourceTree = "<group>"; };
 		2B50F70822C6DDFF0048262C /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
+		2B5FD45222C94B4D00D2EDF0 /* PageTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleLabelView.swift; sourceTree = "<group>"; };
+		2B5FD45722C94D5200D2EDF0 /* DottedGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedGridView.swift; sourceTree = "<group>"; };
+		2B5FD45A22C94DA000D2EDF0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayFirebase.swift; sourceTree = "<group>"; };
 		2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseGatewayFirebase.swift; sourceTree = "<group>"; };
 		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +246,39 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
+		2B5FD45022C94AFE00D2EDF0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2B5FD45622C94D4400D2EDF0 /* DottedGridView */,
+				2B5FD45122C94B2100D2EDF0 /* PageTitleLabelView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2B5FD45122C94B2100D2EDF0 /* PageTitleLabelView */ = {
+			isa = PBXGroup;
+			children = (
+				2B5FD45222C94B4D00D2EDF0 /* PageTitleLabelView.swift */,
+			);
+			path = PageTitleLabelView;
+			sourceTree = "<group>";
+		};
+		2B5FD45622C94D4400D2EDF0 /* DottedGridView */ = {
+			isa = PBXGroup;
+			children = (
+				2B5FD45722C94D5200D2EDF0 /* DottedGridView.swift */,
+			);
+			path = DottedGridView;
+			sourceTree = "<group>";
+		};
+		2B5FD45922C94D9300D2EDF0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2B5FD45A22C94DA000D2EDF0 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2BF8E1ED22C56ABB004D3C2E = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +304,8 @@
 		2BF8E1F822C56ABB004D3C2E /* Threee */ = {
 			isa = PBXGroup;
 			children = (
+				2B5FD45922C94D9300D2EDF0 /* Extensions */,
+				2B5FD45022C94AFE00D2EDF0 /* Components */,
 				2B1A2DD422C6B5480049093A /* Views */,
 				2B1A2DCA22C5A5B70049093A /* Firebase */,
 				2BF8E22B22C56CE5004D3C2E /* Model */,
@@ -573,13 +614,16 @@
 				2B1A2DDB22C6B6160049093A /* AuthPresenter.swift in Sources */,
 				2B50F6FD22C6D2F90048262C /* DatabaseGateway.swift in Sources */,
 				2B1A2DDD22C6BADC0049093A /* AuthSucess.swift in Sources */,
+				2B5FD45B22C94DA000D2EDF0 /* UIColor.swift in Sources */,
 				2B1A2DD722C6B56A0049093A /* SignUpViewController.swift in Sources */,
 				2BF8E22A22C56C1E004D3C2E /* HomeViewModel.swift in Sources */,
+				2B5FD45822C94D5200D2EDF0 /* DottedGridView.swift in Sources */,
 				2B50F70622C6DB570048262C /* HomeViewModelDelegate.swift in Sources */,
 				2BF8E22F22C56D13004D3C2E /* Day.swift in Sources */,
 				2B1A2DD322C6B4110049093A /* AuthError.swift in Sources */,
 				2BF8E23122C574C2004D3C2E /* Item.swift in Sources */,
 				2B1A2DD922C6B5900049093A /* SignUpViewModel.swift in Sources */,
+				2B5FD45322C94B4D00D2EDF0 /* PageTitleLabelView.swift in Sources */,
 				2B50F70422C6DA600048262C /* FirebaseCoordinator.swift in Sources */,
 				2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */,
 				2B50F6FF22C6D7E80048262C /* DatabasePresenter.swift in Sources */,
