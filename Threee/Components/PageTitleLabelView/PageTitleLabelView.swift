@@ -15,7 +15,7 @@ class PageTitleLabelView: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Today"
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        label.font = UIFont.title
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
