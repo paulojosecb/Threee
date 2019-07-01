@@ -26,6 +26,13 @@
 		2B5FD45322C94B4D00D2EDF0 /* PageTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD45222C94B4D00D2EDF0 /* PageTitleLabelView.swift */; };
 		2B5FD45822C94D5200D2EDF0 /* DottedGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD45722C94D5200D2EDF0 /* DottedGridView.swift */; };
 		2B5FD45B22C94DA000D2EDF0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD45A22C94DA000D2EDF0 /* UIColor.swift */; };
+		2B5FD45E22C9596400D2EDF0 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD45D22C9596400D2EDF0 /* UIFont.swift */; };
+		2B5FD46022C959BA00D2EDF0 /* Mali-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B5FD45F22C959BA00D2EDF0 /* Mali-Bold.ttf */; };
+		2B5FD46422C959C700D2EDF0 /* Mali-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B5FD46122C959C700D2EDF0 /* Mali-Regular.ttf */; };
+		2B5FD46522C959C700D2EDF0 /* Mali-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B5FD46222C959C700D2EDF0 /* Mali-SemiBold.ttf */; };
+		2B5FD46622C959C700D2EDF0 /* Mali-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B5FD46322C959C700D2EDF0 /* Mali-Medium.ttf */; };
+		2B5FD46922CA275300D2EDF0 /* ItemFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD46822CA275300D2EDF0 /* ItemFieldView.swift */; };
+		2B5FD46C22CA287500D2EDF0 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */; };
 		2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */; };
 		2B94B10122C58154007C22DF /* DatabaseGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */; };
 		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
@@ -80,6 +87,13 @@
 		2B5FD45222C94B4D00D2EDF0 /* PageTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleLabelView.swift; sourceTree = "<group>"; };
 		2B5FD45722C94D5200D2EDF0 /* DottedGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedGridView.swift; sourceTree = "<group>"; };
 		2B5FD45A22C94DA000D2EDF0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		2B5FD45D22C9596400D2EDF0 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		2B5FD45F22C959BA00D2EDF0 /* Mali-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Bold.ttf"; sourceTree = "<group>"; };
+		2B5FD46122C959C700D2EDF0 /* Mali-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Regular.ttf"; sourceTree = "<group>"; };
+		2B5FD46222C959C700D2EDF0 /* Mali-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-SemiBold.ttf"; sourceTree = "<group>"; };
+		2B5FD46322C959C700D2EDF0 /* Mali-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Medium.ttf"; sourceTree = "<group>"; };
+		2B5FD46822CA275300D2EDF0 /* ItemFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFieldView.swift; sourceTree = "<group>"; };
+		2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayFirebase.swift; sourceTree = "<group>"; };
 		2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseGatewayFirebase.swift; sourceTree = "<group>"; };
 		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +263,7 @@
 		2B5FD45022C94AFE00D2EDF0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2B5FD46722CA273400D2EDF0 /* ItemFieldView */,
 				2B5FD45622C94D4400D2EDF0 /* DottedGridView */,
 				2B5FD45122C94B2100D2EDF0 /* PageTitleLabelView */,
 			);
@@ -275,8 +290,37 @@
 			isa = PBXGroup;
 			children = (
 				2B5FD45A22C94DA000D2EDF0 /* UIColor.swift */,
+				2B5FD45D22C9596400D2EDF0 /* UIFont.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2B5FD45C22C9594600D2EDF0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2B5FD45F22C959BA00D2EDF0 /* Mali-Bold.ttf */,
+				2B5FD46322C959C700D2EDF0 /* Mali-Medium.ttf */,
+				2B5FD46122C959C700D2EDF0 /* Mali-Regular.ttf */,
+				2B5FD46222C959C700D2EDF0 /* Mali-SemiBold.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2B5FD46722CA273400D2EDF0 /* ItemFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				2B5FD46A22CA285E00D2EDF0 /* UnderlineView */,
+				2B5FD46822CA275300D2EDF0 /* ItemFieldView.swift */,
+			);
+			path = ItemFieldView;
+			sourceTree = "<group>";
+		};
+		2B5FD46A22CA285E00D2EDF0 /* UnderlineView */ = {
+			isa = PBXGroup;
+			children = (
+				2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */,
+			);
+			path = UnderlineView;
 			sourceTree = "<group>";
 		};
 		2BF8E1ED22C56ABB004D3C2E = {
@@ -304,6 +348,7 @@
 		2BF8E1F822C56ABB004D3C2E /* Threee */ = {
 			isa = PBXGroup;
 			children = (
+				2B5FD45C22C9594600D2EDF0 /* Resources */,
 				2B5FD45922C94D9300D2EDF0 /* Extensions */,
 				2B5FD45022C94AFE00D2EDF0 /* Components */,
 				2B1A2DD422C6B5480049093A /* Views */,
@@ -493,6 +538,10 @@
 			files = (
 				2BF8E20422C56ABD004D3C2E /* LaunchScreen.storyboard in Resources */,
 				2BF8E20122C56ABD004D3C2E /* Assets.xcassets in Resources */,
+				2B5FD46022C959BA00D2EDF0 /* Mali-Bold.ttf in Resources */,
+				2B5FD46622C959C700D2EDF0 /* Mali-Medium.ttf in Resources */,
+				2B5FD46422C959C700D2EDF0 /* Mali-Regular.ttf in Resources */,
+				2B5FD46522C959C700D2EDF0 /* Mali-SemiBold.ttf in Resources */,
 				2BF8E23322C57D22004D3C2E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF8E22D22C56CEF004D3C2E /* User.swift in Sources */,
+				2B5FD46922CA275300D2EDF0 /* ItemFieldView.swift in Sources */,
 				2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */,
 				2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */,
 				2B50F70922C6DDFF0048262C /* AuthUseCase.swift in Sources */,
@@ -624,9 +674,11 @@
 				2BF8E23122C574C2004D3C2E /* Item.swift in Sources */,
 				2B1A2DD922C6B5900049093A /* SignUpViewModel.swift in Sources */,
 				2B5FD45322C94B4D00D2EDF0 /* PageTitleLabelView.swift in Sources */,
+				2B5FD45E22C9596400D2EDF0 /* UIFont.swift in Sources */,
 				2B50F70422C6DA600048262C /* FirebaseCoordinator.swift in Sources */,
 				2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */,
 				2B50F6FF22C6D7E80048262C /* DatabasePresenter.swift in Sources */,
+				2B5FD46C22CA287500D2EDF0 /* UnderlineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
