@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        if let _ = FirebaseCoordinator.shared.auth.currentUser {
+//        if let _ = FirebaseCoordinator.shared.auth.currentUser {
             window?.rootViewController = HomeViewController()
-        } else {
-            window?.rootViewController = SignUpViewController()
-        }
+//        } else {
+//            window?.rootViewController = SignUpViewController()
+//        }
         
         window?.makeKeyAndVisible()
         
