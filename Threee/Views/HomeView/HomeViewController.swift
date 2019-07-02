@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     }()
     
     lazy var item1: ItemFieldView = {
-        let view = ItemFieldView()
+        let view = ItemFieldView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -90,7 +90,9 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewModelDelegate {
     func didUpdate(day: Day) {
-        print(day)
+        item1.item = day.items[0]
+        item2.item = day.items[1]
+        item3.item = day.items[2]
     }
     
     func didReceivedError(error: Error) {
