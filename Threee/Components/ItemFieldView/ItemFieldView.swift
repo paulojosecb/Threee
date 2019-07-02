@@ -10,6 +10,12 @@ import UIKit
 
 class ItemFieldView: UIView {
     
+    var item: Item? {
+        didSet {
+            
+        }
+    }
+    
     var checkRightAnchor: NSLayoutConstraint?
     
     lazy var label: UILabel = {
@@ -29,6 +35,7 @@ class ItemFieldView: UIView {
     
     lazy var textField: UITextField = {
         let textField = UITextField()
+        textField.isUserInteractionEnabled = true
         textField.backgroundColor = UIColor.init(white: 0, alpha: 0)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -51,8 +58,7 @@ class ItemFieldView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        addSwipeGesture()
-        addTapGestureOnTextField()
+        isUserInteractionEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -94,35 +100,72 @@ class ItemFieldView: UIView {
         textFieldUnderlineView.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
         textFieldUnderlineView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 2.0).isActive = true
         
+        addSwipeRightGesture()
+        addSwipeLeftGesture()
+        addTapGestureOnTextField()
     }
     
-    func addSwipeGesture() {
+    func addSwipeRightGesture() {
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeHandler(_:)))
         swipeGesture.direction = .right
         self.addGestureRecognizer(swipeGesture)
     }
     
+    func addSwipeLeftGesture() {
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeHandler(_:)))
+        swipeGesture.direction = .left
+        self.addGestureRecognizer(swipeGesture)
+    }
+    
     func addTapGestureOnTextField() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler(_:)))
-        textField.addGestureRecognizer(tapGesture)
+        self.addGestureRecognizer(tapGesture)
     }
     
     @objc func tapHandler(_ sender: UITapGestureRecognizer? = nil) {
         textField.becomeFirstResponder()
     }
     
+    func animateCheckLine() {
+        
+    }
+    
     
     @objc func swipeHandler(_ sender: UISwipeGestureRecognizer? = nil) {
         
-        checkRightAnchor = checkedLine.rightAnchor.constraint(equalTo: textField.rightAnchor)
-        checkRightAnchor?.isActive = true
+        guard let sender = sender, let item = item else { return }
         
-        UIView.animate(withDuration: 0.5) {
-            self.checkRightAnchor?.constant = 0
-            self.layoutIfNeeded()
+        switch sender.direction {
+        case .right:
+            if (!item.checked) {
+                checkRightAnchor = checkedLine.rightAnchor.constraint(equalTo: textField.rightAnchor)
+                checkRightAnchor?.isActive = true
+                
+                UIView.animate(withDuration: 0.5) {
+                    self.checkRightAnchor?.constant = 0
+                    self.layoutIfNeeded()
+                }
+                
+                item.checked = !item.checked
+            }
+        case .left:
+            if (item.checked) {
+                checkRightAnchor = checkedLine.rightAnchor.constraint(equalTo: textField.rightAnchor)
+                checkRightAnchor?.isActive = true
+                
+                UIView.animate(withDuration: 0.5) {
+                    self.checkRightAnchor?.constant = -400
+                    self.layoutIfNeeded()
+                }
+                
+                item.checked = !item.checked
+            }
+        default:
+            print("Swipe not treated")
         }
         
-       
+
+        
     }
     
 }
