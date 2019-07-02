@@ -10,6 +10,8 @@ import Foundation
 
 class HomeViewModel {
     
+    var today: Day?
+    
     let delegate: HomeViewModelDelegate
     var database: DatabaseUseCase?
     
@@ -37,6 +39,7 @@ class HomeViewModel {
 
 extension HomeViewModel: DatabasePresenter {
     func observeredDay(_ day: Day) {
+        today = day
         delegate.didUpdate(day: day)
     }
     
