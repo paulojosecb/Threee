@@ -25,6 +25,11 @@ class DottedGridView: UIView {
     }
     
     func drawDots() {
+        
+        for view in self.subviews {
+            view.removeFromSuperview()
+        }
+        
         let collumns = Int(self.frame.width / (DottedGridView.gapBetweenDots))
         let rows = Int(self.frame.height / (DottedGridView.gapBetweenDots))
         
