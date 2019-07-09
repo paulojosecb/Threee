@@ -35,6 +35,7 @@
 		2B5FD46C22CA287500D2EDF0 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */; };
 		2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */; };
 		2B94B10122C58154007C22DF /* DatabaseGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */; };
+		2BB81AD922D3EF8300F9F624 /* UITableViewSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */; };
 		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
 		2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */; };
 		2BF8E20122C56ABD004D3C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF8E20022C56ABD004D3C2E /* Assets.xcassets */; };
@@ -96,6 +97,7 @@
 		2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayFirebase.swift; sourceTree = "<group>"; };
 		2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseGatewayFirebase.swift; sourceTree = "<group>"; };
+		2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewSeparatorCell.swift; sourceTree = "<group>"; };
 		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				2B5FD46722CA273400D2EDF0 /* ItemFieldView */,
 				2B5FD45622C94D4400D2EDF0 /* DottedGridView */,
 				2B5FD45122C94B2100D2EDF0 /* PageTitleLabelView */,
+				2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				2B1A2DDB22C6B6160049093A /* AuthPresenter.swift in Sources */,
 				2B50F6FD22C6D2F90048262C /* DatabaseGateway.swift in Sources */,
 				2B1A2DDD22C6BADC0049093A /* AuthSucess.swift in Sources */,
+				2BB81AD922D3EF8300F9F624 /* UITableViewSeparatorCell.swift in Sources */,
 				2B5FD45B22C94DA000D2EDF0 /* UIColor.swift in Sources */,
 				2B1A2DD722C6B56A0049093A /* SignUpViewController.swift in Sources */,
 				2BF8E22A22C56C1E004D3C2E /* HomeViewModel.swift in Sources */,

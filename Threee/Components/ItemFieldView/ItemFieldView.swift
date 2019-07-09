@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ItemFieldView: UIView {
+class ItemFieldView: UITableViewCell {
     
     var item: Item? {
         didSet {
-            
+            guard let item = item else { return }
+            itemLabel.text = item.name
         }
     }
+    
+    var feedbackGenerator: UISelectionFeedbackGenerator? = nil
+    
+    static var reuseIdentifier = "ItemFieldView"
+    static let height: CGFloat = 71.0
+    static let gapBetweenItems: CGFloat = 75.0
     
     var checkRightAnchor: NSLayoutConstraint?
     
@@ -33,19 +40,14 @@ class ItemFieldView: UIView {
         return view
     }()
     
-    lazy var textField: UITextField = {
-        let textField = UITextField()
+    lazy var itemLabel: UILabel = {
+        let textField = UILabel()
         textField.isUserInteractionEnabled = true
+        textField.font = UIFont.regular
+        textField.textColor = UIColor.black
         textField.backgroundColor = UIColor.init(white: 0, alpha: 0)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
-    }()
-    
-    lazy var textFieldUnderlineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.black
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
     }()
     
     lazy var checkedLine: UIView = {
@@ -55,8 +57,8 @@ class ItemFieldView: UIView {
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         isUserInteractionEnabled = true
     }
@@ -70,13 +72,15 @@ class ItemFieldView: UIView {
     }
     
     func setupViews() {
+        
+        self.backgroundColor = UIColor.init(white: 0, alpha: 0)
+        
         addSubview(label)
         addSubview(underlineView)
-        addSubview(textField)
+        addSubview(itemLabel)
         addSubview(checkedLine)
-        addSubview(textFieldUnderlineView)
         
-        label.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        label.leftAnchor.constraint(equalTo: self.layoutMarginsGuide.leftAnchor).isActive = true
         label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: label.intrinsicContentSize.height).isActive = true
         label.widthAnchor.constraint(equalToConstant: label.intrinsicContentSize.width).isActive = true
@@ -86,23 +90,18 @@ class ItemFieldView: UIView {
         underlineView.rightAnchor.constraint(equalTo: label.rightAnchor).isActive = true
         underlineView.heightAnchor.constraint(equalToConstant: 3.0).isActive = true
         
-        textField.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        textField.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        textField.topAnchor.constraint(equalTo: underlineView.bottomAnchor, constant: 16.0).isActive = true
-        textField.heightAnchor.constraint(equalToConstant: 36.0).isActive = true
+        itemLabel.leftAnchor.constraint(equalTo: underlineView.leftAnchor, constant: 8.0).isActive = true
+        itemLabel.rightAnchor.constraint(equalTo: self.layoutMarginsGuide.rightAnchor).isActive = true
+        itemLabel.topAnchor.constraint(equalTo: underlineView.bottomAnchor, constant: 16.0).isActive = true
+        itemLabel.heightAnchor.constraint(equalToConstant: 36.0).isActive = true
         
-        checkedLine.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
+        checkedLine.centerYAnchor.constraint(equalTo: itemLabel.centerYAnchor).isActive = true
         checkedLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        checkedLine.leftAnchor.constraint(equalTo: textField.leftAnchor).isActive = true
-    
-        textFieldUnderlineView.leftAnchor.constraint(equalTo: textField.leftAnchor).isActive = true
-        textFieldUnderlineView.rightAnchor.constraint(equalTo: textField.rightAnchor).isActive = true
-        textFieldUnderlineView.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
-        textFieldUnderlineView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 2.0).isActive = true
+        checkedLine.leftAnchor.constraint(equalTo: itemLabel.leftAnchor).isActive = true
+        checkedLine.widthAnchor.constraint(equalToConstant: 0).isActive = true
         
         addSwipeRightGesture()
         addSwipeLeftGesture()
-        addTapGestureOnTextField()
     }
     
     func addSwipeRightGesture() {
@@ -117,15 +116,6 @@ class ItemFieldView: UIView {
         self.addGestureRecognizer(swipeGesture)
     }
     
-    func addTapGestureOnTextField() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler(_:)))
-        self.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func tapHandler(_ sender: UITapGestureRecognizer? = nil) {
-        textField.becomeFirstResponder()
-    }
-    
     func animateCheckLine() {
         
     }
@@ -135,10 +125,12 @@ class ItemFieldView: UIView {
         
         guard let sender = sender, let item = item else { return }
         
+        feedbackGenerator = UISelectionFeedbackGenerator()
+        
         switch sender.direction {
         case .right:
             if (!item.checked) {
-                checkRightAnchor = checkedLine.rightAnchor.constraint(equalTo: textField.rightAnchor)
+                checkRightAnchor = checkedLine.rightAnchor.constraint(equalTo: itemLabel.rightAnchor)
                 checkRightAnchor?.isActive = true
                 
                 UIView.animate(withDuration: 0.5) {
@@ -146,17 +138,22 @@ class ItemFieldView: UIView {
                     self.layoutIfNeeded()
                 }
                 
+                feedbackGenerator?.selectionChanged()
+                
                 item.checked = !item.checked
             }
         case .left:
             if (item.checked) {
-                checkRightAnchor = checkedLine.rightAnchor.constraint(equalTo: textField.rightAnchor)
+                checkRightAnchor = checkedLine.rightAnchor.constraint(equalTo: itemLabel.rightAnchor)
                 checkRightAnchor?.isActive = true
                 
                 UIView.animate(withDuration: 0.5) {
                     self.checkRightAnchor?.constant = -400
                     self.layoutIfNeeded()
                 }
+                
+                feedbackGenerator?.selectionChanged()
+
                 
                 item.checked = !item.checked
             }

@@ -16,6 +16,7 @@ class PageTitleLabelView: UIView {
         let label = UILabel()
         label.text = "Today"
         label.font = UIFont.title
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

@@ -10,8 +10,9 @@ extension UIFont {
         return UIFont(name: "Mali-Medium", size: 18.0)!
     }
     
+    
     class var regular: UIFont {
-        return UIFont(name: "Mali-Regular", size: 18.0)!
+        return UIFont(name: "Mali-Regular", size: 22.0)!
     }
     
 }
