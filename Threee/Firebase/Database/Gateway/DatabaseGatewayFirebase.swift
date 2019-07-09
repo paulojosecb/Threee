@@ -52,5 +52,10 @@ class DatabaseGatewayFirebase: DatabaseGateway {
         }
     }
     
+    func update(day: Day, with uid: String) {
+        guard let userUid = FirebaseCoordinator.shared.auth.currentUser?.uid else { return }
+        self.database.child("users").child(userUid).child("days").child(uid).updateChildValues(day.transform())
+    }
+    
     
 }

@@ -11,6 +11,7 @@ import Foundation
 class HomeViewModel {
     
     var today: Day?
+    var todayIndex: Int?
     
     let delegate: HomeViewModelDelegate
     var database: DatabaseUseCase?
@@ -35,6 +36,14 @@ class HomeViewModel {
         database.fetchUser(uid: currentUser.uid)
     }
     
+    func createItemWith(name: String) {
+        guard var today = today, let todayIndex = todayIndex, let database = database else { return }
+        
+        today.add(item: Item(name: name))
+        
+        database.update(day: today, with: "\(todayIndex)")
+    }
+    
 }
 
 extension HomeViewModel: DatabasePresenter {
@@ -47,10 +56,23 @@ extension HomeViewModel: DatabasePresenter {
         guard let database = database else { return }
         guard let today = user.days.firstIndex(of: user.today) else { return }
         
+        todayIndex = today
+        
         database.observerDay(with: "\(today)")
     }
     
     func failure(_ error: Error) {
+        print(error.localizedDescription)
         delegate.didReceivedError(error: error)
     }
+}
+
+extension HomeViewModel : ItemFieldViewDelegate {
+    
+    func toggleItem(on index: Int) {
+        guard let today = today, let todayIndex = todayIndex, let database = database else { return }
+        today.toggle(item: index)
+        database.update(day: today, with: "\(todayIndex)")
+    }
+    
 }

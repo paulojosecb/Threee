@@ -24,4 +24,5 @@ typealias DayObserverResult = DayObserverResultEnum<Day, Error>
 protocol DatabaseGateway {
     func fetchUser(uid: String, completion: @escaping (FetchResult) -> Void)
     func observerDay(with uid: String, completion: @escaping (DayObserverResult) -> Void)
+    func update(day: Day, with uid: String)
 }

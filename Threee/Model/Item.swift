@@ -13,8 +13,8 @@ class Item: Codable {
     var checked: Bool
     var name: String
     
-    init() {
-        self.name = ""
+    init(name: String) {
+        self.name = name
         self.checked = false
     }
     

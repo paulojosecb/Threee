@@ -17,13 +17,16 @@ class ItemFieldView: UITableViewCell {
         }
     }
     
+    var delegate: ItemFieldViewDelegate?
+    var index: Int?
+    
     var feedbackGenerator: UISelectionFeedbackGenerator? = nil
     
     static var reuseIdentifier = "ItemFieldView"
     static let height: CGFloat = 71.0
     static let gapBetweenItems: CGFloat = 75.0
     
-    var checkRightAnchor: NSLayoutConstraint?
+    var checkWidthAnchor: NSLayoutConstraint?
     
     lazy var label: UILabel = {
         let label = UILabel()
@@ -98,10 +101,20 @@ class ItemFieldView: UITableViewCell {
         checkedLine.centerYAnchor.constraint(equalTo: itemLabel.centerYAnchor).isActive = true
         checkedLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
         checkedLine.leftAnchor.constraint(equalTo: itemLabel.leftAnchor).isActive = true
-        checkedLine.widthAnchor.constraint(equalToConstant: 0).isActive = true
         
         addSwipeRightGesture()
         addSwipeLeftGesture()
+        
+        guard let item = item else { return }
+        
+        if (item.checked) {
+            checkedLine.widthAnchor.constraint(equalToConstant: 400).isActive = true
+        } else {
+            checkedLine.widthAnchor.constraint(equalToConstant: 0).isActive = true
+        }
+        
+        
+        
     }
     
     func addSwipeRightGesture() {
@@ -130,32 +143,37 @@ class ItemFieldView: UITableViewCell {
         switch sender.direction {
         case .right:
             if (!item.checked) {
-                checkRightAnchor = checkedLine.rightAnchor.constraint(equalTo: itemLabel.rightAnchor)
-                checkRightAnchor?.isActive = true
+                checkWidthAnchor = checkedLine.widthAnchor.constraint(equalToConstant: 0)
+                checkWidthAnchor?.isActive = true
                 
-                UIView.animate(withDuration: 0.5) {
-                    self.checkRightAnchor?.constant = 0
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.checkWidthAnchor?.constant = self.frame.width
                     self.layoutIfNeeded()
+                }) { (bool) in
+                    self.feedbackGenerator?.selectionChanged()
+                    
+                    guard let delegate = self.delegate, let index = self.index else { return }
+                    delegate.toggleItem(on: index)
                 }
                 
-                feedbackGenerator?.selectionChanged()
-                
-                item.checked = !item.checked
+               
             }
         case .left:
             if (item.checked) {
-                checkRightAnchor = checkedLine.rightAnchor.constraint(equalTo: itemLabel.rightAnchor)
-                checkRightAnchor?.isActive = true
+                checkWidthAnchor = checkedLine.widthAnchor.constraint(equalToConstant: self.frame.width)
+                checkWidthAnchor?.isActive = true
                 
-                UIView.animate(withDuration: 0.5) {
-                    self.checkRightAnchor?.constant = -400
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.checkWidthAnchor?.constant = 0
                     self.layoutIfNeeded()
+                }) { (bool) in
+                    self.feedbackGenerator?.selectionChanged()
+            
+                    guard let delegate = self.delegate, let index = self.index else { return }
+                    delegate.toggleItem(on: index)
                 }
                 
-                feedbackGenerator?.selectionChanged()
-
-                
-                item.checked = !item.checked
+               
             }
         default:
             print("Swipe not treated")

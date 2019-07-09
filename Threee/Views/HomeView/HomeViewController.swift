@@ -33,6 +33,19 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
+    lazy var addButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Add", for: .normal)
+        button.titleLabel?.textColor = UIColor.black
+        button.titleLabel?.font = UIFont.title
+        button.backgroundColor = UIColor.yellow
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderWidth = 2.0
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isHidden = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +55,9 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleAddGesture(_:)))
+        addButton.addGestureRecognizer(tapGesture)
+        
         setupViews()
     }
     
@@ -49,6 +65,7 @@ class HomeViewController: UIViewController {
         self.view.addSubview(dottedGrid)
         self.view.addSubview(pageTitleLabelView)
         self.view.addSubview(tableView)
+        self.view.addSubview(addButton)
 
         dottedGrid.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         dottedGrid.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
@@ -62,7 +79,11 @@ class HomeViewController: UIViewController {
         tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-       
+        
+        addButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        addButton.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        addButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        addButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     
@@ -70,11 +91,21 @@ class HomeViewController: UIViewController {
         dottedGrid.drawDots()
     }
     
+    @objc func handleAddGesture(_ sender: UITapGestureRecognizer? = nil) {
+        let itemName = "Hue"
+        viewModel?.createItemWith(name: itemName)
+    }
+    
 }
 
 extension HomeViewController: HomeViewModelDelegate {
     func didUpdate(day: Day) {
-//
+        guard let items = day.items else {
+            return
+        }
+        
+        items.count < 3 ? (addButton.isHidden = false) : (addButton.isHidden = true)
+        tableView.reloadData()
     }
     
     func didReceivedError(error: Error) {
@@ -86,7 +117,8 @@ extension HomeViewController: HomeViewModelDelegate {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3 * 2 - 1
+        guard let items = viewModel?.today?.items else { return 0 }
+        return items.count * 2 - 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,10 +128,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if (mod == 0) {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ItemFieldView.reuseIdentifier, for: indexPath) as? ItemFieldView else { return UITableViewCell()}
             
-            let item = Item()
-            item.name = "Teste"
-            
-            cell.item = item
+            guard let items = viewModel?.today?.items else { return UITableViewCell() }
+        
+            cell.item = items[indexPath.row / 2]
+            cell.delegate = viewModel
+            cell.index = indexPath.row / 2
             
             return cell
         } else {
