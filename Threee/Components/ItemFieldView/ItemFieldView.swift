@@ -30,7 +30,7 @@ class ItemFieldView: UITableViewCell {
     
     lazy var label: UILabel = {
         let label = UILabel()
-        label.font = UIFont.label
+        label.font = UIFont.label18
         label.textColor = UIColor.black
         label.text = "Thing 1:"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +46,7 @@ class ItemFieldView: UITableViewCell {
     lazy var itemLabel: UILabel = {
         let textField = UILabel()
         textField.isUserInteractionEnabled = true
-        textField.font = UIFont.regular
+        textField.font = UIFont.regular20
         textField.textColor = UIColor.black
         textField.backgroundColor = UIColor.init(white: 0, alpha: 0)
         textField.translatesAutoresizingMaskIntoConstraints = false
