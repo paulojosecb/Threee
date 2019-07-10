@@ -34,7 +34,7 @@ class SignUpViewModel {
         
         guard let auth = auth else { return }
         
-        auth.signUp(email: "paulocardosob@gmail.com", password: "123456", name: "Paulo")
+        auth.signUp(email: "paulocardosob3@gmail.com", password: "123456", name: "Paulo")
     }
     
 }

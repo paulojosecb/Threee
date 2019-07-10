@@ -37,6 +37,8 @@
 		2B94B10122C58154007C22DF /* DatabaseGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */; };
 		2BB81AD922D3EF8300F9F624 /* UITableViewSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */; };
 		2BB81ADF22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */; };
+		2BC8F6D822D52037005B6D64 /* InputModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */; };
+		2BCDF06D22D5148F0059C6F4 /* InputModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDF06C22D5148F0059C6F4 /* InputModalViewController.swift */; };
 		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
 		2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */; };
 		2BF8E20122C56ABD004D3C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF8E20022C56ABD004D3C2E /* Assets.xcassets */; };
@@ -100,6 +102,8 @@
 		2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseGatewayFirebase.swift; sourceTree = "<group>"; };
 		2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewSeparatorCell.swift; sourceTree = "<group>"; };
 		2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFieldViewDelegate.swift; sourceTree = "<group>"; };
+		2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalViewDelegate.swift; sourceTree = "<group>"; };
+		2BCDF06C22D5148F0059C6F4 /* InputModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalViewController.swift; sourceTree = "<group>"; };
 		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		2B1A2DD422C6B5480049093A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2BCDF06B22D5145D0059C6F4 /* InputModalView */,
 				2B1A2DD522C6B5510049093A /* SignUpView */,
 				2BF8E22822C56BF0004D3C2E /* HomeView */,
 			);
@@ -327,6 +332,15 @@
 				2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */,
 			);
 			path = UnderlineView;
+			sourceTree = "<group>";
+		};
+		2BCDF06B22D5145D0059C6F4 /* InputModalView */ = {
+			isa = PBXGroup;
+			children = (
+				2BCDF06C22D5148F0059C6F4 /* InputModalViewController.swift */,
+				2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */,
+			);
+			path = InputModalView;
 			sourceTree = "<group>";
 		};
 		2BF8E1ED22C56ABB004D3C2E = {
@@ -660,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF8E22D22C56CEF004D3C2E /* User.swift in Sources */,
+				2BCDF06D22D5148F0059C6F4 /* InputModalViewController.swift in Sources */,
 				2B5FD46922CA275300D2EDF0 /* ItemFieldView.swift in Sources */,
 				2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */,
 				2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */,
@@ -670,6 +685,7 @@
 				2B1A2DDB22C6B6160049093A /* AuthPresenter.swift in Sources */,
 				2B50F6FD22C6D2F90048262C /* DatabaseGateway.swift in Sources */,
 				2B1A2DDD22C6BADC0049093A /* AuthSucess.swift in Sources */,
+				2BC8F6D822D52037005B6D64 /* InputModalViewDelegate.swift in Sources */,
 				2BB81ADF22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift in Sources */,
 				2BB81AD922D3EF8300F9F624 /* UITableViewSeparatorCell.swift in Sources */,
 				2B5FD45B22C94DA000D2EDF0 /* UIColor.swift in Sources */,
