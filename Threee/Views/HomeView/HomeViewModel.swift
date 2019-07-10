@@ -35,15 +35,7 @@ class HomeViewModel {
         
         database.fetchUser(uid: currentUser.uid)
     }
-    
-    func createItemWith(name: String) {
-        guard var today = today, let todayIndex = todayIndex, let database = database else { return }
-        
-        today.add(item: Item(name: name))
-        
-        database.update(day: today, with: "\(todayIndex)")
-    }
-    
+
 }
 
 extension HomeViewModel: DatabasePresenter {
@@ -72,6 +64,22 @@ extension HomeViewModel : ItemFieldViewDelegate {
     func toggleItem(on index: Int) {
         guard let today = today, let todayIndex = todayIndex, let database = database else { return }
         today.toggle(item: index)
+        database.update(day: today, with: "\(todayIndex)")
+    }
+    
+}
+
+extension HomeViewModel : InputModalViewDelegate {
+    
+    func createItemWith(name: String) {
+        guard let today = today, let todayIndex = todayIndex, let database = database else { return }
+        today.add(item: Item(name: name))
+        database.update(day: today, with: "\(todayIndex)")
+    }
+    
+    func editItemWith(name: String, on index: Int) {
+        guard let today = today, let todayIndex = todayIndex, let database = database else { return }
+        today.edit(item: index, newValue: name)
         database.update(day: today, with: "\(todayIndex)")
     }
     

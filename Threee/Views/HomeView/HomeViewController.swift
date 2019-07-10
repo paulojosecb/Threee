@@ -92,8 +92,10 @@ class HomeViewController: UIViewController {
     }
     
     @objc func handleAddGesture(_ sender: UITapGestureRecognizer? = nil) {
-        let itemName = "Hue"
-        viewModel?.createItemWith(name: itemName)
+        let vc = InputModalViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.delegate = viewModel
+        present(vc, animated: true, completion: nil)
     }
     
 }
@@ -111,8 +113,6 @@ extension HomeViewController: HomeViewModelDelegate {
     func didReceivedError(error: Error) {
         print(error)
     }
-    
-    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
