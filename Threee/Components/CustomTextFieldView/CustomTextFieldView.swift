@@ -21,6 +21,7 @@ class CustomTextFieldView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.black
         label.font = UIFont.label18
+        label.text = "Email:::::::"
         return label
     }()
     
@@ -59,7 +60,7 @@ class CustomTextFieldView: UIView {
         addSubview(textField)
         addSubview(line)
         
-        label.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        label.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: label.intrinsicContentSize.height).isActive = true
         label.widthAnchor.constraint(equalToConstant: label.intrinsicContentSize.width).isActive = true
