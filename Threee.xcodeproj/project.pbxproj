@@ -35,6 +35,7 @@
 		2B5FD46C22CA287500D2EDF0 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */; };
 		2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */; };
 		2B94B10122C58154007C22DF /* DatabaseGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */; };
+		2BABA12E22D916720057C156 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BABA12D22D916720057C156 /* CustomTextFieldView.swift */; };
 		2BB81AD922D3EF8300F9F624 /* UITableViewSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */; };
 		2BB81ADF22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */; };
 		2BC8F6D822D52037005B6D64 /* InputModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */; };
@@ -100,6 +101,7 @@
 		2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayFirebase.swift; sourceTree = "<group>"; };
 		2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseGatewayFirebase.swift; sourceTree = "<group>"; };
+		2BABA12D22D916720057C156 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewSeparatorCell.swift; sourceTree = "<group>"; };
 		2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFieldViewDelegate.swift; sourceTree = "<group>"; };
 		2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalViewDelegate.swift; sourceTree = "<group>"; };
@@ -272,6 +274,8 @@
 		2B5FD45022C94AFE00D2EDF0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2B5FD46A22CA285E00D2EDF0 /* UnderlineView */,
+				2BABA12C22D9164A0057C156 /* CustomTextFieldView */,
 				2B5FD46722CA273400D2EDF0 /* ItemFieldView */,
 				2B5FD45622C94D4400D2EDF0 /* DottedGridView */,
 				2B5FD45122C94B2100D2EDF0 /* PageTitleLabelView */,
@@ -319,7 +323,6 @@
 		2B5FD46722CA273400D2EDF0 /* ItemFieldView */ = {
 			isa = PBXGroup;
 			children = (
-				2B5FD46A22CA285E00D2EDF0 /* UnderlineView */,
 				2B5FD46822CA275300D2EDF0 /* ItemFieldView.swift */,
 				2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */,
 			);
@@ -332,6 +335,14 @@
 				2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */,
 			);
 			path = UnderlineView;
+			sourceTree = "<group>";
+		};
+		2BABA12C22D9164A0057C156 /* CustomTextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				2BABA12D22D916720057C156 /* CustomTextFieldView.swift */,
+			);
+			path = CustomTextFieldView;
 			sourceTree = "<group>";
 		};
 		2BCDF06B22D5145D0059C6F4 /* InputModalView */ = {
@@ -702,6 +713,7 @@
 				2B50F70422C6DA600048262C /* FirebaseCoordinator.swift in Sources */,
 				2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */,
 				2B50F6FF22C6D7E80048262C /* DatabasePresenter.swift in Sources */,
+				2BABA12E22D916720057C156 /* CustomTextFieldView.swift in Sources */,
 				2B5FD46C22CA287500D2EDF0 /* UnderlineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
