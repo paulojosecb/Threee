@@ -160,7 +160,9 @@ class SignInViewController: UIViewController {
     }
     
     @objc func didTapSignIn(_ sender: UITapGestureRecognizer? = nil) {
+        guard let viewModel = viewModel else { return }
         setLoadingState()
+        viewModel.signIn(email: "", password: "")
     }
     
     @objc func keyboardWillAppear(_ notification: Notification) {
@@ -194,6 +196,7 @@ class SignInViewController: UIViewController {
 extension SignInViewController: SignInViewModelDelegate {
     func didSignedIn() {
         let vc = HomeViewController()
+        vc.modalPresentationStyle = .currentContext
         present(vc, animated: true, completion: nil)
     }
     

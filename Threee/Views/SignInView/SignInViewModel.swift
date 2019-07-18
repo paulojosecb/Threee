@@ -34,7 +34,7 @@ class SignInViewModel {
         
         guard let auth = auth else { return }
         
-        auth.signIn(email: email, password: password)
+        auth.signIn(email: "paulocardosob3@gmail.com", password: "123456")
     }
     
 }
