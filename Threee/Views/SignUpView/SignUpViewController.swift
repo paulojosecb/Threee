@@ -51,8 +51,9 @@ class SignUpViewController: UIViewController {
         button.backgroundColor = .yellow
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.borderWidth = 2.0
-        button.titleLabel?.text = "SignUp"
-        button.titleLabel?.textColor = .black
+        button.setTitleColor(.black, for: .normal)
+        button.setTitle("Sign Up", for: .normal)
+        button.titleLabel?.font = .title
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
