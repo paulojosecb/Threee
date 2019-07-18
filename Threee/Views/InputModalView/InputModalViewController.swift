@@ -10,7 +10,6 @@ import UIKit
 
 class InputModalViewController: UIViewController {
     
-    
     var delegate: InputModalViewDelegate?
     
     lazy var backdropView: UIView = {

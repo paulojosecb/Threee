@@ -114,8 +114,11 @@ class HomeViewController: UIViewController {
     }
     
     @objc func handleSignOutGesture(_ sender: UITapGestureRecognizer? = nil) {
-        guard let viewModel = viewModel else { return }
-        viewModel.signOut()
+//        guard let viewModel = viewModel else { return }
+//        viewModel.signOut()
+        let vc = AlertModalViewController(mode: .confirmation)
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
     }
     
 }
