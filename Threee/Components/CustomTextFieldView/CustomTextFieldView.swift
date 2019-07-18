@@ -83,7 +83,7 @@ class CustomTextFieldView: UIView {
         
         line.leftAnchor.constraint(equalTo: textField.leftAnchor).isActive = true
         line.rightAnchor.constraint(equalTo: textField.rightAnchor).isActive = true
-        line.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 2).isActive = true
+        line.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 4).isActive = true
         line.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
     
