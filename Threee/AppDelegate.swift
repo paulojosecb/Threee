@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        if let _ = FirebaseCoordinator.shared.auth.currentUser {
 //            window?.rootViewController = HomeViewController()
 //        } else {
-            window?.rootViewController = SignUpViewController()
+            window?.rootViewController = SignInViewController()
 //        }
         
         window?.makeKeyAndVisible()

@@ -190,7 +190,7 @@
 		2B1A2DD422C6B5480049093A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2B42754E22E0C18400CC28A5 /* SignInViewController */,
+				2B42754E22E0C18400CC28A5 /* SignInView */,
 				2BCDF06B22D5145D0059C6F4 /* InputModalView */,
 				2B1A2DD522C6B5510049093A /* SignUpView */,
 				2BF8E22822C56BF0004D3C2E /* HomeView */,
@@ -207,13 +207,13 @@
 			path = SignUpView;
 			sourceTree = "<group>";
 		};
-		2B42754E22E0C18400CC28A5 /* SignInViewController */ = {
+		2B42754E22E0C18400CC28A5 /* SignInView */ = {
 			isa = PBXGroup;
 			children = (
 				2B42754F22E0C1A500CC28A5 /* SignInViewController.swift */,
 				2B42755122E0C1B900CC28A5 /* SignInViewModel.swift */,
 			);
-			path = SignInViewController;
+			path = SignInView;
 			sourceTree = "<group>";
 		};
 		2B50F6F122C6D1CD0048262C /* Database */ = {
