@@ -10,5 +10,6 @@ import Foundation
 
 protocol HomeViewModelDelegate {
     func didUpdate(day: Day)
+    func didSignedOut()
     func didReceivedError(error: Error)
 }

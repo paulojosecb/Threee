@@ -25,6 +25,10 @@ class AuthUseCase {
         gateway.signIn(email: email, password: password, completion: presentResult(result:))
     }
     
+    func signOut() {
+        gateway.signOut(completion: presentResult(result:))
+    }
+    
     private func presentResult(result: AuthResult) {
         switch result {
         case let .success(authSucess): self.presenter.sucess(authSucess)

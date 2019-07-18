@@ -15,6 +15,7 @@ class HomeViewModel {
     
     let delegate: HomeViewModelDelegate
     var database: DatabaseUseCase?
+    var auth: AuthUseCase?
     
     init(delegate: HomeViewModelDelegate) {
         self.delegate = delegate
@@ -23,6 +24,21 @@ class HomeViewModel {
     func initializeDatabase() {
         let gateway = DatabaseGatewayFirebase(database: FirebaseCoordinator.shared.databaseReference)
         database = DatabaseUseCase(gateway: gateway, presenter: self)
+    }
+    
+    func initializeAuthUseCase() {
+        let gateway = AuthGatewayFirebase(auth: FirebaseCoordinator.shared.auth)
+        auth = AuthUseCase(gateway: gateway, presenter: self)
+    }
+    
+    func signOut() {
+        if (auth == nil) {
+            initializeAuthUseCase()
+        }
+        
+        guard let auth = auth else { return }
+        
+        auth.signOut()
     }
     
     func observerToday() {
@@ -57,6 +73,20 @@ extension HomeViewModel: DatabasePresenter {
         print(error.localizedDescription)
         delegate.didReceivedError(error: error)
     }
+}
+
+extension HomeViewModel: AuthPresenter {
+    func sucess(_ sucess: AuthSucess) {
+        if (sucess == .signedOut) {
+            delegate.didSignedOut()
+        }
+    }
+    
+    func failure(_ error: AuthError) {
+        delegate.didReceivedError(error: error)
+    }
+    
+    
 }
 
 extension HomeViewModel : ItemFieldViewDelegate {
