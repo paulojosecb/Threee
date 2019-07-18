@@ -10,7 +10,7 @@ import UIKit
 
 class CustomTextFieldView: UIView {
     
-    var descriptor: String? {
+    var descriptor: String {
         didSet {
             label.text = descriptor
         }
@@ -21,7 +21,7 @@ class CustomTextFieldView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.black
         label.font = UIFont.label18
-        label.text = "Email:::::::"
+        label.text = self.descriptor
         return label
     }()
     
@@ -45,10 +45,16 @@ class CustomTextFieldView: UIView {
         return view
     }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(frame: CGRect, descriptor: String) {
+        self.descriptor = descriptor
+        super.init(frame: .zero)
         setupViews()
     }
+    
+//    convenience init(frame: CGRect, descriptor: String) {
+//        self.init(frame: frame)
+//        self.descriptor = descriptor
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -73,7 +79,7 @@ class CustomTextFieldView: UIView {
         textField.leftAnchor.constraint(equalTo: underlineView.leftAnchor).isActive = true
         textField.rightAnchor.constraint(equalTo: self.layoutMarginsGuide.rightAnchor).isActive = true
         textField.topAnchor.constraint(equalTo: underlineView.bottomAnchor, constant: 20).isActive = true
-        textField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         line.leftAnchor.constraint(equalTo: textField.leftAnchor).isActive = true
         line.rightAnchor.constraint(equalTo: textField.rightAnchor).isActive = true

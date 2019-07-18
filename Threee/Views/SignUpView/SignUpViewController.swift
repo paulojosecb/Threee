@@ -21,27 +21,28 @@ class SignUpViewController: UIViewController {
     lazy var welcomeImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "welcome")
+        imageView.contentMode = UIImageView.ContentMode.scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     lazy var emailTextField: CustomTextFieldView = {
-        let view = CustomTextFieldView()
+        let view = CustomTextFieldView(frame: .zero, descriptor: "Email:")
         view.translatesAutoresizingMaskIntoConstraints = false
         view.descriptor = "Email:"
         return view
     }()
     
     lazy var passwordTextField: CustomTextFieldView = {
-        let view = CustomTextFieldView()
+        let view = CustomTextFieldView(frame: .zero, descriptor: "Password:")
         view.translatesAutoresizingMaskIntoConstraints = false
         view.descriptor = "Password:"
         return view
     }()
     
     lazy var confirmPasswordTextField: CustomTextFieldView = {
-        let view = CustomTextFieldView()
+        let view = CustomTextFieldView(frame: .zero, descriptor: "Confirm Password:")
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.descriptor = "Confirm Password:"
         return view
     }()
     
@@ -81,6 +82,20 @@ class SignUpViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapSignUp(_:)))
         signUpButton.addGestureRecognizer(tapGesture)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillAppear(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillDismiss(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
     override func viewDidLayoutSubviews() {
@@ -110,25 +125,25 @@ class SignUpViewController: UIViewController {
         welcomeImage.heightAnchor.constraint(equalToConstant: 66).isActive = true
         welcomeImage.widthAnchor.constraint(equalToConstant: 224).isActive = true
         
-        emailTextField.topAnchor.constraint(equalTo: welcomeImage.bottomAnchor, constant: 98).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: welcomeImage.bottomAnchor, constant: 30).isActive = true
         emailTextField.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
         emailTextField.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
-        emailTextField.heightAnchor.constraint(equalToConstant: 71).isActive = true
+        emailTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
-        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 50).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 60).isActive = true
         passwordTextField.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
         passwordTextField.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
-        passwordTextField.heightAnchor.constraint(equalToConstant: 71).isActive = true
+        passwordTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
-        confirmPasswordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50).isActive = true
+        confirmPasswordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 60).isActive = true
         confirmPasswordTextField.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
         confirmPasswordTextField.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
-        confirmPasswordTextField.heightAnchor.constraint(equalToConstant: 71).isActive = true
+        confirmPasswordTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         signUpButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         signUpButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         signUpButton.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        signUpButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        signUpButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
         
         backdropView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backdropView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -157,6 +172,32 @@ class SignUpViewController: UIViewController {
         backdropView.isHidden = true
         activity.isHidden = true
         activity.stopAnimating()
+    }
+    
+    @objc func keyboardWillAppear(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            
+            guard let window = UIApplication.shared.keyWindow else { return }
+        
+            UIView.animate(withDuration: 0.2) {
+                self.view.bottomAnchor.constraint(equalTo: window.bottomAnchor, constant: -keyboardHeight).isActive = true
+            }
+        }
+    }
+    
+    @objc func keyboardWillDismiss(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            
+            guard let window = UIApplication.shared.keyWindow else { return }
+            
+            UIView.animate(withDuration: 0.2) {
+                self.view.bottomAnchor.constraint(equalTo: window.bottomAnchor).isActive = true
+            }
+        }
     }
     
 }
