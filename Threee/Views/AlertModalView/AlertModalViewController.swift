@@ -19,6 +19,8 @@ class AlertModalViewController: UIViewController {
     
     let mode: AlertMode
     
+    var cardViewCenterYAnchor: NSLayoutConstraint?
+    
     lazy var backdropView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
@@ -130,7 +132,8 @@ class AlertModalViewController: UIViewController {
         cardView.widthAnchor.constraint(equalToConstant: 285).isActive = true
         cardView.heightAnchor.constraint(equalToConstant: 345).isActive = true
         cardView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        cardView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        cardViewCenterYAnchor = cardView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        cardViewCenterYAnchor?.isActive = true
         
 //        dottedGrid.topAnchor.constraint(equalTo: cardView.topAnchor).isActive = true
 //        dottedGrid.bottomAnchor.constraint(equalTo: cardView.bottomAnchor).isActive = true

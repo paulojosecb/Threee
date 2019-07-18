@@ -38,6 +38,8 @@
 		2B5FD46C22CA287500D2EDF0 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */; };
 		2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */; };
 		2B94B10122C58154007C22DF /* DatabaseGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */; };
+		2B9ADB6C22E12885009A3223 /* ModalPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9ADB6B22E12885009A3223 /* ModalPushTransition.swift */; };
+		2B9ADB6E22E12A76009A3223 /* ModalPopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9ADB6D22E12A76009A3223 /* ModalPopTransition.swift */; };
 		2BABA12E22D916720057C156 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BABA12D22D916720057C156 /* CustomTextFieldView.swift */; };
 		2BB81AD922D3EF8300F9F624 /* UITableViewSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */; };
 		2BB81ADF22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */; };
@@ -107,6 +109,8 @@
 		2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayFirebase.swift; sourceTree = "<group>"; };
 		2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseGatewayFirebase.swift; sourceTree = "<group>"; };
+		2B9ADB6B22E12885009A3223 /* ModalPushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPushTransition.swift; sourceTree = "<group>"; };
+		2B9ADB6D22E12A76009A3223 /* ModalPopTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPopTransition.swift; sourceTree = "<group>"; };
 		2BABA12D22D916720057C156 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewSeparatorCell.swift; sourceTree = "<group>"; };
 		2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFieldViewDelegate.swift; sourceTree = "<group>"; };
@@ -362,6 +366,15 @@
 			path = UnderlineView;
 			sourceTree = "<group>";
 		};
+		2B9ADB6822E127DB009A3223 /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				2B9ADB6B22E12885009A3223 /* ModalPushTransition.swift */,
+				2B9ADB6D22E12A76009A3223 /* ModalPopTransition.swift */,
+			);
+			path = CustomTransition;
+			sourceTree = "<group>";
+		};
 		2BABA12C22D9164A0057C156 /* CustomTextFieldView */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				2B5FD45C22C9594600D2EDF0 /* Resources */,
+				2B9ADB6822E127DB009A3223 /* CustomTransition */,
 				2B5FD45922C94D9300D2EDF0 /* Extensions */,
 				2B5FD45022C94AFE00D2EDF0 /* Components */,
 				2B1A2DD422C6B5480049093A /* Views */,
@@ -711,6 +725,7 @@
 			files = (
 				2BF8E22D22C56CEF004D3C2E /* User.swift in Sources */,
 				2BCDF06D22D5148F0059C6F4 /* InputModalViewController.swift in Sources */,
+				2B9ADB6E22E12A76009A3223 /* ModalPopTransition.swift in Sources */,
 				2B5FD46922CA275300D2EDF0 /* ItemFieldView.swift in Sources */,
 				2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */,
 				2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */,
@@ -739,6 +754,7 @@
 				2B5FD45E22C9596400D2EDF0 /* UIFont.swift in Sources */,
 				2B50F70422C6DA600048262C /* FirebaseCoordinator.swift in Sources */,
 				2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */,
+				2B9ADB6C22E12885009A3223 /* ModalPushTransition.swift in Sources */,
 				2B42755022E0C1A500CC28A5 /* SignInViewController.swift in Sources */,
 				2B50F6FF22C6D7E80048262C /* DatabasePresenter.swift in Sources */,
 				2BABA12E22D916720057C156 /* CustomTextFieldView.swift in Sources */,
