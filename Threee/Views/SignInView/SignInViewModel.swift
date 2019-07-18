@@ -27,13 +27,14 @@ class SignInViewModel {
         auth = AuthUseCase(gateway: gateway, presenter: self)
     }
     
-    func signIn() {
+    func signIn(email: String, password: String) {
         if (auth == nil) {
             initializeAuthUseCase()
         }
         
         guard let auth = auth else { return }
-    
+        
+        auth.signIn(email: email, password: password)
     }
     
 }
