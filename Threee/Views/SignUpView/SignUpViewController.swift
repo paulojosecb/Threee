@@ -205,7 +205,7 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController: SignUpViewModelDelegate {
     func didSignedUp() {
-        let vc = HomeViewController()
+        let vc = HomeViewController(mode: .today)
         present(vc, animated: true, completion: nil)
     }
     

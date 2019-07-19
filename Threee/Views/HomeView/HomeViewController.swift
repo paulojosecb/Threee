@@ -8,9 +8,15 @@
 
 import UIKit
 
+enum HomeViewMode {
+    case today
+    case tomorrow
+}
+
 class HomeViewController: UIViewController {
     
     var viewModel: HomeViewModel?
+    let mode: HomeViewMode
     
     lazy var dottedGrid: DottedGridView = {
         return DottedGridView(frame: self.view.frame)
@@ -18,6 +24,7 @@ class HomeViewController: UIViewController {
     
     lazy var pageTitleLabelView: PageTitleLabelView = {
         let view = PageTitleLabelView()
+        view.titleLabel.text = mode == .today ? "Today" : "Tomorrow"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -53,6 +60,15 @@ class HomeViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    init(mode: HomeViewMode) {
+        self.mode = mode
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

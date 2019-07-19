@@ -36,6 +36,7 @@
 		2B5FD46622C959C700D2EDF0 /* Mali-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B5FD46322C959C700D2EDF0 /* Mali-Medium.ttf */; };
 		2B5FD46922CA275300D2EDF0 /* ItemFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD46822CA275300D2EDF0 /* ItemFieldView.swift */; };
 		2B5FD46C22CA287500D2EDF0 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */; };
+		2B6FC0EA22E22284007E9C41 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6FC0E922E22284007E9C41 /* PageViewController.swift */; };
 		2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */; };
 		2B94B10122C58154007C22DF /* DatabaseGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */; };
 		2B9ADB6C22E12885009A3223 /* ModalPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9ADB6B22E12885009A3223 /* ModalPushTransition.swift */; };
@@ -107,6 +108,7 @@
 		2B5FD46322C959C700D2EDF0 /* Mali-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Medium.ttf"; sourceTree = "<group>"; };
 		2B5FD46822CA275300D2EDF0 /* ItemFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFieldView.swift; sourceTree = "<group>"; };
 		2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
+		2B6FC0E922E22284007E9C41 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		2B8553FE22C59C91005F41F5 /* AuthGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayFirebase.swift; sourceTree = "<group>"; };
 		2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseGatewayFirebase.swift; sourceTree = "<group>"; };
 		2B9ADB6B22E12885009A3223 /* ModalPushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPushTransition.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		2B1A2DD422C6B5480049093A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B6FC0E822E22258007E9C41 /* PageViewController */,
 				2B42755322E1146D00CC28A5 /* AlertModalView */,
 				2B42754E22E0C18400CC28A5 /* SignInView */,
 				2BCDF06B22D5145D0059C6F4 /* InputModalView */,
@@ -364,6 +367,14 @@
 				2B5FD46B22CA287500D2EDF0 /* UnderlineView.swift */,
 			);
 			path = UnderlineView;
+			sourceTree = "<group>";
+		};
+		2B6FC0E822E22258007E9C41 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B6FC0E922E22284007E9C41 /* PageViewController.swift */,
+			);
+			path = PageViewController;
 			sourceTree = "<group>";
 		};
 		2B9ADB6822E127DB009A3223 /* CustomTransition */ = {
@@ -748,6 +759,7 @@
 				2BF8E22F22C56D13004D3C2E /* Day.swift in Sources */,
 				2B1A2DD322C6B4110049093A /* AuthError.swift in Sources */,
 				2B42755522E1148C00CC28A5 /* AlertModalViewController.swift in Sources */,
+				2B6FC0EA22E22284007E9C41 /* PageViewController.swift in Sources */,
 				2BF8E23122C574C2004D3C2E /* Item.swift in Sources */,
 				2B1A2DD922C6B5900049093A /* SignUpViewModel.swift in Sources */,
 				2B5FD45322C94B4D00D2EDF0 /* PageTitleLabelView.swift in Sources */,

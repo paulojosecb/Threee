@@ -12,7 +12,7 @@ class PageTitleLabelView: UIView {
     
     static let height: CGFloat = 45.0
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Today"
         label.font = UIFont.title
