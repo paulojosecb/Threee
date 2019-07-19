@@ -164,9 +164,11 @@ class SignInViewController: UIViewController {
     }
     
     @objc func didTapSignIn(_ sender: UITapGestureRecognizer? = nil) {
-        guard let viewModel = viewModel else { return }
+        guard let viewModel = viewModel,
+            let email = emailTextField.textField.text,
+            let password = passwordTextField.textField.text else { return }
         setLoadingState()
-        viewModel.signIn(email: "", password: "")
+        viewModel.signIn(email: email, password: password)
     }
     
     @objc func keyboardWillAppear(_ notification: Notification) {
@@ -204,9 +206,10 @@ extension SignInViewController: SignInViewModelDelegate {
         present(vc, animated: true, completion: nil)
     }
     
-    func didReceivedError(error: Error) {
+    func didReceivedError(error: AuthError) {
         setFailedState()
+        let vc = AlertModalViewController(mode: .warning, customText: error.localizedDescription)
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
     }
-    
-    
 }

@@ -162,9 +162,12 @@ class SignUpViewController: UIViewController {
     @objc func didTapSignUp(_ sender: UITapGestureRecognizer? = nil) {
         setLoadingState()
         
-        guard let viewModel = viewModel else { return }
+        guard let viewModel = viewModel,
+            let email = emailTextField.textField.text,
+            let password = passwordTextField.textField.text else { return }
         
-        viewModel.signUp()
+        
+        viewModel.signUp(email: email, password: password)
     }
     
     func setLoadingState() {
@@ -215,6 +218,9 @@ extension SignUpViewController: SignUpViewModelDelegate {
     
     func didReceived(error: Error) {
         setFailedState()
+        let vc = AlertModalViewController(mode: .warning, customText: error.localizedDescription)
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
     }
     
     
