@@ -21,6 +21,10 @@ class AlertModalViewController: UIViewController {
     
     var cardViewCenterYAnchor: NSLayoutConstraint?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     lazy var backdropView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)

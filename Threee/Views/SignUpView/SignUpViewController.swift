@@ -12,6 +12,10 @@ class SignUpViewController: UIViewController {
     
     var viewModel: SignUpViewModel?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     lazy var dottedGrid: DottedGridView = {
         let view = DottedGridView(frame: self.view.frame)
         view.translatesAutoresizingMaskIntoConstraints = false

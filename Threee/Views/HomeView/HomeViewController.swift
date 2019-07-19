@@ -15,6 +15,10 @@ enum HomeViewMode {
 
 class HomeViewController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     var viewModel: HomeViewModel?
     let mode: HomeViewMode
     

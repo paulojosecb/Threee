@@ -133,8 +133,8 @@
             filePath = "Threee/Views/SignUpView/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "keyboardWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -149,8 +149,8 @@
             filePath = "Threee/Views/SignUpView/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "keyboardWillDismiss(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -165,8 +165,8 @@
             filePath = "Threee/Views/SignUpView/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "keyboardWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -181,8 +181,8 @@
             filePath = "Threee/Views/SignUpView/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "keyboardWillAppear(_:)"
             landmarkType = "7">
             <Locations>
@@ -197,9 +197,9 @@
                   urlString = "file:///Users/paulocardosob/Documents/Code/iOS/Projetos%20Pessoais/Threee/Threee/Views/SignUpView/SignUpViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "185"
-                  endingLineNumber = "185"
-                  offsetFromSymbolStart = "848">
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "1069">
                </Location>
                <Location
                   uuid = "78C70D6C-C1F9-4B57-BF7F-9A4068E5D1B9 - cfbd10d70f2d9503"
@@ -212,9 +212,9 @@
                   urlString = "file:///Users/paulocardosob/Documents/Code/iOS/Projetos%20Pessoais/Threee/Threee/Views/SignUpView/SignUpViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "185"
-                  endingLineNumber = "185"
-                  offsetFromSymbolStart = "152">
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "119">
                </Location>
             </Locations>
          </BreakpointContent>
