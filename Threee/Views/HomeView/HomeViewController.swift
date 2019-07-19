@@ -140,7 +140,6 @@ class HomeViewController: UIViewController {
     
     func presentAlert(with mode: AlertMode) {
         let vc = AlertModalViewController(mode: mode)
-        vc.transitioningDelegate = self
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true, completion: nil)
     }
@@ -203,15 +202,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return false
     }
     
-}
-
-extension HomeViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return ModalPushTransition()
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return ModalPopTransition()
-    }
 }
 

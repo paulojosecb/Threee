@@ -18,6 +18,7 @@ enum AlertMode: String {
 class AlertModalViewController: UIViewController {
     
     let mode: AlertMode
+    let customText: String?
     
     var cardViewCenterYAnchor: NSLayoutConstraint?
     
@@ -98,8 +99,9 @@ class AlertModalViewController: UIViewController {
         return label
     }()
     
-    init(mode: AlertMode) {
+    init(mode: AlertMode, customText: String? = nil) {
         self.mode = mode
+        self.customText = customText
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -110,6 +112,8 @@ class AlertModalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        
+        self.transitioningDelegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handlerDismiss(_:)))
         self.view.addGestureRecognizer(tapGesture)
@@ -170,6 +174,11 @@ class AlertModalViewController: UIViewController {
     }
     
     func populateText(mode: AlertMode) -> String {
+        
+        if (customText != nil) {
+            return customText!
+        }
+        
         switch mode {
         case .welcome:
             return "You can start your jorney by adding the three most important things you can do today to add value to your life"
@@ -182,4 +191,14 @@ class AlertModalViewController: UIViewController {
         }
     }
     
+}
+
+extension AlertModalViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return ModalPushTransition()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return ModalPopTransition()
+    }
 }
