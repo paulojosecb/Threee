@@ -10,7 +10,7 @@ import Foundation
 
 protocol SignInViewModelDelegate {
     func didSignedIn()
-    func didReceivedError(error: Error)
+    func didReceivedError(error: AuthError)
 }
 
 class SignInViewModel {
@@ -34,7 +34,7 @@ class SignInViewModel {
         
         guard let auth = auth else { return }
         
-        auth.signIn(email: "paulocardosob3@gmail.com", password: "123456")
+        auth.signIn(email: email, password: password)
     }
     
 }

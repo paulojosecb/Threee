@@ -27,14 +27,14 @@ class SignUpViewModel {
         auth = AuthUseCase(gateway: gateway, presenter: self)
     }
     
-    func signUp() {
+    func signUp(email: String, password: String) {
         if auth == nil {
             initializeAuthUseCase()
         }
         
         guard let auth = auth else { return }
         
-        auth.signUp(email: "paulocardosob3@gmail.com", password: "123456", name: "Paulo")
+        auth.signUp(email: email, password: password, name: "")
     }
     
 }

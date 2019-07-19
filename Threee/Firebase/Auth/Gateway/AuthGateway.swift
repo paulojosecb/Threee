@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum AuthResultEnum<AuthSucess, Error> {
+enum AuthResultEnum<AuthSucess, AuthError> {
     case success(AuthSucess)
-    case failure(Error)
+    case failure(AuthError)
 }
 
 typealias AuthResult = AuthResultEnum<AuthSucess, AuthError>

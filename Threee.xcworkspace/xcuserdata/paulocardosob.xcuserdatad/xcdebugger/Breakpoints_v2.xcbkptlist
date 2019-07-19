@@ -135,7 +135,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
             endingLineNumber = "183"
-            landmarkName = "keyboardWillAppear(_:)"
+            landmarkName = "setFailedState()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -151,7 +151,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
             endingLineNumber = "196"
-            landmarkName = "keyboardWillDismiss(_:)"
+            landmarkName = "keyboardWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -184,70 +184,6 @@
             startingLineNumber = "189"
             endingLineNumber = "189"
             landmarkName = "keyboardWillAppear(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "78C70D6C-C1F9-4B57-BF7F-9A4068E5D1B9 - 5a8fc409c274c462"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Threee.SignUpViewController.keyboardWillAppear(Foundation.Notification) -&gt; ()"
-                  moduleName = "Threee"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/paulocardosob/Documents/Code/iOS/Projetos%20Pessoais/Threee/Threee/Views/SignUpView/SignUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "189"
-                  endingLineNumber = "189"
-                  offsetFromSymbolStart = "1069">
-               </Location>
-               <Location
-                  uuid = "78C70D6C-C1F9-4B57-BF7F-9A4068E5D1B9 - cfbd10d70f2d9503"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Threee.SignUpViewController.keyboardWillAppear(Foundation.Notification) -&gt; ()"
-                  moduleName = "Threee"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/paulocardosob/Documents/Code/iOS/Projetos%20Pessoais/Threee/Threee/Views/SignUpView/SignUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "189"
-                  endingLineNumber = "189"
-                  offsetFromSymbolStart = "119">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3EB3F301-5CB3-4B90-9850-1324460C3AA1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Threee/Views/SignInView/SignInViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "sucess(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CC677A15-11AB-4992-B7FC-D79DF1DCE622"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Threee/Views/SignInView/SignInViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "failure(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
