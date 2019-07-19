@@ -114,14 +114,16 @@ class HomeViewController: UIViewController {
     }
     
     @objc func handleSignOutGesture(_ sender: UITapGestureRecognizer? = nil) {
-//        guard let viewModel = viewModel else { return }
-//        viewModel.signOut()
-        let vc = AlertModalViewController(mode: .confirmation)
+        guard let viewModel = viewModel else { return }
+        viewModel.signOut()
+    }
+    
+    func presentAlert(with mode: AlertMode) {
+        let vc = AlertModalViewController(mode: mode)
         vc.transitioningDelegate = self
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true, completion: nil)
     }
-    
 }
 
 extension HomeViewController: HomeViewModelDelegate {
@@ -135,14 +137,13 @@ extension HomeViewController: HomeViewModelDelegate {
     }
     
     func didReceivedError(error: Error) {
-        print(error)
+       presentAlert(with: .warning)
     }
     
     func didSignedOut() {
         let vc = SignInViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
-        
     }
 }
 
