@@ -103,6 +103,7 @@ class AlertModalViewController: UIViewController {
         self.mode = mode
         self.customText = customText
         super.init(nibName: nil, bundle: nil)
+        self.transitioningDelegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -112,8 +113,6 @@ class AlertModalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
-        self.transitioningDelegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handlerDismiss(_:)))
         self.view.addGestureRecognizer(tapGesture)

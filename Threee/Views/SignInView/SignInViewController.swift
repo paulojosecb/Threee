@@ -41,6 +41,7 @@ class SignInViewController: UIViewController {
         let view = CustomTextFieldView(frame: .zero, descriptor: "Password:")
         view.translatesAutoresizingMaskIntoConstraints = false
         view.descriptor = "Password:"
+        view.textField.isSecureTextEntry = true
         return view
     }()
     
@@ -54,6 +55,24 @@ class SignInViewController: UIViewController {
         button.titleLabel?.font = .title
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }()
+    
+    lazy var goToSignInLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Don't have an account?"
+        label.textColor = UIColor.black
+        label.font = .regular18
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var (signInHereLabel): UILabel = {
+        let label = UILabel()
+        label.text = "Sign up here"
+        label.textColor = .black
+        label.font = .label18
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     let backdropView: UIView = {
@@ -87,6 +106,10 @@ class SignInViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapSignIn(_:)))
         signInButton.addGestureRecognizer(tapGesture)
         
+        let signUpTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapSignUpHere(_:)))
+        signInHereLabel.isUserInteractionEnabled = true
+        signInHereLabel.addGestureRecognizer(signUpTapGesture)
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillAppear(_:)),
@@ -114,6 +137,8 @@ class SignInViewController: UIViewController {
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
         view.addSubview(signInButton)
+        view.addSubview(goToSignInLabel)
+        view.addSubview(signInHereLabel)
         view.addSubview(backdropView)
         view.addSubview(activity)
         
@@ -142,6 +167,14 @@ class SignInViewController: UIViewController {
         signInButton.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         signInButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
         
+        goToSignInLabel.bottomAnchor.constraint(equalTo: signInButton.topAnchor, constant: -23).isActive = true
+        goToSignInLabel.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
+        goToSignInLabel.widthAnchor.constraint(equalToConstant: goToSignInLabel.intrinsicContentSize.width).isActive = true
+        
+        signInHereLabel.topAnchor.constraint(equalTo: goToSignInLabel.topAnchor).isActive = true
+        signInHereLabel.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
+        signInHereLabel.widthAnchor.constraint(equalToConstant: signInHereLabel.intrinsicContentSize.width).isActive = true
+        
         backdropView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backdropView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backdropView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -169,6 +202,12 @@ class SignInViewController: UIViewController {
             let password = passwordTextField.textField.text else { return }
         setLoadingState()
         viewModel.signIn(email: email, password: password)
+    }
+    
+    @objc func didTapSignUpHere(_ sender: UITapGestureRecognizer? = nil) {
+        let vc = SignUpViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     @objc func keyboardWillAppear(_ notification: Notification) {

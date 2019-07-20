@@ -40,6 +40,7 @@ class SignUpViewController: UIViewController {
     lazy var passwordTextField: CustomTextFieldView = {
         let view = CustomTextFieldView(frame: .zero, descriptor: "Password:")
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.textField.isSecureTextEntry = true
         view.descriptor = "Password:"
         return view
     }()
@@ -47,6 +48,7 @@ class SignUpViewController: UIViewController {
     lazy var confirmPasswordTextField: CustomTextFieldView = {
         let view = CustomTextFieldView(frame: .zero, descriptor: "Confirm Password:")
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.textField.isSecureTextEntry = true
         return view
     }()
     
@@ -60,6 +62,24 @@ class SignUpViewController: UIViewController {
         button.titleLabel?.font = .title
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }()
+    
+    lazy var goToSignUpLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Already have an account?"
+        label.textColor = UIColor.black
+        label.font = .regular18
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var signUpHereLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Sign in here"
+        label.textColor = .black
+        label.font = .label18
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     let backdropView: UIView = {
@@ -87,6 +107,10 @@ class SignUpViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapSignUp(_:)))
         signUpButton.addGestureRecognizer(tapGesture)
+        
+        let signInTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapSignInHere(_:)))
+        signUpHereLabel.isUserInteractionEnabled = true
+        signUpHereLabel.addGestureRecognizer(signInTapGesture)
         
         NotificationCenter.default.addObserver(
             self,
@@ -117,6 +141,8 @@ class SignUpViewController: UIViewController {
         view.addSubview(passwordTextField)
         view.addSubview(confirmPasswordTextField)
         view.addSubview(signUpButton)
+        view.addSubview(goToSignUpLabel)
+        view.addSubview(signUpHereLabel)
         view.addSubview(backdropView)
         view.addSubview(activity)
         
@@ -150,6 +176,14 @@ class SignUpViewController: UIViewController {
         signUpButton.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         signUpButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
         
+        goToSignUpLabel.bottomAnchor.constraint(equalTo: signUpButton.topAnchor, constant: -23).isActive = true
+        goToSignUpLabel.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
+        goToSignUpLabel.widthAnchor.constraint(equalToConstant: goToSignUpLabel.intrinsicContentSize.width).isActive = true
+        
+        signUpHereLabel.topAnchor.constraint(equalTo: goToSignUpLabel.topAnchor).isActive = true
+        signUpHereLabel.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
+        signUpHereLabel.widthAnchor.constraint(equalToConstant: signUpHereLabel.intrinsicContentSize.width).isActive = true
+        
         backdropView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backdropView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backdropView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -180,6 +214,12 @@ class SignUpViewController: UIViewController {
         backdropView.isHidden = true
         activity.isHidden = true
         activity.stopAnimating()
+    }
+    
+    @objc func didTapSignInHere(_ sender: UITapGestureRecognizer? = nil) {
+        let vc = SignInViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     @objc func keyboardWillAppear(_ notification: Notification) {
@@ -213,6 +253,7 @@ class SignUpViewController: UIViewController {
 extension SignUpViewController: SignUpViewModelDelegate {
     func didSignedUp() {
         let vc = HomeViewController(mode: .today)
+        vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true, completion: nil)
     }
     
