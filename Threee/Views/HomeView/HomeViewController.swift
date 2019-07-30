@@ -77,8 +77,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = HomeViewModel(delegate: self)
-        viewModel?.observerToday()
+        viewModel = HomeViewModel(delegate: self, mode: self.mode == .today ? .today : .tomorrow)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -90,7 +89,22 @@ class HomeViewController: UIViewController {
         signOutButton.addGestureRecognizer(tapSignOutGesture)
         
         setupViews()
+        
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        
+//        guard let viewModel = viewModel,
+//            let day = viewModel.day else { return }
+//        
+//        if (mode == .tomorrow && !day.isDayCompleted() ) {
+//            
+//            let vc = AlertModalViewController(mode: .planning)
+//            vc.modalPresentationStyle = .overFullScreen
+//            present(vc, animated: true, completion: nil)
+//            
+//        }
+//    }
     
     func setupViews() {
         self.view.addSubview(dottedGrid)
@@ -168,7 +182,7 @@ extension HomeViewController: HomeViewModelDelegate {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let items = viewModel?.today?.items else { return 0 }
+        guard let items = viewModel?.day?.items else { return 0 }
         return items.count * 2 - 1
     }
     
@@ -179,7 +193,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if (mod == 0) {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ItemFieldView.reuseIdentifier, for: indexPath) as? ItemFieldView else { return UITableViewCell()}
             
-            guard let items = viewModel?.today?.items else { return UITableViewCell() }
+            guard let items = viewModel?.day?.items else { return UITableViewCell() }
         
             cell.item = items[indexPath.row / 2]
             cell.delegate = viewModel

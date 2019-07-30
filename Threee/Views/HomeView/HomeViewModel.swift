@@ -8,17 +8,26 @@
 
 import Foundation
 
+enum DayMode {
+    case today
+    case tomorrow
+}
+
 class HomeViewModel {
     
-    var today: Day?
-    var todayIndex: Int?
+    var day: Day?
+    var dayIndex: Int?
+    
+    var mode: DayMode
     
     let delegate: HomeViewModelDelegate
     var database: DatabaseUseCase?
     var auth: AuthUseCase?
     
-    init(delegate: HomeViewModelDelegate) {
+    init(delegate: HomeViewModelDelegate, mode: DayMode) {
         self.delegate = delegate
+        self.mode = mode
+        self.fetchUser()
     }
     
     func initializeDatabase() {
@@ -41,7 +50,7 @@ class HomeViewModel {
         auth.signOut()
     }
     
-    func observerToday() {
+    func fetchUser() {
         if database == nil {
             initializeDatabase()
         }
@@ -51,22 +60,70 @@ class HomeViewModel {
         
         database.fetchUser(uid: currentUser.uid)
     }
-
+    
+    func update(user: User, with id: String) {
+        
+    }
+    
 }
 
 extension HomeViewModel: DatabasePresenter {
     func observeredDay(_ day: Day) {
-        today = day
+        self.day = day
         delegate.didUpdate(day: day)
     }
     
     func fetchUserSucess(_ user: User) {
         guard let database = database else { return }
-        guard let today = user.days.firstIndex(of: user.today) else { return }
         
-        todayIndex = today
+        var mutableUser = user
+    
+        if (mode == .today) {
+            
+            let today = user.today
+            
+            if (today == nil) {
+                
+                mutableUser.createDayFrom(now: 0)
+                
+                guard let currentUser = FirebaseCoordinator.shared.auth.currentUser else { return }
+                database.update(user: mutableUser, with: currentUser.uid)
+                
+            } else {
+                
+                guard let dayIndex = user.days.firstIndex(of: user.today!) else { return }
+                self.dayIndex = dayIndex
+                
+                database.observerDay(with: "\(dayIndex)")
+
+            }
+            
+        } else if (mode == .tomorrow) {
+            
+            let tomorrow = user.tomorrow
+            
+            if (tomorrow == nil) {
+                
+                mutableUser.createDayFrom(now: 1)
+                
+                guard let currentUser = FirebaseCoordinator.shared.auth.currentUser else { return }
+                database.update(user: mutableUser, with: currentUser.uid)
+                
+            } else {
+                
+                guard let dayIndex = user.days.firstIndex(of: user.tomorrow!) else { return }
+                self.dayIndex = dayIndex
+                
+                database.observerDay(with: "\(dayIndex)")
+                
+            }
+            
+        }
         
-        database.observerDay(with: "\(today)")
+    }
+    
+    func updateUserSucess() {
+        fetchUser()
     }
     
     func failure(_ error: Error) {
@@ -92,9 +149,9 @@ extension HomeViewModel: AuthPresenter {
 extension HomeViewModel : ItemFieldViewDelegate {
     
     func toggleItem(on index: Int) {
-        guard let today = today, let todayIndex = todayIndex, let database = database else { return }
-        today.toggle(item: index)
-        database.update(day: today, with: "\(todayIndex)")
+        guard let day = day, let dayIndex = dayIndex, let database = database else { return }
+        day.toggle(item: index)
+        database.update(day: day, with: "\(dayIndex)")
     }
     
 }
@@ -102,15 +159,15 @@ extension HomeViewModel : ItemFieldViewDelegate {
 extension HomeViewModel : InputModalViewDelegate {
     
     func createItemWith(name: String) {
-        guard let today = today, let todayIndex = todayIndex, let database = database else { return }
-        today.add(item: Item(name: name))
-        database.update(day: today, with: "\(todayIndex)")
+        guard let day = day, let dayIndex = dayIndex, let database = database else { return }
+        day.add(item: Item(name: name))
+        database.update(day: day, with: "\(dayIndex)")
     }
     
     func editItemWith(name: String, on index: Int) {
-        guard let today = today, let todayIndex = todayIndex, let database = database else { return }
-        today.edit(item: index, newValue: name)
-        database.update(day: today, with: "\(todayIndex)")
+        guard let day = day, let dayIndex = dayIndex, let database = database else { return }
+        day.edit(item: index, newValue: name)
+        database.update(day: day, with: "\(dayIndex)")
     }
     
 }

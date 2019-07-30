@@ -13,7 +13,7 @@ struct User: Codable {
     var name: String
     var days: [Day]
     
-    var today: Day {
+    var today: Day? {
         get {
             
             for day in days {
@@ -25,13 +25,13 @@ struct User: Codable {
                 }
             }
             
-            return days[0]
+            return nil
         }
     }
     
-    var tomorrow: Day {
+    var tomorrow: Day? {
         
-        mutating get {
+        get {
             
             for day in days {
                 
@@ -42,11 +42,7 @@ struct User: Codable {
                 }
             }
             
-            // If tomorrow is not created yet, it will create, append and return it
-            let day = Day(daysFromNow: 1)
-            days.append(day)
-            return day
-            
+            return nil
         }
     }
     
@@ -71,6 +67,10 @@ struct User: Codable {
         dict["days"] = daysDict
         
         return dict
+    }
+    
+    mutating func createDayFrom(now: Int) {
+        days.append(Day(daysFromNow: now))
     }
         
 }

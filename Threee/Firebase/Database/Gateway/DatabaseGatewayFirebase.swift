@@ -57,5 +57,17 @@ class DatabaseGatewayFirebase: DatabaseGateway {
         self.database.child("users").child(userUid).child("days").child(uid).updateChildValues(day.transform())
     }
     
+    func update(user: User, with uid: String, completion: @escaping (UserUpdateResult) -> Void) {
+        
+        self.database.child("users").child(uid).updateChildValues(user.transform()) { (error, reference) in
+            if (error != nil) {
+                completion(UserUpdateResult.failure(error!))
+            } else {
+                completion(UserUpdateResult.sucess(User(name: "")))
+            }
+        }
+        
+    }
+    
     
 }

@@ -21,6 +21,10 @@ class DatabaseUseCase {
         gateway.fetchUser(uid: uid, completion: presentFetchResult(result:))
     }
     
+    func update(user: User, with uid: String) {
+        gateway.update(user: user, with: uid, completion: presentUserUpdateResult(result:))
+    }
+    
     func update(day: Day, with uid: String) {
         gateway.update(day: day, with: uid)
     }
@@ -39,6 +43,13 @@ class DatabaseUseCase {
     private func presentObserverResult(result: DayObserverResult) {
         switch result {
         case let .sucess(day): self.presenter.observeredDay(day)
+        case let .failure(error): self.presenter.failure(error)
+        }
+    }
+    
+    private func presentUserUpdateResult(result: UserUpdateResult) {
+        switch result {
+        case .sucess(_): self.presenter.updateUserSucess()
         case let .failure(error): self.presenter.failure(error)
         }
     }

@@ -21,7 +21,7 @@ class PageViewController: UIPageViewController {
                 HomeViewController(mode: .tomorrow)]
     }()
     
-    let mode: PageViewMode
+    var mode: PageViewMode
     
     init(mode: PageViewMode) {
         self.mode = mode
@@ -41,15 +41,20 @@ class PageViewController: UIPageViewController {
         guard let firstPage = pages.first else { return }
         
         setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
-        
-//        if (mode == .firstTime) {
-            let vc = AlertModalViewController(mode: .warning)
-            vc.modalPresentationStyle = .overCurrentContext
-            present(vc, animated: false, completion: nil)
-//        }
-
-        // Do any additional setup after loading the view.
+    
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if (mode == .firstTime) {
+            mode = .other
+            let vc = AlertModalViewController(mode: .welcome)
+            vc.modalPresentationStyle = .overCurrentContext
+            present(vc, animated: true, completion: nil)
+        }
+        
+    }
+    
 }
 
 extension PageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {

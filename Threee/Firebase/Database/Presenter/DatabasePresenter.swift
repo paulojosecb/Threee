@@ -12,4 +12,5 @@ protocol DatabasePresenter {
     func fetchUserSucess(_ user: User)
     func failure(_ error: Error)
     func observeredDay(_ day: Day)
+    func updateUserSucess()
 }
