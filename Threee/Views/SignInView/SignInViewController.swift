@@ -240,7 +240,7 @@ class SignInViewController: UIViewController {
 
 extension SignInViewController: SignInViewModelDelegate {
     func didSignedIn() {
-        let vc = HomeViewController(mode: .today)
+        let vc = PageViewController(mode: .other)
         vc.modalPresentationStyle = .currentContext
         present(vc, animated: true, completion: nil)
     }

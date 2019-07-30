@@ -116,6 +116,9 @@ class AlertModalViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handlerDismiss(_:)))
         self.view.addGestureRecognizer(tapGesture)
+        
+        let feedbackGenerator = UISelectionFeedbackGenerator()
+        feedbackGenerator.selectionChanged()
     }
     
     override func viewDidLayoutSubviews() {
