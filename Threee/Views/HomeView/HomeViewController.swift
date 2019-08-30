@@ -89,22 +89,20 @@ class HomeViewController: UIViewController {
         signOutButton.addGestureRecognizer(tapSignOutGesture)
         
         setupViews()
-        
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        
-//        guard let viewModel = viewModel,
-//            let day = viewModel.day else { return }
-//        
-//        if (mode == .tomorrow && !day.isDayCompleted() ) {
-//            
-//            let vc = AlertModalViewController(mode: .planning)
-//            vc.modalPresentationStyle = .overFullScreen
-//            present(vc, animated: true, completion: nil)
-//            
-//        }
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        guard let viewModel = viewModel,
+            let day = viewModel.day,
+            let items = day.items else { return }
+        
+        if (mode == .tomorrow && items.count < 3 ) {
+            
+            presentAlert(with: .planning)
+            
+        }
+    }
     
     func setupViews() {
         self.view.addSubview(dottedGrid)
@@ -112,7 +110,7 @@ class HomeViewController: UIViewController {
         self.view.addSubview(tableView)
         self.view.addSubview(signOutButton)
         self.view.addSubview(addButton)
-
+        
         dottedGrid.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         dottedGrid.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         dottedGrid.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -133,6 +131,7 @@ class HomeViewController: UIViewController {
         addButton.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         addButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         addButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
     }
     
     
@@ -166,6 +165,11 @@ extension HomeViewController: HomeViewModelDelegate {
         }
         
         items.count < 3 ? (addButton.isHidden = false) : (addButton.isHidden = true)
+        
+        if (day.isDayCompleted()) {
+            presentAlert(with: .confirmation)
+        }
+        
         tableView.reloadData()
     }
     
@@ -198,6 +202,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.item = items[indexPath.row / 2]
             cell.delegate = viewModel
             cell.index = indexPath.row / 2
+            cell.mode = mode == .today ? .today : .tomorrow
+            
+            cell.tomorrowHandler = { () -> Void in
+                self.presentAlert(with: .warning)
+            }
             
             return cell
         } else {
@@ -211,7 +220,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ItemFieldView.height
     }
-    
+        
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
     }

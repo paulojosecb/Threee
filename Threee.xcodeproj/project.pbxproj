@@ -41,11 +41,18 @@
 		2B94B10122C58154007C22DF /* DatabaseGatewayFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */; };
 		2B9ADB6C22E12885009A3223 /* ModalPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9ADB6B22E12885009A3223 /* ModalPushTransition.swift */; };
 		2B9ADB6E22E12A76009A3223 /* ModalPopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9ADB6D22E12A76009A3223 /* ModalPopTransition.swift */; };
+		2BA9283223117A7500FCE72C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA9283123117A7500FCE72C /* UILabel.swift */; };
+		2BA9283523117A9F00FCE72C /* MatrixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA9283423117A9F00FCE72C /* MatrixViewController.swift */; };
+		2BA9283723117D2800FCE72C /* JSMatrixCodeRainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA9283623117D2800FCE72C /* JSMatrixCodeRainView.swift */; };
+		2BA9283923117F3F00FCE72C /* matrixcode.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BA9283823117F3F00FCE72C /* matrixcode.ttf */; };
+		2BA9283C231189AA00FCE72C /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA9283B231189AA00FCE72C /* VideoViewController.swift */; };
+		2BA9283E23118A4D00FCE72C /* CustomCurlTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA9283D23118A4D00FCE72C /* CustomCurlTransition.swift */; };
 		2BABA12E22D916720057C156 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BABA12D22D916720057C156 /* CustomTextFieldView.swift */; };
 		2BB81AD922D3EF8300F9F624 /* UITableViewSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */; };
 		2BB81ADF22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */; };
 		2BC8F6D822D52037005B6D64 /* InputModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */; };
 		2BCDF06D22D5148F0059C6F4 /* InputModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDF06C22D5148F0059C6F4 /* InputModalViewController.swift */; };
+		2BF038E82315A06B00C98324 /* INVASION2000.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 2BF038E72315A06B00C98324 /* INVASION2000.TTF */; };
 		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
 		2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */; };
 		2BF8E20122C56ABD004D3C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF8E20022C56ABD004D3C2E /* Assets.xcassets */; };
@@ -113,11 +120,18 @@
 		2B94B10022C58154007C22DF /* DatabaseGatewayFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseGatewayFirebase.swift; sourceTree = "<group>"; };
 		2B9ADB6B22E12885009A3223 /* ModalPushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPushTransition.swift; sourceTree = "<group>"; };
 		2B9ADB6D22E12A76009A3223 /* ModalPopTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPopTransition.swift; sourceTree = "<group>"; };
+		2BA9283123117A7500FCE72C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		2BA9283423117A9F00FCE72C /* MatrixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixViewController.swift; sourceTree = "<group>"; };
+		2BA9283623117D2800FCE72C /* JSMatrixCodeRainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSMatrixCodeRainView.swift; sourceTree = "<group>"; };
+		2BA9283823117F3F00FCE72C /* matrixcode.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = matrixcode.ttf; sourceTree = "<group>"; };
+		2BA9283B231189AA00FCE72C /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		2BA9283D23118A4D00FCE72C /* CustomCurlTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCurlTransition.swift; sourceTree = "<group>"; };
 		2BABA12D22D916720057C156 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		2BB81AD822D3EF8300F9F624 /* UITableViewSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewSeparatorCell.swift; sourceTree = "<group>"; };
 		2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFieldViewDelegate.swift; sourceTree = "<group>"; };
 		2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalViewDelegate.swift; sourceTree = "<group>"; };
 		2BCDF06C22D5148F0059C6F4 /* InputModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalViewController.swift; sourceTree = "<group>"; };
+		2BF038E72315A06B00C98324 /* INVASION2000.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = INVASION2000.TTF; sourceTree = "<group>"; };
 		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -198,12 +212,15 @@
 		2B1A2DD422C6B5480049093A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2BA9283A2311899B00FCE72C /* VideoViewController */,
+				2BA9283323117A8B00FCE72C /* MatrixViewController */,
 				2B6FC0E822E22258007E9C41 /* PageViewController */,
 				2B42755322E1146D00CC28A5 /* AlertModalView */,
 				2B42754E22E0C18400CC28A5 /* SignInView */,
 				2BCDF06B22D5145D0059C6F4 /* InputModalView */,
 				2B1A2DD522C6B5510049093A /* SignUpView */,
 				2BF8E22822C56BF0004D3C2E /* HomeView */,
+				2BA9283623117D2800FCE72C /* JSMatrixCodeRainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +354,7 @@
 			children = (
 				2B5FD45A22C94DA000D2EDF0 /* UIColor.swift */,
 				2B5FD45D22C9596400D2EDF0 /* UIFont.swift */,
+				2BA9283123117A7500FCE72C /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				2B5FD45F22C959BA00D2EDF0 /* Mali-Bold.ttf */,
+				2BA9283823117F3F00FCE72C /* matrixcode.ttf */,
+				2BF038E72315A06B00C98324 /* INVASION2000.TTF */,
 				2B5FD46322C959C700D2EDF0 /* Mali-Medium.ttf */,
 				2B5FD46122C959C700D2EDF0 /* Mali-Regular.ttf */,
 				2B5FD46222C959C700D2EDF0 /* Mali-SemiBold.ttf */,
@@ -382,8 +402,25 @@
 			children = (
 				2B9ADB6B22E12885009A3223 /* ModalPushTransition.swift */,
 				2B9ADB6D22E12A76009A3223 /* ModalPopTransition.swift */,
+				2BA9283D23118A4D00FCE72C /* CustomCurlTransition.swift */,
 			);
 			path = CustomTransition;
+			sourceTree = "<group>";
+		};
+		2BA9283323117A8B00FCE72C /* MatrixViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BA9283423117A9F00FCE72C /* MatrixViewController.swift */,
+			);
+			path = MatrixViewController;
+			sourceTree = "<group>";
+		};
+		2BA9283A2311899B00FCE72C /* VideoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BA9283B231189AA00FCE72C /* VideoViewController.swift */,
+			);
+			path = VideoViewController;
 			sourceTree = "<group>";
 		};
 		2BABA12C22D9164A0057C156 /* CustomTextFieldView */ = {
@@ -619,9 +656,11 @@
 			files = (
 				2BF8E20422C56ABD004D3C2E /* LaunchScreen.storyboard in Resources */,
 				2BF8E20122C56ABD004D3C2E /* Assets.xcassets in Resources */,
+				2BA9283923117F3F00FCE72C /* matrixcode.ttf in Resources */,
 				2B5FD46022C959BA00D2EDF0 /* Mali-Bold.ttf in Resources */,
 				2B5FD46622C959C700D2EDF0 /* Mali-Medium.ttf in Resources */,
 				2B5FD46422C959C700D2EDF0 /* Mali-Regular.ttf in Resources */,
+				2BF038E82315A06B00C98324 /* INVASION2000.TTF in Resources */,
 				2B5FD46522C959C700D2EDF0 /* Mali-SemiBold.ttf in Resources */,
 				2BF8E23322C57D22004D3C2E /* GoogleService-Info.plist in Resources */,
 			);
@@ -739,10 +778,13 @@
 				2B9ADB6E22E12A76009A3223 /* ModalPopTransition.swift in Sources */,
 				2B5FD46922CA275300D2EDF0 /* ItemFieldView.swift in Sources */,
 				2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */,
+				2BA9283523117A9F00FCE72C /* MatrixViewController.swift in Sources */,
 				2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */,
+				2BA9283723117D2800FCE72C /* JSMatrixCodeRainView.swift in Sources */,
 				2B50F70922C6DDFF0048262C /* AuthUseCase.swift in Sources */,
 				2B50F70222C6D8BB0048262C /* DatabaseUseCase.swift in Sources */,
 				2B94B10122C58154007C22DF /* DatabaseGatewayFirebase.swift in Sources */,
+				2BA9283E23118A4D00FCE72C /* CustomCurlTransition.swift in Sources */,
 				2B42755222E0C1B900CC28A5 /* SignInViewModel.swift in Sources */,
 				2B1A2DFD22C6C3DB0049093A /* AuthGateway.swift in Sources */,
 				2B1A2DDB22C6B6160049093A /* AuthPresenter.swift in Sources */,
@@ -754,12 +796,14 @@
 				2B5FD45B22C94DA000D2EDF0 /* UIColor.swift in Sources */,
 				2B1A2DD722C6B56A0049093A /* SignUpViewController.swift in Sources */,
 				2BF8E22A22C56C1E004D3C2E /* HomeViewModel.swift in Sources */,
+				2BA9283C231189AA00FCE72C /* VideoViewController.swift in Sources */,
 				2B5FD45822C94D5200D2EDF0 /* DottedGridView.swift in Sources */,
 				2B50F70622C6DB570048262C /* HomeViewModelDelegate.swift in Sources */,
 				2BF8E22F22C56D13004D3C2E /* Day.swift in Sources */,
 				2B1A2DD322C6B4110049093A /* AuthError.swift in Sources */,
 				2B42755522E1148C00CC28A5 /* AlertModalViewController.swift in Sources */,
 				2B6FC0EA22E22284007E9C41 /* PageViewController.swift in Sources */,
+				2BA9283223117A7500FCE72C /* UILabel.swift in Sources */,
 				2BF8E23122C574C2004D3C2E /* Item.swift in Sources */,
 				2B1A2DD922C6B5900049093A /* SignUpViewModel.swift in Sources */,
 				2B5FD45322C94B4D00D2EDF0 /* PageTitleLabelView.swift in Sources */,

@@ -8,14 +8,32 @@
 
 import UIKit
 
+enum ItemMode {
+    case today
+    case tomorrow
+}
+
 class ItemFieldView: UITableViewCell {
     
     var item: Item? {
         didSet {
             guard let item = item else { return }
             itemLabel.text = item.name
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.checkLineConstraint?.constant = item.checked ? 300 : 0
+                self.layoutIfNeeded()
+            }) { (bool) in
+                self.feedbackGenerator?.selectionChanged()
+            }
+            
         }
     }
+    
+    var mode: ItemMode?
+    var tomorrowHandler: (() -> Void)?
+    
+    var checkLineConstraint: NSLayoutConstraint?
     
     var delegate: ItemFieldViewDelegate?
     var index: Int?
@@ -102,84 +120,26 @@ class ItemFieldView: UITableViewCell {
         checkedLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
         checkedLine.leftAnchor.constraint(equalTo: itemLabel.leftAnchor).isActive = true
         
-        addSwipeRightGesture()
-        addSwipeLeftGesture()
+        checkLineConstraint = checkedLine.widthAnchor.constraint(equalToConstant: 0)
+        checkLineConstraint?.isActive = true
         
-        guard let item = item else { return }
+        addTapGesture()
+    }
+    
+    func addTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler(_:)))
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func tapHandler(_ sender: UISwipeGestureRecognizer? = nil) {
+        guard let index = index, let delegate = self.delegate, let mode = mode,
+            let tomorrowHandler = tomorrowHandler else { return }
         
-        if (item.checked) {
-            checkedLine.widthAnchor.constraint(equalToConstant: 400).isActive = true
+        if (mode == .today) {
+            delegate.toggleItem(on: index)
         } else {
-            checkedLine.widthAnchor.constraint(equalToConstant: 0).isActive = true
+            tomorrowHandler()
         }
-        
-        
-        
-    }
-    
-    func addSwipeRightGesture() {
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeHandler(_:)))
-        swipeGesture.direction = .right
-        self.addGestureRecognizer(swipeGesture)
-    }
-    
-    func addSwipeLeftGesture() {
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeHandler(_:)))
-        swipeGesture.direction = .left
-        self.addGestureRecognizer(swipeGesture)
-    }
-    
-    func animateCheckLine() {
-        
-    }
-    
-    
-    @objc func swipeHandler(_ sender: UISwipeGestureRecognizer? = nil) {
-        
-        guard let sender = sender, let item = item else { return }
-        
-        feedbackGenerator = UISelectionFeedbackGenerator()
-        
-        switch sender.direction {
-        case .right:
-            if (!item.checked) {
-                checkWidthAnchor = checkedLine.widthAnchor.constraint(equalToConstant: 0)
-                checkWidthAnchor?.isActive = true
-                
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.checkWidthAnchor?.constant = self.frame.width
-                    self.layoutIfNeeded()
-                }) { (bool) in
-                    self.feedbackGenerator?.selectionChanged()
-                    
-                    guard let delegate = self.delegate, let index = self.index else { return }
-                    delegate.toggleItem(on: index)
-                }
-                
-               
-            }
-        case .left:
-            if (item.checked) {
-                checkWidthAnchor = checkedLine.widthAnchor.constraint(equalToConstant: self.frame.width)
-                checkWidthAnchor?.isActive = true
-                
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.checkWidthAnchor?.constant = 0
-                    self.layoutIfNeeded()
-                }) { (bool) in
-                    self.feedbackGenerator?.selectionChanged()
-            
-                    guard let delegate = self.delegate, let index = self.index else { return }
-                    delegate.toggleItem(on: index)
-                }
-                
-               
-            }
-        default:
-            print("Swipe not treated")
-        }
-        
-
         
     }
     

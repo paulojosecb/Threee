@@ -4,6 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>INVASION2000.TTF</string>
+		<string>matrixcode.ttf</string>
 		<string>Mali-Bold.ttf</string>
 		<string>Mali-Medium.ttf</string>
 		<string>Mali-Regular.ttf</string>
