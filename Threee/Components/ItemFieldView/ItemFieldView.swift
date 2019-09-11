@@ -36,7 +36,12 @@ class ItemFieldView: UITableViewCell {
     var checkLineConstraint: NSLayoutConstraint?
     
     var delegate: ItemFieldViewDelegate?
-    var index: Int?
+    var index: Int? {
+        didSet {
+            guard let index = index else { return }
+            label.text = "Thing \(index + 1)"
+        }
+    }
     
     var feedbackGenerator: UISelectionFeedbackGenerator? = nil
     
@@ -50,7 +55,7 @@ class ItemFieldView: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.label18
         label.textColor = UIColor.black
-        label.text = "Thing 1:"
+        label.text = "Thing: 0"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

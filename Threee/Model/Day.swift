@@ -22,9 +22,11 @@ class Day: NSObject, Codable {
     func isDayCompleted() -> Bool {
         guard let items = items else { return false }
 
-        return items.reduce(true, { (accumulator, item) -> Bool in
+        let result = items.reduce(true, { (accumulator, item) -> Bool in
             return accumulator && item.checked
         })
+        
+        return result && items.count == 3
     }
     
     func add(item: Item) {

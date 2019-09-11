@@ -116,7 +116,7 @@ class HomeViewController: UIViewController {
         dottedGrid.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         dottedGrid.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
-        pageTitleLabelView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: -3).isActive = true
+        pageTitleLabelView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: -3).isActive = true
         pageTitleLabelView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 43.0).isActive = true
         
         signOutButton.centerYAnchor.constraint(equalTo: pageTitleLabelView.centerYAnchor).isActive = true

@@ -43,12 +43,12 @@ class PageTitleLabelView: UIView {
         
         self.heightAnchor.constraint(equalToConstant: PageTitleLabelView.height).isActive = true
         
-        titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
         print(titleLabel.intrinsicContentSize.width)
         
-        self.widthAnchor.constraint(equalToConstant: titleLabel.intrinsicContentSize.width + 32).isActive = true
+        self.widthAnchor.constraint(equalToConstant: titleLabel.intrinsicContentSize.width + 65).isActive = true
     }
 
     
