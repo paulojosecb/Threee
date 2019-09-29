@@ -52,6 +52,7 @@
 		2BB81ADF22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */; };
 		2BC8F6D822D52037005B6D64 /* InputModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */; };
 		2BCDF06D22D5148F0059C6F4 /* InputModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDF06C22D5148F0059C6F4 /* InputModalViewController.swift */; };
+		2BDF88FB234125E7003FA506 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF88FA234125E7003FA506 /* ModalViewController.swift */; };
 		2BF038E82315A06B00C98324 /* INVASION2000.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 2BF038E72315A06B00C98324 /* INVASION2000.TTF */; };
 		2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */; };
 		2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8E1FB22C56ABB004D3C2E /* HomeViewController.swift */; };
@@ -131,6 +132,7 @@
 		2BB81ADE22D4CCDD00F9F624 /* ItemFieldViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFieldViewDelegate.swift; sourceTree = "<group>"; };
 		2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalViewDelegate.swift; sourceTree = "<group>"; };
 		2BCDF06C22D5148F0059C6F4 /* InputModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalViewController.swift; sourceTree = "<group>"; };
+		2BDF88FA234125E7003FA506 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		2BF038E72315A06B00C98324 /* INVASION2000.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = INVASION2000.TTF; sourceTree = "<group>"; };
 		2BF8E1F622C56ABB004D3C2E /* Threee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF8E1F922C56ABB004D3C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				2B9ADB6B22E12885009A3223 /* ModalPushTransition.swift */,
 				2B9ADB6D22E12A76009A3223 /* ModalPopTransition.swift */,
 				2BA9283D23118A4D00FCE72C /* CustomCurlTransition.swift */,
+				2BDF88FA234125E7003FA506 /* ModalViewController.swift */,
 			);
 			path = CustomTransition;
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 				2B8553FF22C59C91005F41F5 /* AuthGatewayFirebase.swift in Sources */,
 				2BA9283523117A9F00FCE72C /* MatrixViewController.swift in Sources */,
 				2BF8E1FC22C56ABB004D3C2E /* HomeViewController.swift in Sources */,
+				2BDF88FB234125E7003FA506 /* ModalViewController.swift in Sources */,
 				2BA9283723117D2800FCE72C /* JSMatrixCodeRainView.swift in Sources */,
 				2B50F70922C6DDFF0048262C /* AuthUseCase.swift in Sources */,
 				2B50F70222C6D8BB0048262C /* DatabaseUseCase.swift in Sources */,

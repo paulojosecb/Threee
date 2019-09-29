@@ -15,7 +15,7 @@ class ModalPopTransition: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let fromViewController = transitionContext.viewController(forKey: .from) as? AlertModalViewController,
+        guard let fromViewController = transitionContext.viewController(forKey: .from) as? ModalViewController,
             let fromView = fromViewController.view
             else { return }
         

@@ -8,20 +8,13 @@
 
 import UIKit
 
-class InputModalViewController: UIViewController {
+class InputModalViewController: ModalViewController {
     
     var delegate: InputModalViewDelegate?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-    
-    lazy var backdropView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     lazy var cardView: UIView = {
         let view = UIView()
@@ -46,6 +39,8 @@ class InputModalViewController: UIViewController {
         let textField = UITextField()
         textField.backgroundColor = UIColor.init(white: 0, alpha: 0)
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.delegate = self
+        textField.placeholder = "Type here"
         return textField
     }()
     
@@ -61,16 +56,40 @@ class InputModalViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Add", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
-        button.backgroundColor = UIColor.yellow
+        button.backgroundColor = UIColor.gray
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.borderWidth = 2.0
         button.titleLabel?.font = UIFont.title
+        button.isEnabled = false
         return button
     }()
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        self.transitioningDelegate = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillAppear(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillDismiss(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
     func setupViews() {
@@ -81,9 +100,13 @@ class InputModalViewController: UIViewController {
         view.addSubview(inputLineView)
         view.addSubview(button)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handlerButtonTap(_:)))
-        button.addGestureRecognizer(tapGesture)
-//        backdropView.addGestureRecognizer(tapGesture)
+        let buttonTap = UITapGestureRecognizer(target: self, action: #selector(handlerButtonTap(_:)))
+        button.addGestureRecognizer(buttonTap)
+        
+        let backdropViewTap = UITapGestureRecognizer(target: self, action: #selector(handlerBackdropTap(_:)))
+        backdropView.addGestureRecognizer(backdropViewTap)
+
+        input.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         backdropView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         backdropView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -92,7 +115,8 @@ class InputModalViewController: UIViewController {
         
         cardView.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor).isActive = true
         cardView.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor).isActive = true
-        cardView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        cardViewCenterYAnchor =  cardView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        cardViewCenterYAnchor?.isActive = true
         cardView.heightAnchor.constraint(equalToConstant: 264).isActive = true
         
         label.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 27).isActive = true
@@ -103,6 +127,7 @@ class InputModalViewController: UIViewController {
         input.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -45).isActive = true
         input.leftAnchor.constraint(equalTo: label.leftAnchor).isActive = true
         input.rightAnchor.constraint(equalTo: label.rightAnchor).isActive = true
+        input.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         inputLineView.topAnchor.constraint(equalTo: input.bottomAnchor).isActive = true
         inputLineView.leftAnchor.constraint(equalTo: input.leftAnchor).isActive = true
@@ -119,5 +144,64 @@ class InputModalViewController: UIViewController {
         guard let delegate = delegate, let text = input.text else { return }
         delegate.createItemWith(name: text)
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func handlerBackdropTap(_ sender: UITapGestureRecognizer? = nil) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func keyboardWillAppear(_ notification: Notification) {
+//        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//            let keyboardRectangle = keyboardFrame.cgRectValue
+//            let keyboardHeight = keyboardRectangle.height
+                    
+            UIView.animate(withDuration: 0.2) {
+                self.cardViewCenterYAnchor?.constant -= 55
+                self.view.layoutIfNeeded()
+            }
+    }
+    
+    @objc func keyboardWillDismiss(_ notification: Notification) {
+//        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//            let keyboardRectangle = keyboardFrame.cgRectValue
+//            let keyboardHeight = keyboardRectangle.height
+                        
+            UIView.animate(withDuration: 0.2) {
+                self.cardViewCenterYAnchor?.constant = 0
+                self.view.layoutIfNeeded()
+            }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if (textField.text != "") {
+            button.backgroundColor = .yellow
+            button.isEnabled = true
+        } else {
+            button.backgroundColor = .gray
+            button.isEnabled = false
+        }
+    }
+}
+
+extension InputModalViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (input.text != "") {
+            textField.resignFirstResponder()
+            handlerButtonTap(nil)
+            return true
+        } else {
+            dismiss(animated: true, completion: nil)
+            return true
+        }
+    }
+}
+
+extension InputModalViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return ModalPushTransition()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return ModalPopTransition()
     }
 }

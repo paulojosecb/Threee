@@ -15,14 +15,12 @@ class ModalPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let toViewController = transitionContext.viewController(forKey: .to) as? AlertModalViewController,
-            let toView = toViewController.view
-        else { return }
+        guard let toViewController = transitionContext.viewController(forKey: .to) as? ModalViewController,
+        let toView = toViewController.view else { return }
         
         let containerView = transitionContext.containerView
         
         containerView.addSubview(toView)
-        
         
         toViewController.backdropView.alpha = 0
         

@@ -228,10 +228,8 @@ class SignUpViewController: UIViewController {
     @objc func keyboardWillAppear(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            
-            guard let window = UIApplication.shared.keyWindow else { return }
-        
+//            let keyboardHeight = keyboardRectangle.height
+                    
             UIView.animate(withDuration: 0.2) {
                 self.welcomeTopAnchor?.constant = -35
                 self.view.layoutIfNeeded()
@@ -242,10 +240,8 @@ class SignUpViewController: UIViewController {
     @objc func keyboardWillDismiss(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            
-            guard let window = UIApplication.shared.keyWindow else { return }
-            
+//            let keyboardHeight = keyboardRectangle.height
+                        
             UIView.animate(withDuration: 0.2) {
                 self.welcomeTopAnchor?.constant = 43
                 self.view.layoutIfNeeded()

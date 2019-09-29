@@ -15,27 +15,14 @@ enum AlertMode: String {
     case confirmation = "confirmation"
 }
 
-class AlertModalViewController: UIViewController {
+class AlertModalViewController: ModalViewController {
     
     let mode: AlertMode
     let customText: String?
-    
-    var cardViewCenterYAnchor: NSLayoutConstraint?
-    
+        
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-    
-    lazy var backdropView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-//    lazy var dottedGrid: DottedGridView = {
-//        return DottedGridView(frame: .zero)
-//    }()
     
     lazy var cardView: UIView = {
         let view = UIView()
