@@ -10,6 +10,8 @@ import UIKit
 
 class CustomTextFieldView: UIView {
     
+    static var height: CGFloat = 70
+    
     var descriptor: String {
         didSet {
             label.text = descriptor
@@ -35,6 +37,7 @@ class CustomTextFieldView: UIView {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.init(white: 0, alpha: 0)
+        textField.delegate = self
         return textField
     }()
     
@@ -79,7 +82,7 @@ class CustomTextFieldView: UIView {
         textField.leftAnchor.constraint(equalTo: underlineView.leftAnchor).isActive = true
         textField.rightAnchor.constraint(equalTo: self.layoutMarginsGuide.rightAnchor).isActive = true
         textField.topAnchor.constraint(equalTo: underlineView.bottomAnchor, constant: 20).isActive = true
-        textField.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         line.leftAnchor.constraint(equalTo: textField.leftAnchor).isActive = true
         line.rightAnchor.constraint(equalTo: textField.rightAnchor).isActive = true
@@ -87,4 +90,11 @@ class CustomTextFieldView: UIView {
         line.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
     
+}
+
+extension CustomTextFieldView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

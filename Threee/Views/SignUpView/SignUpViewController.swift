@@ -12,6 +12,8 @@ class SignUpViewController: UIViewController {
     
     var viewModel: SignUpViewModel?
     
+    var welcomeTopAnchor: NSLayoutConstraint?
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
@@ -151,7 +153,8 @@ class SignUpViewController: UIViewController {
         dottedGrid.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         dottedGrid.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         
-        welcomeImage.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 43).isActive = true
+        welcomeTopAnchor = welcomeImage.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 43)
+        welcomeTopAnchor?.isActive = true
         welcomeImage.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         welcomeImage.heightAnchor.constraint(equalToConstant: 66).isActive = true
         welcomeImage.widthAnchor.constraint(equalToConstant: 224).isActive = true
@@ -159,17 +162,17 @@ class SignUpViewController: UIViewController {
         emailTextField.topAnchor.constraint(equalTo: welcomeImage.bottomAnchor, constant: 30).isActive = true
         emailTextField.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
         emailTextField.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
-        emailTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        emailTextField.heightAnchor.constraint(equalToConstant: CustomTextFieldView.height).isActive = true
         
         passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 60).isActive = true
         passwordTextField.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
         passwordTextField.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
-        passwordTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        passwordTextField.heightAnchor.constraint(equalToConstant: CustomTextFieldView.height).isActive = true
         
         confirmPasswordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 60).isActive = true
         confirmPasswordTextField.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
         confirmPasswordTextField.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
-        confirmPasswordTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        confirmPasswordTextField.heightAnchor.constraint(equalToConstant: CustomTextFieldView.height).isActive = true
         
         signUpButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         signUpButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
@@ -230,7 +233,8 @@ class SignUpViewController: UIViewController {
             guard let window = UIApplication.shared.keyWindow else { return }
         
             UIView.animate(withDuration: 0.2) {
-                self.view.bottomAnchor.constraint(equalTo: window.bottomAnchor, constant: -keyboardHeight).isActive = true
+                self.welcomeTopAnchor?.constant = -35
+                self.view.layoutIfNeeded()
             }
         }
     }
@@ -243,7 +247,8 @@ class SignUpViewController: UIViewController {
             guard let window = UIApplication.shared.keyWindow else { return }
             
             UIView.animate(withDuration: 0.2) {
-                self.view.bottomAnchor.constraint(equalTo: window.bottomAnchor).isActive = true
+                self.welcomeTopAnchor?.constant = 43
+                self.view.layoutIfNeeded()
             }
         }
     }
