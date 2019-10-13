@@ -30,8 +30,9 @@ class ItemFieldView: UITableViewCell {
         }
     }
     
-    var mode: ItemMode?
+    var mode: HomeViewMode?
     var tomorrowHandler: (() -> Void)?
+    var editHandler: ((String) -> Void)?
     
     var checkLineConstraint: NSLayoutConstraint?
     
@@ -138,10 +139,14 @@ class ItemFieldView: UITableViewCell {
     
     @objc func tapHandler(_ sender: UISwipeGestureRecognizer? = nil) {
         guard let index = index, let delegate = self.delegate, let mode = mode,
-            let tomorrowHandler = tomorrowHandler else { return }
+            let tomorrowHandler = tomorrowHandler,
+            let editHandler = editHandler else { return }
         
         if (mode == .today) {
             delegate.toggleItem(on: index)
+        } else if (mode == .edit) {
+            guard let name = item?.name else { return }
+            editHandler(name)
         } else {
             tomorrowHandler()
         }

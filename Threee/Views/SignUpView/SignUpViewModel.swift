@@ -10,7 +10,7 @@ import Foundation
 
 protocol SignUpViewModelDelegate {
     func didSignedUp()
-    func didReceived(error: Error)
+    func didReceived(error: AuthError)
 }
 
 class SignUpViewModel {

@@ -258,7 +258,7 @@ extension SignUpViewController: SignUpViewModelDelegate {
         present(vc, animated: true, completion: nil)
     }
     
-    func didReceived(error: Error) {
+    func didReceived(error: AuthError) {
         setFailedState()
         let vc = AlertModalViewController(mode: .warning, customText: error.localizedDescription)
         vc.modalPresentationStyle = .overCurrentContext

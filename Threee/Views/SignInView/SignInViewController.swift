@@ -110,19 +110,19 @@ class SignInViewController: UIViewController {
         signInHereLabel.isUserInteractionEnabled = true
         signInHereLabel.addGestureRecognizer(signUpTapGesture)
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillAppear(_:)),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil
-        )
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillDismiss(_:)),
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil
-        )
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(keyboardWillAppear(_:)),
+//            name: UIResponder.keyboardWillShowNotification,
+//            object: nil
+//        )
+//        
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(keyboardWillDismiss(_:)),
+//            name: UIResponder.keyboardWillHideNotification,
+//            object: nil
+//        )
 
         // Do any additional setup after loading the view.
     }
@@ -155,12 +155,12 @@ class SignInViewController: UIViewController {
         emailTextField.topAnchor.constraint(equalTo: welcomeImage.bottomAnchor, constant: 30).isActive = true
         emailTextField.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
         emailTextField.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
-        emailTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        emailTextField.heightAnchor.constraint(equalToConstant: CustomTextFieldView.height).isActive = true
         
         passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 60).isActive = true
         passwordTextField.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
         passwordTextField.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
-        passwordTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        passwordTextField.heightAnchor.constraint(equalToConstant: CustomTextFieldView.height).isActive = true
     
         signInButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         signInButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
@@ -210,31 +210,31 @@ class SignInViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
-    @objc func keyboardWillAppear(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            
-            guard let window = UIApplication.shared.keyWindow else { return }
-            
-            UIView.animate(withDuration: 0.2) {
-                self.view.bottomAnchor.constraint(equalTo: window.bottomAnchor, constant: -keyboardHeight).isActive = true
-            }
-        }
-    }
-    
-    @objc func keyboardWillDismiss(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            
-            guard let window = UIApplication.shared.keyWindow else { return }
-            
-            UIView.animate(withDuration: 0.2) {
-                self.view.bottomAnchor.constraint(equalTo: window.bottomAnchor).isActive = true
-            }
-        }
-    }
+//    @objc func keyboardWillAppear(_ notification: Notification) {
+//        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//            let keyboardRectangle = keyboardFrame.cgRectValue
+//            let keyboardHeight = keyboardRectangle.height
+//
+//            guard let window = UIApplication.shared.keyWindow else { return }
+//
+//            UIView.animate(withDuration: 0.2) {
+//                self.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -keyboardHeight).isActive = true
+//            }
+//        }
+//    }
+//
+//    @objc func keyboardWillDismiss(_ notification: Notification) {
+//        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//            let keyboardRectangle = keyboardFrame.cgRectValue
+//            let keyboardHeight = keyboardRectangle.height
+//
+//            guard let window = UIApplication.shared.keyWindow else { return }
+//
+//            UIView.animate(withDuration: 0.2) {
+//                self.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+//            }
+//        }
+//    }
 
 }
 

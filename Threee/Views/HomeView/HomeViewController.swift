@@ -11,6 +11,7 @@ import UIKit
 enum HomeViewMode {
     case today
     case tomorrow
+    case edit
 }
 
 class HomeViewController: UIViewController {
@@ -20,7 +21,13 @@ class HomeViewController: UIViewController {
     }
     
     var viewModel: HomeViewModel?
-    let mode: HomeViewMode
+    var mode: HomeViewMode {
+        didSet {
+            editButton.setTitle(self.mode == .edit ? "Save" : "Edit", for: .normal)
+            tableView.reloadData()
+        }
+    }
+    let initialMode: HomeViewMode
     
     lazy var dottedGrid: DottedGridView = {
         return DottedGridView(frame: self.view.frame)
@@ -44,6 +51,16 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
+    lazy var editButton: UIButton = {
+        let button = UIButton()
+        button.setTitle(self.mode == .edit ? "Save" : "Edit", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleModeGesture(_:))))
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = .action
+        return button
+    }()
+    
     lazy var addButton: UIButton = {
         let button = UIButton()
         button.setTitle("Add", for: .normal)
@@ -60,13 +77,15 @@ class HomeViewController: UIViewController {
     lazy var signOutButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign Out", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.salmonDark, for: .normal)
+        button.titleLabel?.font = .action
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     init(mode: HomeViewMode) {
         self.mode = mode
+        self.initialMode = mode
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -107,6 +126,7 @@ class HomeViewController: UIViewController {
     func setupViews() {
         self.view.addSubview(dottedGrid)
         self.view.addSubview(pageTitleLabelView)
+        self.view.addSubview(editButton)
         self.view.addSubview(tableView)
         self.view.addSubview(signOutButton)
         self.view.addSubview(addButton)
@@ -116,13 +136,16 @@ class HomeViewController: UIViewController {
         dottedGrid.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         dottedGrid.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
+        signOutButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
+        signOutButton.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
+            
         pageTitleLabelView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: -3).isActive = true
-        pageTitleLabelView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 43.0).isActive = true
+        pageTitleLabelView.topAnchor.constraint(equalTo: signOutButton.bottomAnchor, constant: 24.0).isActive = true
         
-        signOutButton.centerYAnchor.constraint(equalTo: pageTitleLabelView.centerYAnchor).isActive = true
-        signOutButton.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
+        editButton.centerYAnchor.constraint(equalTo: pageTitleLabelView.centerYAnchor).isActive = true
+        editButton.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
         
-        tableView.topAnchor.constraint(equalTo: pageTitleLabelView.bottomAnchor, constant: 50).isActive = true
+        tableView.topAnchor.constraint(equalTo: editButton.bottomAnchor, constant: 32).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
@@ -140,7 +163,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func handleAddGesture(_ sender: UITapGestureRecognizer? = nil) {
-        let vc = InputModalViewController()
+        let vc = InputModalViewController(mode: .creating)
         vc.modalPresentationStyle = .overCurrentContext
         vc.delegate = viewModel
         present(vc, animated: true, completion: nil)
@@ -149,6 +172,10 @@ class HomeViewController: UIViewController {
     @objc func handleSignOutGesture(_ sender: UITapGestureRecognizer? = nil) {
         guard let viewModel = viewModel else { return }
         viewModel.signOut()
+    }
+    
+    @objc func handleModeGesture(_ sender: UITapGestureRecognizer? = nil) {
+        self.mode = self.mode != .edit ? .edit : self.initialMode
     }
     
     func presentAlert(with mode: AlertMode) {
@@ -202,10 +229,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.item = items[indexPath.row / 2]
             cell.delegate = viewModel
             cell.index = indexPath.row / 2
-            cell.mode = mode == .today ? .today : .tomorrow
+            cell.mode = self.mode
             
             cell.tomorrowHandler = { () -> Void in
-                self.presentAlert(with: .warning)
+                self.presentAlert(with: .isNotTypeToCheck)
+            }
+            
+            cell.editHandler = { (currentValue: String) -> Void in
+                print(indexPath.row)
+                let vc = InputModalViewController(mode: .editing, currentValue: currentValue, position: indexPath.row / 2)
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.delegate = self.viewModel
+                self.present(vc, animated: true, completion: nil)
             }
             
             return cell

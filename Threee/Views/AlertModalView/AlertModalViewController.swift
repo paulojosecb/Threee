@@ -13,6 +13,7 @@ enum AlertMode: String {
     case welcome = "welcome"
     case planning = "planning"
     case confirmation = "confirmation"
+    case isNotTypeToCheck = "isNotTypeToCheck"
 }
 
 class AlertModalViewController: ModalViewController {
@@ -71,6 +72,8 @@ class AlertModalViewController: ModalViewController {
             label.text = "Welcome"
         case .planning:
             label.text = "Planning Time!"
+        case .isNotTypeToCheck:
+            label.text = "Calm Down"
         }
         
         return label
@@ -82,6 +85,7 @@ class AlertModalViewController: ModalViewController {
         label.textColor = UIColor.black
         label.font = .regular18
         label.numberOfLines = 5
+        label.textAlignment = .center
         label.text = populateText(mode: mode)
         return label
     }()
@@ -177,7 +181,10 @@ class AlertModalViewController: ModalViewController {
             return "It’s time to plan what you will do tomorrow. Remember to select only the three most important things"
         case .warning:
             return "Something went wrong. But don’t worry, we are already fixing it."
+        case .isNotTypeToCheck:
+            return "Come back tomorrow to check in the things you've done"
         }
+        
     }
     
 }

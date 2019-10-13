@@ -6,6 +6,10 @@ extension UIFont {
         return UIFont(name: "Mali-SemiBold", size: 24.0)!
     }
     
+    class var action: UIFont {
+        return UIFont(name: "Mali-Bold", size: 18)!
+    }
+    
     class var regular20: UIFont {
         return UIFont(name: "Mali-Regular", size: 20.0)!
     }

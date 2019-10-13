@@ -8,7 +8,15 @@
 
 import UIKit
 
+enum InputMode {
+    case creating
+    case editing
+}
+
 class InputModalViewController: ModalViewController {
+    
+    let mode: InputMode
+    let position: Int?
     
     var delegate: InputModalViewDelegate?
     
@@ -60,12 +68,20 @@ class InputModalViewController: ModalViewController {
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.borderWidth = 2.0
         button.titleLabel?.font = UIFont.title
-        button.isEnabled = false
+        button.isEnabled = self.mode == .creating ? false : true
         return button
     }()
     
-    init() {
+    init(mode: InputMode, currentValue: String? = nil, position: Int? = nil) {
+        self.mode = mode
+        self.position = position
+    
         super.init(nibName: nil, bundle: nil)
+        
+        if (currentValue != nil) {
+            self.input.text = currentValue
+        }
+        
         self.transitioningDelegate = self
     }
     
@@ -90,6 +106,7 @@ class InputModalViewController: ModalViewController {
             name: UIResponder.keyboardWillHideNotification,
             object: nil
         )
+    
     }
     
     func setupViews() {
@@ -99,6 +116,10 @@ class InputModalViewController: ModalViewController {
         view.addSubview(input)
         view.addSubview(inputLineView)
         view.addSubview(button)
+        
+        if (input.text != "") {
+            button.isEnabled = true
+        }
         
         let buttonTap = UITapGestureRecognizer(target: self, action: #selector(handlerButtonTap(_:)))
         button.addGestureRecognizer(buttonTap)
@@ -142,7 +163,12 @@ class InputModalViewController: ModalViewController {
     
     @objc func handlerButtonTap(_ sender: UITapGestureRecognizer? = nil) {
         guard let delegate = delegate, let text = input.text else { return }
-        delegate.createItemWith(name: text)
+        if (mode == .creating) {
+            delegate.createItemWith(name: text)
+        } else if (mode == .editing) {
+            guard let position = position else { return }
+            delegate.editItemWith(name: text, on: position)
+        }
         dismiss(animated: true, completion: nil)
     }
     

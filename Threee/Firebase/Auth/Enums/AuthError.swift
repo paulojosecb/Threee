@@ -23,6 +23,33 @@ enum AuthError: Error {
         17026: .invalidPassword
     ]
     
+    var localizedDescription: String {
+        switch self {
+        case .invalidName:
+            return "Invalid username. Try another one"
+        case .invalidPassword:
+            return "Invalid password. Try another one"
+        case .userDisabled:
+            return "User disabled"
+        case .emailAlreadyInUse:
+            return "Email is already in use. Choose another one"
+        case .invalidEmail:
+            return "Invalid email. Try another one"
+        case .wrongPassword:
+            return "Wrong Password. Try another one"
+        case .userNotFound:
+            return "User not found"
+        case .accountExistsWithDifferentCredential:
+            return "Something wrong has happend. We're fixing it"
+        case .networkError:
+            return "Something wrong has happend. We're fixing it"
+        case .credentialAlreadyInUse:
+            return "Something wrong has happend. We're fixing it"
+        case .unknown:
+            return "Something wrong has happend. We're fixing it"
+        }
+    }
+    
     init(rawValue: Int) {
         self = AuthError.errorByCode[rawValue] ?? .unknown
     }
