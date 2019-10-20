@@ -240,15 +240,15 @@ class SignInViewController: UIViewController {
 
 extension SignInViewController: SignInViewModelDelegate {
     func didSignedIn() {
-        let vc = PageViewController(mode: .other)
-        vc.modalPresentationStyle = .currentContext
-        present(vc, animated: true, completion: nil)
+//        let vc = PageViewController(mode: .other)
+//        vc.modalPresentationStyle = .currentContext
+//        present(vc, animated: true, completion: nil)
     }
     
-    func didReceivedError(error: AuthError) {
-        setFailedState()
-        let vc = AlertModalViewController(mode: .warning, customText: error.localizedDescription)
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true, completion: nil)
+    func didReceivedError(error: Error) {
+//        setFailedState()
+//        let vc = AlertModalViewController(mode: .warning, customText: error.localizedDescription)
+//        vc.modalPresentationStyle = .overCurrentContext
+//        present(vc, animated: true, completion: nil)
     }
 }

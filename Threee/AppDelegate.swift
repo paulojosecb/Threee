@@ -20,16 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        if let _ = FirebaseCoordinator.shared.auth.currentUser {
+//        if let _ = FirebaseCoordinator.shared.auth.currentUser {
         window?.rootViewController = PageViewController(mode: .firstTime)
-        } else {
-            window?.rootViewController = SignInViewController()
-        }
+//        } else {
+//            window?.rootViewController = SignInViewController()
+//        }
         
         window?.makeKeyAndVisible()
         
