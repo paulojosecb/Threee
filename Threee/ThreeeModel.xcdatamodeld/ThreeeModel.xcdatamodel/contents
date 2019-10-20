@@ -3,7 +3,7 @@
     <entity name="DayCore" representedClassName="DayCore" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ItemCore"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ItemCore"/>
     </entity>
     <entity name="ItemCore" representedClassName="ItemCore" syncable="YES">
         <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>

@@ -11,5 +11,5 @@ import Foundation
 protocol DayGateway {
     func create(day: Day) throws -> Day
     func getDays(completion: @escaping (([Day]) -> Void)) throws
-    func update(day: Day, completion: ((Day) -> Void)) throws 
+    func update(day: Day, completion: ((Day) -> Void)) throws
 }

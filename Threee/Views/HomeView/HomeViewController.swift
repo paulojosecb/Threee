@@ -74,15 +74,6 @@ class HomeViewController: UIViewController {
         return button
     }()
     
-    lazy var signOutButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Sign Out", for: .normal)
-        button.setTitleColor(.salmonDark, for: .normal)
-        button.titleLabel?.font = .action
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     init(mode: HomeViewMode) {
         self.mode = mode
         self.initialMode = mode
@@ -103,10 +94,7 @@ class HomeViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleAddGesture(_:)))
         addButton.addGestureRecognizer(tapGesture)
-        
-        let tapSignOutGesture = UITapGestureRecognizer(target: self, action: #selector(handleSignOutGesture(_:)))
-        signOutButton.addGestureRecognizer(tapSignOutGesture)
-        
+                
         setupViews()
     }
     
@@ -128,20 +116,14 @@ class HomeViewController: UIViewController {
         self.view.addSubview(pageTitleLabelView)
         self.view.addSubview(editButton)
         self.view.addSubview(tableView)
-        self.view.addSubview(signOutButton)
         self.view.addSubview(addButton)
         
         dottedGrid.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         dottedGrid.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         dottedGrid.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         dottedGrid.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        
-        signOutButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
-        signOutButton.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
-            
-        pageTitleLabelView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: -3).isActive = true
-        pageTitleLabelView.topAnchor.constraint(equalTo: signOutButton.bottomAnchor, constant: 24.0).isActive = true
-        
+                
+        editButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16).isActive = true
         editButton.centerYAnchor.constraint(equalTo: pageTitleLabelView.centerYAnchor).isActive = true
         editButton.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
         
@@ -168,12 +150,7 @@ class HomeViewController: UIViewController {
         vc.delegate = viewModel
         present(vc, animated: true, completion: nil)
     }
-    
-    @objc func handleSignOutGesture(_ sender: UITapGestureRecognizer? = nil) {
-        guard let viewModel = viewModel else { return }
-        viewModel.signOut()
-    }
-    
+        
     @objc func handleModeGesture(_ sender: UITapGestureRecognizer? = nil) {
         self.mode = self.mode != .edit ? .edit : self.initialMode
     }

@@ -24,18 +24,20 @@ class DayUseCase {
     func getToday(completion: @escaping (DayUseCaseResult<Day>) -> Void) {
         do {
             try gateway.getDays { (days) in
+                print(days.count)
                 for day in days {
                     
                     let date = day.date
                     
                     if Calendar.current.isDateInToday(date) {
                         completion(.sucess([day]))
+                        return
                     }
                 }
+                
+                self.createDay(from: 0, completion: completion)
             }
             
-            let day = try self.createDay(from: 0)
-            completion(.sucess([day]))
         } catch let error {
             completion(.failure(error))
         }
@@ -51,12 +53,14 @@ class DayUseCase {
                     
                     if Calendar.current.isDateInTomorrow(date) {
                         completion(.sucess([day]))
+                        return
                     }
                 }
+                
+                self.createDay(from: 1, completion: completion)
+                
             }
-            
-            let day = try self.createDay(from: 1)
-            completion(.sucess([day]))
+
         } catch let error {
             completion(.failure(error))
         }
@@ -72,12 +76,13 @@ class DayUseCase {
         }
     }
     
-    private func createDay(from: Int) throws -> Day {
+    private func createDay(from: Int, completion:  @escaping (DayUseCaseResult<Day>) -> Void) {
         do {
             let day = Day(daysFromNow: from)
-            return try gateway.create(day: day)
+            let dayToReturn = try gateway.create(day: day)
+            completion(.sucess([dayToReturn]))
         } catch let error {
-            throw error
+            completion(.failure(error))
         }
     }
     
