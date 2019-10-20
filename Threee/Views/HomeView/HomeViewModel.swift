@@ -46,7 +46,7 @@ extension HomeViewModel : InputModalViewDelegate {
     
     func createItemWith(name: String) {
         guard let day = day else { return }
-        day.add(item: Item(name: name))
+        day.add(Item(name: name))
     }
     
     func editItemWith(name: String, on index: Int) {

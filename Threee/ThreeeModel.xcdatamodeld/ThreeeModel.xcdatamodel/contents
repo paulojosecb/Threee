@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="19A602" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DayCore" representedClassName="DayCore" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ItemCore"/>
     </entity>
     <entity name="ItemCore" representedClassName="ItemCore" syncable="YES">
@@ -9,7 +10,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="DayCore" positionX="-27" positionY="18" width="128" height="73"/>
+        <element name="DayCore" positionX="-27" positionY="18" width="128" height="88"/>
         <element name="ItemCore" positionX="18" positionY="63" width="128" height="73"/>
     </elements>
 </model>

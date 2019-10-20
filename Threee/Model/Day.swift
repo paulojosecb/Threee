@@ -10,13 +10,15 @@ import Foundation
 
 class Day: NSObject, Codable {
 
-    var date: Double
+    var id: UUID
+    var date: Date
     var items : [Item]? = []
     
     init(daysFromNow: Int) {
+        self.id = UUID()
         let today = Calendar.current.date(byAdding: .day, value: daysFromNow, to: Date()) ?? Date()
         
-        self.date = today.timeIntervalSince1970
+        self.date = today
     }
     
     func isDayCompleted() -> Bool {
@@ -29,7 +31,7 @@ class Day: NSObject, Codable {
         return result && items.count == 3
     }
     
-    func add(item: Item) {
+    func add(_ item: Item) {
         
         if (items == nil) {
             self.items = [Item]()
@@ -40,7 +42,6 @@ class Day: NSObject, Codable {
     
     func edit(item: Int, newValue: String) {
         guard let items = items else { return  }
-
         items[item].name = newValue
     }
     
@@ -49,23 +50,23 @@ class Day: NSObject, Codable {
         items[item].checked = !items[item].checked
     }
     
-    func transform() -> [String: Any] {
-        
-        var dict: [String: Any] = [String: Any]()
-        
-        dict["date"] = date
-        
-        guard let items = items else { return dict }
-        
-        var itemsDict: [String: Any] = [String: Any]()
-        
-        for (index, item) in items.enumerated() {
-            itemsDict["\(index)"] = item.transform()
-        }
-        
-        dict["items"] = itemsDict
-        
-        return dict
-    }
+//    func transform() -> [String: Any] {
+//        
+//        var dict: [String: Any] = [String: Any]()
+//        
+//        dict["date"] = date
+//        
+//        guard let items = items else { return dict }
+//        
+//        var itemsDict: [String: Any] = [String: Any]()
+//        
+//        for (index, item) in items.enumerated() {
+//            itemsDict["\(index)"] = item.transform()
+//        }
+//        
+//        dict["items"] = itemsDict
+//        
+//        return dict
+//    }
     
 }

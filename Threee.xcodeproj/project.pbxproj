@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0792401C024B413BEBD7F5E7 /* Pods_ThreeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA9CAACA5A363803A3FC02E /* Pods_ThreeeTests.framework */; };
-		2B1A2DCC22C5BB260049093A /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DCB22C5BB260049093A /* UserTests.swift */; };
 		2B1A2DCE22C5BD070049093A /* DayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DCD22C5BD070049093A /* DayTests.swift */; };
-		2B1A2DD022C5C1520049093A /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DCF22C5C1520049093A /* ItemTests.swift */; };
 		2B1A2DD722C6B56A0049093A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DD622C6B56A0049093A /* SignUpViewController.swift */; };
 		2B1A2DD922C6B5900049093A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2DD822C6B5900049093A /* SignUpViewModel.swift */; };
 		2B2F008B235C98B1005EDD1E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F008A235C98B1005EDD1E /* CoreDataStack.swift */; };
@@ -41,6 +39,9 @@
 		2BC8F6D822D52037005B6D64 /* InputModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */; };
 		2BCDF06D22D5148F0059C6F4 /* InputModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDF06C22D5148F0059C6F4 /* InputModalViewController.swift */; };
 		2BDAE262235CA059002DBE84 /* DayGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDAE261235CA059002DBE84 /* DayGateway.swift */; };
+		2BDAE266235CC7E7002DBE84 /* DayUseCaseMockGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDAE265235CC7E7002DBE84 /* DayUseCaseMockGateway.swift */; };
+		2BDAE268235CC956002DBE84 /* DayUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDAE267235CC956002DBE84 /* DayUseCaseTests.swift */; };
+		2BDAE26A235CCB85002DBE84 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDAE269235CCB85002DBE84 /* Error.swift */; };
 		2BDF88FB234125E7003FA506 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF88FA234125E7003FA506 /* ModalViewController.swift */; };
 		2BE69BF0235C9D9F00E84166 /* DayUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE69BEF235C9D9F00E84166 /* DayUseCase.swift */; };
 		2BF038E82315A06B00C98324 /* INVASION2000.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 2BF038E72315A06B00C98324 /* INVASION2000.TTF */; };
@@ -78,9 +79,7 @@
 /* Begin PBXFileReference section */
 		1B27DC82C5926521508C2E46 /* Pods-ThreeeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeeUITests.release.xcconfig"; path = "Target Support Files/Pods-ThreeeUITests/Pods-ThreeeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B140B17235628C50058C6E0 /* Threee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Threee.entitlements; sourceTree = "<group>"; };
-		2B1A2DCB22C5BB260049093A /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		2B1A2DCD22C5BD070049093A /* DayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTests.swift; sourceTree = "<group>"; };
-		2B1A2DCF22C5C1520049093A /* ItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
 		2B1A2DD622C6B56A0049093A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2B1A2DD822C6B5900049093A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		2B2F008A235C98B1005EDD1E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -111,6 +110,9 @@
 		2BC8F6D722D52037005B6D64 /* InputModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalViewDelegate.swift; sourceTree = "<group>"; };
 		2BCDF06C22D5148F0059C6F4 /* InputModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalViewController.swift; sourceTree = "<group>"; };
 		2BDAE261235CA059002DBE84 /* DayGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayGateway.swift; sourceTree = "<group>"; };
+		2BDAE265235CC7E7002DBE84 /* DayUseCaseMockGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayUseCaseMockGateway.swift; sourceTree = "<group>"; };
+		2BDAE267235CC956002DBE84 /* DayUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayUseCaseTests.swift; sourceTree = "<group>"; };
+		2BDAE269235CCB85002DBE84 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		2BDF88FA234125E7003FA506 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		2BE69BEF235C9D9F00E84166 /* DayUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayUseCase.swift; sourceTree = "<group>"; };
 		2BF038E72315A06B00C98324 /* INVASION2000.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = INVASION2000.TTF; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		2B2F0089235C9894005EDD1E /* CoreDataStack */ = {
 			isa = PBXGroup;
 			children = (
+				2BDAE263235CC4B1002DBE84 /* Models */,
 				2B2F008A235C98B1005EDD1E /* CoreDataStack.swift */,
 			);
 			path = CoreDataStack;
@@ -321,6 +324,21 @@
 			path = InputModalView;
 			sourceTree = "<group>";
 		};
+		2BDAE263235CC4B1002DBE84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2BDAE264235CC7D0002DBE84 /* MockClasses */ = {
+			isa = PBXGroup;
+			children = (
+				2BDAE265235CC7E7002DBE84 /* DayUseCaseMockGateway.swift */,
+			);
+			path = MockClasses;
+			sourceTree = "<group>";
+		};
 		2BDE7EE1235C9B3D0012D723 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +381,7 @@
 		2BF8E1F822C56ABB004D3C2E /* Threee */ = {
 			isa = PBXGroup;
 			children = (
+				2BDAE269235CCB85002DBE84 /* Error.swift */,
 				2B2F0089235C9894005EDD1E /* CoreDataStack */,
 				2B140B17235628C50058C6E0 /* Threee.entitlements */,
 				2B5FD45C22C9594600D2EDF0 /* Resources */,
@@ -385,11 +404,11 @@
 		2BF8E20D22C56ABD004D3C2E /* ThreeeTests */ = {
 			isa = PBXGroup;
 			children = (
+				2BDAE264235CC7D0002DBE84 /* MockClasses */,
 				2BF8E20E22C56ABD004D3C2E /* ThreeeTests.swift */,
 				2BF8E21022C56ABD004D3C2E /* Info.plist */,
-				2B1A2DCB22C5BB260049093A /* UserTests.swift */,
 				2B1A2DCD22C5BD070049093A /* DayTests.swift */,
-				2B1A2DCF22C5C1520049093A /* ItemTests.swift */,
+				2BDAE267235CC956002DBE84 /* DayUseCaseTests.swift */,
 			);
 			path = ThreeeTests;
 			sourceTree = "<group>";
@@ -698,6 +717,7 @@
 				2B1A2DD922C6B5900049093A /* SignUpViewModel.swift in Sources */,
 				2B5FD45322C94B4D00D2EDF0 /* PageTitleLabelView.swift in Sources */,
 				2B5FD45E22C9596400D2EDF0 /* UIFont.swift in Sources */,
+				2BDAE26A235CCB85002DBE84 /* Error.swift in Sources */,
 				2BF8E1FA22C56ABB004D3C2E /* AppDelegate.swift in Sources */,
 				2BE69BF0235C9D9F00E84166 /* DayUseCase.swift in Sources */,
 				2B9ADB6C22E12885009A3223 /* ModalPushTransition.swift in Sources */,
@@ -712,9 +732,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B1A2DD022C5C1520049093A /* ItemTests.swift in Sources */,
 				2B1A2DCE22C5BD070049093A /* DayTests.swift in Sources */,
-				2B1A2DCC22C5BB260049093A /* UserTests.swift in Sources */,
+				2BDAE266235CC7E7002DBE84 /* DayUseCaseMockGateway.swift in Sources */,
+				2BDAE268235CC956002DBE84 /* DayUseCaseTests.swift in Sources */,
 				2BF8E20F22C56ABD004D3C2E /* ThreeeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

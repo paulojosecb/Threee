@@ -10,22 +10,13 @@ import Foundation
 
 class Item: Codable {
     
+    var id: UUID
     var checked: Bool
     var name: String
     
     init(name: String) {
+        self.id = UUID()
         self.name = name
         self.checked = false
     }
-    
-    func transform() -> [String: Any] {
-        var dict: [String: Any] = [String: Any]()
-        
-        dict["checked"] = checked
-        dict["name"] = name
-        
-        return dict
-    }
-    
-    
 }
