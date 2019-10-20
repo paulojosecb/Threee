@@ -36,9 +36,8 @@ class HomeViewModel {
 extension HomeViewModel : ItemFieldViewDelegate {
     
     func toggleItem(on index: Int) {
-        guard let day = day, let _ = dayIndex else { return }
+        guard let day = day else { return }
         day.toggle(item: index)
-//        database.update(day: day, with: "\(dayIndex)")
     }
     
 }
@@ -46,15 +45,13 @@ extension HomeViewModel : ItemFieldViewDelegate {
 extension HomeViewModel : InputModalViewDelegate {
     
     func createItemWith(name: String) {
-        guard let day = day, let _ = dayIndex else { return }
+        guard let day = day else { return }
         day.add(item: Item(name: name))
-//        database.update(day: day, with: "\(dayIndex)")
     }
     
     func editItemWith(name: String, on index: Int) {
-        guard let day = day, let _ = dayIndex else { return }
+        guard let day = day else { return }
         day.edit(item: index, newValue: name)
-//        database.update(day: day, with: "\(dayIndex)")
     }
     
 }

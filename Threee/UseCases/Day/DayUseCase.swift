@@ -10,7 +10,7 @@ import Foundation
 
 enum DayUseCaseResult<Day> {
     case sucess([Day]?)
-    case failure(Error)
+    case failure(Error?)
 }
 
 class DayUseCase {
@@ -21,15 +21,33 @@ class DayUseCase {
         self.gateway = gateway
     }
     
-    func getToday(completion: (DayUseCaseResult<Day>) -> Void) {
+    func getToday(completion: @escaping (DayUseCaseResult<Day>) -> Void) {
         gateway.getDays { (days) in
-            completion(.sucess(days))
+            for day in days {
+                
+                let date = Date(timeIntervalSince1970: day.date)
+                
+                if Calendar.current.isDateInToday(date) {
+                    completion(.sucess([day]))
+                }
+            }
+            
+            completion(.failure(nil))
         }
     }
     
-    func getTomorrow(completion: (DayUseCaseResult<Day>) -> Void) {
+    func getTomorrow(completion: @escaping (DayUseCaseResult<Day>) -> Void) {
         gateway.getDays { (days) in
-            completion(.sucess(days))
+            for day in days {
+                
+                let date = Date(timeIntervalSince1970: day.date)
+                
+                if Calendar.current.isDateInTomorrow(date) {
+                    completion(.sucess([day]))
+                }
+            }
+            
+            completion(.failure(nil))
         }
     }
     
