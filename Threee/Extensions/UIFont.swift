@@ -26,6 +26,10 @@ extension UIFont {
         return UIFont(name: "Mali-Regular", size: 16.0)!
     }
     
+    class var label14: UIFont {
+        return UIFont(name: "Mali-Regular", size: 14.0)!
+    }
+    
     class var retro: UIFont {
         return UIFont(name: "INVASION2000", size: 18)!
     }

@@ -36,6 +36,8 @@ class DottedGridView: UIView {
         for i in 1...rows + 1 {
             for j in 1...collumns + 1 {
                 let dot = UIView(frame: CGRect(x: DottedGridView.gapBetweenDots * CGFloat(j), y: DottedGridView.gapBetweenDots * CGFloat(i), width: DottedGridView.dotRadius, height: DottedGridView.dotRadius))
+                dot.layer.masksToBounds = true
+                dot.layer.cornerRadius = DottedGridView.dotRadius / 2
                 dot.backgroundColor = UIColor.grey
                 addSubview(dot)
             }

@@ -49,6 +49,7 @@ class InputModalViewController: ModalViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.delegate = self
         textField.placeholder = "Type here"
+        textField.textColor = .black
         return textField
     }()
     
@@ -182,7 +183,7 @@ class InputModalViewController: ModalViewController {
 //            let keyboardHeight = keyboardRectangle.height
                     
             UIView.animate(withDuration: 0.2) {
-                self.cardViewCenterYAnchor?.constant -= 55
+                self.cardViewCenterYAnchor?.constant -= 70
                 self.view.layoutIfNeeded()
             }
     }

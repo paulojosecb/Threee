@@ -15,14 +15,22 @@ enum PageViewMode {
 
 class PageViewController: UIPageViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
+    }
+    
     lazy var pages: [HomeViewController] = {
         return [
-                HomeViewController(mode: .today),
-                HomeViewController(mode: .tomorrow)]
+            HomeViewController(mode: .today),
+            HomeViewController(mode: .tomorrow)]
     }()
     
     var mode: PageViewMode
-    
+        
     init(mode: PageViewMode) {
         self.mode = mode
         super.init(transitionStyle: .pageCurl, navigationOrientation: .horizontal, options: nil)
@@ -52,7 +60,7 @@ class PageViewController: UIPageViewController {
             vc.modalPresentationStyle = .overCurrentContext
             present(vc, animated: true, completion: nil)
         }
-        
+                
     }
     
 }

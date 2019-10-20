@@ -40,7 +40,7 @@ class ItemFieldView: UITableViewCell {
     var index: Int? {
         didSet {
             guard let index = index else { return }
-            label.text = "Thing \(index + 1)"
+            label.text = "Task \(index + 1)"
         }
     }
     
@@ -48,7 +48,7 @@ class ItemFieldView: UITableViewCell {
     
     static var reuseIdentifier = "ItemFieldView"
     static let height: CGFloat = 71.0
-    static let gapBetweenItems: CGFloat = 75.0
+    static let gapBetweenItems: CGFloat = 45.0
     
     var checkWidthAnchor: NSLayoutConstraint?
     
@@ -56,7 +56,7 @@ class ItemFieldView: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.label18
         label.textColor = UIColor.black
-        label.text = "Thing: 0"
+        label.text = "Task: 0"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

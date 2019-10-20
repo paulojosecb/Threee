@@ -22,11 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-//        if let _ = FirebaseCoordinator.shared.auth.currentUser {
         window?.rootViewController = PageViewController(mode: .firstTime)
-//        } else {
-//            window?.rootViewController = SignInViewController()
-//        }
         
         window?.makeKeyAndVisible()
         

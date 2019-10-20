@@ -17,7 +17,11 @@ enum HomeViewMode {
 class HomeViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
     }
     
     var viewModel: HomeViewModel?
@@ -33,6 +37,14 @@ class HomeViewController: UIViewController {
         return DottedGridView(frame: self.view.frame)
     }()
     
+    lazy var letteringImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "LetsImage") ?? UIImage()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .center
+        return imageView
+    }()
+
     lazy var pageTitleLabelView: PageTitleLabelView = {
         let view = PageTitleLabelView()
         view.titleLabel.text = mode == .today ? "Today" : "Tomorrow"
@@ -74,6 +86,26 @@ class HomeViewController: UIViewController {
         return button
     }()
     
+    lazy var swipeLeft: UILabel = {
+        let label = UILabel()
+        label.font = .label14
+        label.textColor = .systemGray
+        label.text = "Swipe Left to plan tomorrow"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = self.mode == .tomorrow ? true : false
+        return label
+    }()
+    
+    lazy var swipeRight: UILabel = {
+        let label = UILabel()
+        label.font = .label14
+        label.textColor = .systemGray
+        label.text = "Swipe Right to plan tomorrow"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = self.mode == .tomorrow ? false : true
+        return label
+    }()
+    
     init(mode: HomeViewMode) {
         self.mode = mode
         self.initialMode = mode
@@ -97,7 +129,7 @@ class HomeViewController: UIViewController {
                 
         setupViews()
     }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         
         guard let viewModel = viewModel,
@@ -117,24 +149,41 @@ class HomeViewController: UIViewController {
     
     func setupViews() {
         self.view.addSubview(dottedGrid)
+        self.view.addSubview(letteringImageView)
         self.view.addSubview(pageTitleLabelView)
         self.view.addSubview(editButton)
         self.view.addSubview(tableView)
         self.view.addSubview(addButton)
-        
+        self.view.addSubview(swipeLeft)
+        self.view.addSubview(swipeRight)
+          
         dottedGrid.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         dottedGrid.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         dottedGrid.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         dottedGrid.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
                 
-        editButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 84).isActive = true
+        letteringImageView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 56).isActive = true
+        letteringImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        letteringImageView.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor, constant: 0).isActive = true
+        letteringImageView.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor, constant: 0).isActive = true
+        letteringImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        editButton.topAnchor.constraint(equalTo: letteringImageView.bottomAnchor, constant: 32).isActive = true
         editButton.centerYAnchor.constraint(equalTo: pageTitleLabelView.centerYAnchor).isActive = true
         editButton.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
         
-        tableView.topAnchor.constraint(equalTo: editButton.bottomAnchor, constant: 32).isActive = true
+        tableView.topAnchor.constraint(equalTo: editButton.bottomAnchor, constant: 16).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        swipeLeft.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
+        swipeLeft.bottomAnchor.constraint(equalTo: addButton.topAnchor, constant: -16).isActive = true
+        swipeLeft.heightAnchor.constraint(equalToConstant: swipeLeft.intrinsicContentSize.height).isActive = true
+        
+        swipeRight.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
+        swipeRight.bottomAnchor.constraint(equalTo: addButton.topAnchor, constant: -16).isActive = true
+        swipeRight.heightAnchor.constraint(equalToConstant: swipeLeft.intrinsicContentSize.height).isActive = true
         
         addButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         addButton.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
@@ -157,6 +206,16 @@ class HomeViewController: UIViewController {
         
     @objc func handleModeGesture(_ sender: UITapGestureRecognizer? = nil) {
         self.mode = self.mode != .edit ? .edit : self.initialMode
+        
+        guard let count = viewModel?.day?.items?.count else { return }
+        
+        if (self.mode == .edit) {
+            letteringImageView.image = UIImage(named: "EditImage") ?? UIImage()
+        } else if (count < 3) {
+            letteringImageView.image = UIImage(named: "LetsImage") ?? UIImage()
+        } else {
+            letteringImageView.image = UIImage(named: "CheckImage") ?? UIImage()
+        }
     }
     
     func presentAlert(with mode: AlertMode) {
@@ -234,7 +293,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ItemFieldView.height
+        return indexPath.row % 2 == 0 ? ItemFieldView.height : ItemFieldView.gapBetweenItems
     }
         
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
