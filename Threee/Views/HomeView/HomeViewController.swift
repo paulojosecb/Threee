@@ -104,6 +104,10 @@ class HomeViewController: UIViewController {
             let day = viewModel.day,
             let items = day.items else { return }
         
+        if (items.count >= 3) {
+            addButton.isHidden = true
+        }
+        
         if (mode == .tomorrow && items.count < 3 ) {
             
             presentAlert(with: .planning)
@@ -123,7 +127,7 @@ class HomeViewController: UIViewController {
         dottedGrid.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         dottedGrid.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
                 
-        editButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16).isActive = true
+        editButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 84).isActive = true
         editButton.centerYAnchor.constraint(equalTo: pageTitleLabelView.centerYAnchor).isActive = true
         editButton.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
         
@@ -168,7 +172,7 @@ extension HomeViewController: HomeViewModelDelegate {
             return
         }
         
-        items.count < 3 ? (addButton.isHidden = false) : (addButton.isHidden = true)
+        items.count >= 3 ? (addButton.isHidden = true) : (addButton.isHidden = false)
         
         if (day.isDayCompleted()) {
             presentAlert(with: .confirmation)
