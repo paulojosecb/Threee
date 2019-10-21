@@ -21,7 +21,7 @@ class ItemFieldView: UITableViewCell {
             itemLabel.text = item.name
             
             UIView.animate(withDuration: 0.3, animations: {
-                self.checkLineConstraint?.constant = item.checked ? 300 : 0
+                self.checkLineConstraint?.constant = item.checked ? 250 : 0
                 self.layoutIfNeeded()
             }) { (bool) in
                 self.feedbackGenerator?.selectionChanged()
@@ -77,6 +77,16 @@ class ItemFieldView: UITableViewCell {
         return textField
     }()
     
+    lazy var editButton: UIButton = {
+       let button = UIButton()
+        button.setTitle("Edit", for: .normal)
+        button.setTitleColor(.systemGray, for: .normal)
+        button.titleLabel?.font = .label18
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(editHandler(_:))))
+        return button
+    }()
+    
     lazy var checkedLine: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black
@@ -106,6 +116,7 @@ class ItemFieldView: UITableViewCell {
         addSubview(underlineView)
         addSubview(itemLabel)
         addSubview(checkedLine)
+        addSubview(editButton)
         
         label.leftAnchor.constraint(equalTo: self.layoutMarginsGuide.leftAnchor).isActive = true
         label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
@@ -125,6 +136,11 @@ class ItemFieldView: UITableViewCell {
         checkedLine.centerYAnchor.constraint(equalTo: itemLabel.centerYAnchor).isActive = true
         checkedLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
         checkedLine.leftAnchor.constraint(equalTo: itemLabel.leftAnchor).isActive = true
+        
+        editButton.centerYAnchor.constraint(equalTo: checkedLine.centerYAnchor).isActive = true
+        editButton.rightAnchor.constraint(equalTo: self.layoutMarginsGuide.rightAnchor, constant: -4).isActive = true
+        editButton.widthAnchor.constraint(equalToConstant: editButton.intrinsicContentSize.width).isActive = true
+        editButton.heightAnchor.constraint(equalToConstant: editButton.intrinsicContentSize.height).isActive = true
         
         checkLineConstraint = checkedLine.widthAnchor.constraint(equalToConstant: 0)
         checkLineConstraint?.isActive = true
@@ -151,6 +167,11 @@ class ItemFieldView: UITableViewCell {
             tomorrowHandler()
         }
         
+    }
+    
+    @objc func editHandler(_ sender: UISwipeGestureRecognizer? = nil) {
+        guard let delegate = self.delegate, let editHandler = editHandler, let name = item?.name else { return }
+        editHandler(name)
     }
     
 }

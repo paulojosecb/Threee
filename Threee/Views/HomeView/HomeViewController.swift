@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     var viewModel: HomeViewModel?
     var mode: HomeViewMode {
         didSet {
-            editButton.setTitle(self.mode == .edit ? "Save" : "Edit", for: .normal)
+//            editButton.setTitle(self.mode == .edit ? "Save" : "Edit", for: .normal)
             tableView.reloadData()
         }
     }
@@ -63,15 +63,15 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
-    lazy var editButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(self.mode == .edit ? "Save" : "Edit", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleModeGesture(_:))))
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = .action
-        return button
-    }()
+//    lazy var editButton: UIButton = {
+//        let button = UIButton()
+//        button.setTitle(self.mode == .edit ? "Save" : "Edit", for: .normal)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleModeGesture(_:))))
+//        button.setTitleColor(.black, for: .normal)
+//        button.titleLabel?.font = .action
+//        return button
+//    }()
     
     lazy var addButton: UIButton = {
         let button = UIButton()
@@ -100,7 +100,7 @@ class HomeViewController: UIViewController {
         let label = UILabel()
         label.font = .label14
         label.textColor = .systemGray
-        label.text = "Swipe Right to plan tomorrow"
+        label.text = "Swipe Right to plan today"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isHidden = self.mode == .tomorrow ? false : true
         return label
@@ -151,7 +151,7 @@ class HomeViewController: UIViewController {
         self.view.addSubview(dottedGrid)
         self.view.addSubview(letteringImageView)
         self.view.addSubview(pageTitleLabelView)
-        self.view.addSubview(editButton)
+//        self.view.addSubview(editButton)
         self.view.addSubview(tableView)
         self.view.addSubview(addButton)
         self.view.addSubview(swipeLeft)
@@ -168,11 +168,14 @@ class HomeViewController: UIViewController {
         letteringImageView.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor, constant: 0).isActive = true
         letteringImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        editButton.topAnchor.constraint(equalTo: letteringImageView.bottomAnchor, constant: 32).isActive = true
-        editButton.centerYAnchor.constraint(equalTo: pageTitleLabelView.centerYAnchor).isActive = true
-        editButton.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
+        pageTitleLabelView.topAnchor.constraint(equalTo: letteringImageView.bottomAnchor, constant: 32).isActive = true
+        pageTitleLabelView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: -2).isActive = true
         
-        tableView.topAnchor.constraint(equalTo: editButton.bottomAnchor, constant: 16).isActive = true
+//        editButton.topAnchor.constraint(equalTo: letteringImageView.bottomAnchor, constant: 32).isActive = true
+//        editButton.centerYAnchor.constraint(equalTo: pageTitleLabelView.centerYAnchor).isActive = true
+//        editButton.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
+        
+        tableView.topAnchor.constraint(equalTo: pageTitleLabelView.bottomAnchor, constant: 16).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
@@ -276,7 +279,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             cell.editHandler = { (currentValue: String) -> Void in
-                print(indexPath.row)
                 let vc = InputModalViewController(mode: .editing, currentValue: currentValue, position: indexPath.row / 2)
                 vc.modalPresentationStyle = .overCurrentContext
                 vc.delegate = self.viewModel

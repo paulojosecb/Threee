@@ -97,9 +97,13 @@ extension HomeViewModel : InputModalViewDelegate {
     }
     
     func editItemWith(name: String, on index: Int) {
-        guard let day = day else { return }
-        day.edit(item: index, newValue: name)
+        guard let day = day, let checked = day.items?[index].checked else { return }
         
+        if (checked) {
+            day.toggle(item: index)
+        }
+        
+        day.edit(item: index, newValue: name)
         self.update()
     }
     

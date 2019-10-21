@@ -50,6 +50,7 @@ class InputModalViewController: ModalViewController {
         textField.delegate = self
         textField.placeholder = "Type here"
         textField.textColor = .black
+//        textField.becomeFirstResponder()
         return textField
     }()
     
@@ -63,13 +64,13 @@ class InputModalViewController: ModalViewController {
     lazy var button: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Add", for: .normal)
+        button.setTitle(self.mode == .creating ? "Add" : "Save", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.backgroundColor = UIColor.gray
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.borderWidth = 2.0
         button.titleLabel?.font = UIFont.title
-        button.isEnabled = self.mode == .creating ? false : true
+//        button.isEnabled = self.mode == .creating ? false : true
         return button
     }()
     
@@ -118,7 +119,9 @@ class InputModalViewController: ModalViewController {
         view.addSubview(inputLineView)
         view.addSubview(button)
         
-        if (input.text != "") {
+        if (self.mode == .creating) {
+            button.isEnabled = false
+        } else {
             button.isEnabled = true
         }
         
@@ -137,7 +140,7 @@ class InputModalViewController: ModalViewController {
         
         cardView.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor).isActive = true
         cardView.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor).isActive = true
-        cardViewCenterYAnchor =  cardView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        cardViewCenterYAnchor = cardView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -70)
         cardViewCenterYAnchor?.isActive = true
         cardView.heightAnchor.constraint(equalToConstant: 264).isActive = true
         
