@@ -30,15 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let options: UNAuthorizationOptions = [.alert, .sound]
         
-        notificationCenter.requestAuthorization(options: options) { (didAllow, error) in
-            if didAllow {
-                self.createNotification(with: notificationCenter)
-            }
-        }
-        
         notificationCenter.getNotificationSettings { (setting) in
-            if (setting.authorizationStatus == .authorized) {
-                print("UAHSU")
+            if (setting.authorizationStatus == .notDetermined) {
+                notificationCenter.requestAuthorization(options: options) { (didAllow, error) in
+                    if didAllow {
+                        self.createNotification(with: notificationCenter)
+                    }
+                }
+            } else if (setting.authorizationStatus == .authorized) {
+                print("Auth")
             }
         }
         
